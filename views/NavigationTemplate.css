@@ -1,0 +1,139 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#navbar-font{
+	font-family: 'Sanchez', serif;
+}
+#paragraph-post{
+	text-align: center | justify;
+	font-family: 'Work Sans', sans-serif;
+	width: 100%
+}
+
+
+#paragraph-postAbout{
+	position: absolute;
+	width: 33%;
+}
+
+
+
+#paragraph-postDetails{
+	position: absolute;
+	top: 129%;
+	right: 30px;
+	width: 33%;
+}
+
+
+
+.image{
+	height: 50%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+
+}
+
+.textTop{
+	text-align: center;
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	font-family: 'Work Sans', sans-serif;
+}
+
+.textTop h1{
+	font-family: 'Sanchez', serif;
+}
+
+.textTop button{
+
+}
+
+.textResume{
+	text-align: center;
+	position: absolute;
+	top: 65%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	font-family: 'Work Sans', sans-serif;
+}
+
+.text{
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	font-family: 'Work Sans', sans-serif;
+}
+
+.text h1{
+	font-family: 'Sanchez', serif;
+}
+.text button{
+	font-family: 'Sanchez', serif;
+
+}
+.post{
+
+	width: 100%;
+	height: 805px;
+	padding-right: 100px;
+	padding-left: 100px;
+	text-align: center;
+	font-family: 'Sanchez', serif;
+	padding-top: 60px;
+	color: white;
+}
+
+.postResume{
+	width: 100%;
+	height: 1000px;
+	padding-right: 100px;
+	padding-left: 100px;
+	text-align: center;
+	font-family: 'Sanchez', serif;
+	padding-top: 60px;
+	color: white;
+}
+
+.conclusion{
+	text-align: right;
+	color:white;
+	padding-top: 10px;
+	padding-bottom: 1px;
+
+}
+
+
+a.button {
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	appearance: button;
+
+	text-decoration: none;
+	color: initial;
+}
+.navbar-nav {
+    display:table;
+    width:100%;
+    margin: 0;
+}
+.navbar-nav  li {
+    float:none;
+    display:table-cell;
+    text-align:center;
+}
+.navbar .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: lightskyblue;
+    color: white;
+}
