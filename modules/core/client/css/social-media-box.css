@@ -36,9 +36,14 @@ font-family: 'Sanchez', serif;
 }
 
 .tableWrapper {
-  padding-top: 25px;
-  max-height: 800;
+
+  max-height: 800px;
   overflow: auto;
+}
+
+.rowBoards{
+  border: 2px solid   lightgrey;
+  border-radius: 5px;
 }
 
 .eventPadding
