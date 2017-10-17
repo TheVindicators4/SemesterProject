@@ -1,0 +1,52 @@
+.box {
+display: inline-block;
+width: 300px;
+border: 1px solid #000;
+background:#D3D3D3;
+text-align: center;
+font-family: 'Sanchez', serif;
+}
+
+.divider{
+    width: 5px;
+    height: auto;
+    display: inline-block;
+}
+
+.box2 {
+display: inline-block;
+width: auto;
+font-family: 'Sanchez', serif;
+}
+
+.column {
+    float: left;
+}
+
+/* Left and right column */
+.column.side {
+    width: 25%;
+    padding-top: 50px;
+}
+
+/* Middle column */
+.column.middle {
+    width: 75%;
+    padding-right: 50px;
+}
+
+.tableWrapper {
+
+  max-height: 800px;
+  overflow: auto;
+}
+
+.rowBoards{
+  border: 2px solid   lightgrey;
+  border-radius: 5px;
+}
+
+.eventPadding
+{
+  padding: 10px;
+}
