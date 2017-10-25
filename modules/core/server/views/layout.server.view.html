@@ -73,11 +73,9 @@
 </header>-->
 <body>
 	<!-- This is for the banner that appears above the nav-bar -->
-	<div class="image">
-		<div  class="textTop">
-			<h1>
-				<a href="#/login"></a><img src="/modules/core/client/img/nav/ELO_LOGO_COLOR.png" alt="ELO LOGO" style="width:209;height:223px;"></a>
-			</h1>
+	<div class="image" ng-controller="HeaderController as vm">
+		<div class="textTop" ng-hide="vm.authentication.user">
+			<a ui-sref="authentication.signup"><h1><img src="/modules/core/client/img/nav/ELO_LOGO_COLOR.png" alt="ELO LOGO" style="width:209;height:223px;"></h1></a>
 		</div>
 	</div>
 	<!-- Navbar using bootstrap -->

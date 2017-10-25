@@ -51,6 +51,12 @@
         controller: 'HomeController',
         controllerAs: 'vm'
       })
+      .state('login', {
+        url: '/login',
+        templateUrl: '/modules/users/client/views/authentication/authentication.client.view.html',
+        controller: 'AuthenticationController',
+        controllerAs: 'vm'
+      })
       .state('not-found', {
         url: '/not-found',
         templateUrl: '/modules/core/client/views/404.client.view.html',
