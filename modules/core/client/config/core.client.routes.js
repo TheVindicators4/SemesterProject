@@ -41,8 +41,8 @@
       })
       .state('blog', {
         url: '/blog',
-        templateUrl: '/modules/core/client/views/blog.client.view.html',
-        controller: 'HomeController',
+        templateUrl: '/modules/articles/client/views/list-articles.client.view.html',
+        controller: 'BlogpostsController',
         controllerAs: 'vm'
       })
       .state('contactme', {
