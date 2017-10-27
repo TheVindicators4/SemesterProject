@@ -74,9 +74,9 @@
 </header>-->
 <body>
 	<!-- This is for the banner that appears above the nav-bar -->
-	<div class="image" ng-controller="HeaderController as vm">
-		<div class="textTop" ng-hide="vm.authentication.user">
-			<a ui-sref="authentication.signup"><h1><img src="/modules/core/client/img/nav/ELO_LOGO_COLOR.png" alt="ELO LOGO" style="width:209;height:223px;"></h1></a>
+	<div class="image">
+		<div class="textTop">
+			<a href="/"><h1><img src="/modules/core/client/img/nav/ELO_LOGO_COLOR.png" alt="ELO LOGO" style="width:209;height:223px;"></h1></a>
 		</div>
 	</div>
 	<!-- Navbar using bootstrap -->
@@ -88,19 +88,19 @@
 					<a class="nav-link" ui-sref="home">Home</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link"  ui-sref="about">About</a>
+					<a class="nav-link" ui-sref="about">About</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">Shop</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Photos</a>
+					<a class="nav-link" ui-sref="#">Photos</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" ui-sref="blog">Blog</a>
+					<a class="nav-link" ui-sref="blogposts.list">Blog</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Reviews</a>
+					<a class="nav-link" href="reviews.list">Reviews</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="contact">Contact</a>
@@ -108,9 +108,16 @@
 			</ul>
 		</div>
 	</nav>
-	<section>
-		{{{block "content"}}}
-	</section>
+	<div class="container">
+		<div>
+			<section>
+				{{{block "content"}}}
+			</section>
+		</div>
+		<div>
+			<a href="/login"><button style="width: 80px; height: 40px; visibility: hidden;">Button</button></a>
+		</div>
+	</div>
 
 	<!--<noscript>
 	<style>

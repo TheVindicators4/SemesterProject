@@ -28,7 +28,7 @@
       }
     })
     .state('authentication.signin', {
-      url: '/signin?err',
+      url: '/signin',
       templateUrl: '/modules/users/client/views/authentication/signin.client.view.html',
       controller: 'AuthenticationController',
       controllerAs: 'vm',

@@ -41,7 +41,7 @@
       })
       .state('blog', {
         url: '/blog',
-        templateUrl: '/modules/articles/client/views/list-articles.client.view.html',
+        templateUrl: '/modules/blog/client/views/list-blogposts.client.view.html',
         controller: 'BlogpostsController',
         controllerAs: 'vm'
       })
@@ -53,7 +53,7 @@
       })
       .state('login', {
         url: '/login',
-        templateUrl: '/modules/users/client/views/authentication/authentication.client.view.html',
+        templateUrl: '/modules/users/client/views/authentication/signin.client.view.html',
         controller: 'AuthenticationController',
         controllerAs: 'vm'
       })
