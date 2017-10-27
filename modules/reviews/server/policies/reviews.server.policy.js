@@ -9,47 +9,47 @@ var acl = require('acl');
 acl = new acl(new acl.memoryBackend());
 
 /**
- * Invoke Articles Permissions
+ * Invoke Reviews Permissions
  */
 exports.invokeRolesPolicies = function () {
   acl.allow([{
     roles: ['admin'],
     allows: [{
-      resources: '/api/articles',
+      resources: '/api/reviews',
       permissions: '*'
     }, {
-      resources: '/api/articles/:articleId',
+      resources: '/api/reviews/:reviewId',
       permissions: '*'
     }]
   }, {
     roles: ['user'],
     allows: [{
-      resources: '/api/articles',
+      resources: '/api/reviews',
       permissions: ['get']
     }, {
-      resources: '/api/articles/:articleId',
+      resources: '/api/reviews/:reviewId',
       permissions: ['get']
     }]
   }, {
     roles: ['guest'],
     allows: [{
-      resources: '/api/articles',
+      resources: '/api/reviews',
       permissions: ['get']
     }, {
-      resources: '/api/articles/:articleId',
+      resources: '/api/reviews/:reviewId',
       permissions: ['get']
     }]
   }]);
 };
 
 /**
- * Check If Articles Policy Allows
+ * Check If Reviews Policy Allows
  */
 exports.isAllowed = function (req, res, next) {
   var roles = (req.user) ? req.user.roles : ['guest'];
 
-  // If an article is being processed and the current user created it then allow any manipulation
-  if (req.article && req.user && req.article.user && req.article.user.id === req.user.id) {
+  // If an review is being processed and the current user created it then allow any manipulation
+  if (req.review && req.user && req.review.user && req.review.user.id === req.user.id) {
     return next();
   }
 

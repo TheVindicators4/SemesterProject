@@ -10,9 +10,9 @@ var mongoose = require('mongoose'),
   chalk = require('chalk');
 
 /**
- * Article Schema
+ * Review Schema
  */
-var ArticleSchema = new Schema({
+var ReviewSchema = new Schema({
   created: {
     type: Date,
     default: Date.now
@@ -34,16 +34,16 @@ var ArticleSchema = new Schema({
   }
 });
 
-ArticleSchema.statics.seed = seed;
+ReviewSchema.statics.seed = seed;
 
-mongoose.model('Article', ArticleSchema);
+mongoose.model('Review', ReviewSchema);
 
 /**
-* Seeds the User collection with document (Article)
+* Seeds the User collection with document (Review)
 * and provided options.
 */
 function seed(doc, options) {
-  var Article = mongoose.model('Article');
+  var Review = mongoose.model('Review');
 
   return new Promise(function (resolve, reject) {
 
@@ -83,7 +83,7 @@ function seed(doc, options) {
 
     function skipDocument() {
       return new Promise(function (resolve, reject) {
-        Article
+        Review
           .findOne({
             title: doc.title
           })
@@ -100,7 +100,7 @@ function seed(doc, options) {
               return resolve(true);
             }
 
-            // Remove Article (overwrite)
+            // Remove Review (overwrite)
 
             existing.remove(function (err) {
               if (err) {
@@ -117,19 +117,19 @@ function seed(doc, options) {
       return new Promise(function (resolve, reject) {
         if (skip) {
           return resolve({
-            message: chalk.yellow('Database Seeding: Article\t' + doc.title + ' skipped')
+            message: chalk.yellow('Database Seeding: Review\t' + doc.title + ' skipped')
           });
         }
 
-        var article = new Article(doc);
+        var review = new Review(doc);
 
-        article.save(function (err) {
+        review.save(function (err) {
           if (err) {
             return reject(err);
           }
 
           return resolve({
-            message: 'Database Seeding: Article\t' + article.title + ' added'
+            message: 'Database Seeding: Review\t' + review.title + ' added'
           });
         });
       });

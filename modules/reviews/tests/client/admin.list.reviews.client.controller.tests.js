@@ -1,15 +1,15 @@
 ﻿(function () {
   'use strict';
 
-  describe('Admin Articles List Controller Tests', function () {
+  describe('Admin Reviews List Controller Tests', function () {
     // Initialize global variables
-    var ArticlesAdminListController,
+    var ReviewsAdminListController,
       $scope,
       $httpBackend,
       $state,
       Authentication,
-      ArticlesService,
-      mockArticle;
+      ReviewsService,
+      mockReview;
 
     // The $resource service augments the response object with methods for updating and deleting the resource.
     // If we were to use the standard toEqual matcher, our tests would fail because the test values would not match
@@ -36,7 +36,7 @@
     // The injector ignores leading and trailing underscores here (i.e. _$httpBackend_).
     // This allows us to inject a service but then attach it to a variable
     // with the same name as the service.
-    beforeEach(inject(function ($controller, $rootScope, _$state_, _$httpBackend_, _Authentication_, _ArticlesService_) {
+    beforeEach(inject(function ($controller, $rootScope, _$state_, _$httpBackend_, _Authentication_, _ReviewsService_) {
       // Set a new global scope
       $scope = $rootScope.$new();
 
@@ -44,16 +44,16 @@
       $httpBackend = _$httpBackend_;
       $state = _$state_;
       Authentication = _Authentication_;
-      ArticlesService = _ArticlesService_;
+      ReviewsService = _ReviewsService_;
 
       // Ignore parent template get on state transitions
-      $httpBackend.whenGET('/modules/articles/client/views/list-articles.client.view.html').respond(200, '');
+      $httpBackend.whenGET('/modules/reviews/client/views/list-reviews.client.view.html').respond(200, '');
       $httpBackend.whenGET('/modules/core/client/views/home.client.view.html').respond(200, '');
 
-      // create mock article
-      mockArticle = new ArticlesService({
+      // create mock review
+      mockReview = new ReviewsService({
         _id: '525a8422f6d0f87f0e407a33',
-        title: 'An Article about MEAN',
+        title: 'An Review about MEAN',
         content: 'MEAN rocks!'
       });
 
@@ -62,8 +62,8 @@
         roles: ['user', 'admin']
       };
 
-      // Initialize the Articles List controller.
-      ArticlesAdminListController = $controller('ArticlesAdminListController as vm', {
+      // Initialize the Reviews List controller.
+      ReviewsAdminListController = $controller('ReviewsAdminListController as vm', {
         $scope: $scope
       });
 
@@ -72,23 +72,23 @@
     }));
 
     describe('Instantiate', function () {
-      var mockArticleList;
+      var mockReviewList;
 
       beforeEach(function () {
-        mockArticleList = [mockArticle, mockArticle];
+        mockReviewList = [mockReview, mockReview];
       });
 
-      it('should send a GET request and return all articles', inject(function (ArticlesService) {
+      it('should send a GET request and return all reviews', inject(function (ReviewsService) {
         // Set POST response
-        $httpBackend.expectGET('/api/articles').respond(mockArticleList);
+        $httpBackend.expectGET('/api/reviews').respond(mockReviewList);
 
 
         $httpBackend.flush();
 
         // Test form inputs are reset
-        expect($scope.vm.articles.length).toEqual(2);
-        expect($scope.vm.articles[0]).toEqual(mockArticle);
-        expect($scope.vm.articles[1]).toEqual(mockArticle);
+        expect($scope.vm.reviews.length).toEqual(2);
+        expect($scope.vm.reviews[0]).toEqual(mockReview);
+        expect($scope.vm.reviews[1]).toEqual(mockReview);
 
       }));
     });

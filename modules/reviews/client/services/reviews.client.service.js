@@ -2,38 +2,38 @@
   'use strict';
 
   angular
-    .module('articles.services')
-    .factory('ArticlesService', ArticlesService);
+    .module('reviews.services')
+    .factory('ReviewsService', ReviewsService);
 
-  ArticlesService.$inject = ['$resource', '$log'];
+  ReviewsService.$inject = ['$resource', '$log'];
 
-  function ArticlesService($resource, $log) {
-    var Article = $resource('/api/articles/:articleId', {
-      articleId: '@_id'
+  function ReviewsService($resource, $log) {
+    var Review = $resource('/api/reviews/:reviewId', {
+      reviewId: '@_id'
     }, {
       update: {
         method: 'PUT'
       }
     });
 
-    angular.extend(Article.prototype, {
+    angular.extend(Review.prototype, {
       createOrUpdate: function () {
-        var article = this;
-        return createOrUpdate(article);
+        var review = this;
+        return createOrUpdate(review);
       }
     });
 
-    return Article;
+    return Review;
 
-    function createOrUpdate(article) {
-      if (article._id) {
-        return article.$update(onSuccess, onError);
+    function createOrUpdate(review) {
+      if (review._id) {
+        return review.$update(onSuccess, onError);
       } else {
-        return article.$save(onSuccess, onError);
+        return review.$save(onSuccess, onError);
       }
 
       // Handle successful response
-      function onSuccess(article) {
+      function onSuccess(review) {
         // Any required internal processing from inside the service, goes here.
       }
 
