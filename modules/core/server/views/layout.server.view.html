@@ -56,6 +56,43 @@
   <header ng-include="'/modules/core/client/views/header.client.view.html'">
 </header>
     <body>
+  	<!-- This is for the banner that appears above the nav-bar -->
+  	<div class="image">
+  		<div  class="textTop">
+  			<h1>
+  			<img src="/modules/core/client/img/nav/ELO_LOGO_COLOR.png" alt="ELO LOGO" style="width:209;height:223px;">
+  			</h1>
+  		</div>
+  	</div>
+  	<!-- Navbar using bootstrap -->
+  	<nav class="navbar top navbar-expand-lg nav-tabs navbar-light bg-light" id = "navbar-font" >
+  		<div class="collapse navbar-collapse" id="navbarNavDropdown" ng-controller="HeaderController as vm">
+  			<ul class="navbar-nav">
+  				<!-- inside each href put the link to the proper page -->
+  				<li class="nav-item">
+  					<a class="nav-link" ui-sref="home">Home</a>
+  				</li>
+  				<li class="nav-item">
+  					<a class="nav-link"  ui-sref="about">About</a>
+  				</li>
+  				<li class="nav-item">
+  					<a class="nav-link" href="#">Shop</a>
+  				</li>
+  				<li class="nav-item">
+  					<a class="nav-link" href="#">Photos</a>
+  				</li>
+  				<li class="nav-item">
+  					<a class="nav-link" ui-sref="blog">Blog</a>
+  				</li>
+  				<li class="nav-item">
+  					<a class="nav-link" href="#">Reviews</a>
+  				</li>
+  				<li class="nav-item">
+  					<a class="nav-link" href="contact">Contact</a>
+  				</li>
+  			</ul>
+  		</div>
+  	</nav>
    <section>
       {{{block "content"}}}
     </section>
