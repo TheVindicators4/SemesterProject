@@ -39,7 +39,7 @@
           pageTitle: 'Settings password'
         }
       })
-      /*.state('settings.accounts', {
+      .state('settings.accounts', {
         url: '/accounts',
         templateUrl: '/modules/users/client/views/settings/manage-social-accounts.client.view.html',
         controller: 'SocialAccountsController',
@@ -56,7 +56,7 @@
         data: {
           pageTitle: 'Settings picture'
         }
-      })*/
+      })
       .state('authentication', {
         abstract: true,
         url: '/authentication',
@@ -74,7 +74,7 @@
         }
       })
       .state('authentication.signin', {
-        url: '/signin-secret-jFklos',
+        url: '/signin?err',
         templateUrl: '/modules/users/client/views/authentication/signin.client.view.html',
         controller: 'AuthenticationController',
         controllerAs: 'vm',

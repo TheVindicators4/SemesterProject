@@ -1,4 +1,4 @@
-/*@media (min-width: 992px) {
+@media (min-width: 992px) {
   .nav-users {
     position: fixed;
   }
@@ -25,26 +25,4 @@
 }
 .social-button:hover {
   opacity: 0.65;
-}
-*/
-.column {
-    float: left;
-}
-
-/* Left and right column */
-.column.side {
-    width: 25%;
-    padding-top: 50px;
-}
-
-/* Middle column */
-.column.middle {
-    width: 75%;
-    padding-right: 50px;
-}
-
-
-.content {
-    max-width: 500px;
-    margin: auto;
 }
