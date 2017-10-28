@@ -1,5 +1,5 @@
 .content {
-  margin-top: 50px;
+  margin-top: 30px;
   margin-right: 50px;
   margin-left: 50px;
 }
@@ -44,13 +44,27 @@ a:hover .header-profile-image {
   display: inline;
 } */
 
-/*body {
+body {
 	margin: 0;
 	padding: 0;
-}*/
+  background: black; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(black, gray); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(black, gray);; /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(black, gray); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(black, gray); /* Standard syntax (must be last) */
+}
 
 #navbar-font{
 	font-family: 'Sanchez', serif;
+  color: white;
+}
+
+#grad1 {
+    background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(red, yellow); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(red, yellow); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(red, yellow); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(red, yellow); /* Standard syntax (must be last) */
 }
 
 .image{
@@ -90,31 +104,52 @@ a:hover .header-profile-image {
 .text h1{
 	font-family: 'Sanchez', serif;
 }
+.navbar{
+  /*background-color: black;*/
+  background: black; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(black, gray); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(black, gray);; /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(black, gray); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(black, gray);
 
+}
   .navbar-nav {
       float: none;
       display:table;
       width:100%;
       margin: 0;
   }
+  .nav-item {
+      color: white;
+  }
+
+  .nav-link {
+      color: white;
+  }
+
   .navbar-nav  li {
       float:none;
       display:table-cell;
       text-align:center;
+      font-size: 20px;
   }
+
   .navbar .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-      background-color: lightskyblue;
+      background-color: gray;
       color: white;
   }
 
-
+/*Home Page CSS*/
+h1 {
+  color: white;
+}
 .box {
-display: inline-block;
-width: 300px;
-border: 1px solid #000;
-background:#D3D3D3;
-text-align: center;
-font-family: 'Sanchez', serif;
+  display: inline-block;
+  width: 300px;
+  border: 1px solid #000;
+  background:#D3D3D3;
+  text-align: center;
+  font-family: 'Sanchez', serif;
 }
 
 .divider{
@@ -146,15 +181,27 @@ font-family: 'Sanchez', serif;
 }
 
 .tableWrapper {
-
   max-height: 800px;
   overflow: auto;
 }
 
-.rowBoards{
-  border: 2px solid   lightgrey;
-  border-radius: 5px;
+.tableWrapper .rowBoards:nth-child(odd) {
+    background-color: lightgray;
 }
+
+.tableWrapper .rowBoards:nth-child(even) {
+    background-color: white;
+}
+
+.tableWrapper.rowBoards:hover {
+    background: black;
+    cursor: pointer;
+}
+/*.rowBoards{
+  color:white;
+  border: 2px solid lightgrey;
+  border-radius: 5px;
+}*/
 
 .eventPadding
 {
