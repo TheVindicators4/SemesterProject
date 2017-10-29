@@ -1,15 +1,15 @@
 (function () {
   'use strict';
 
-  describe('Articles List Controller Tests', function () {
+  describe('AboutMessages List Controller Tests', function () {
     // Initialize global variables
-    var ArticlesListController,
+    var AboutMessagesListController,
       $scope,
       $httpBackend,
       $state,
       Authentication,
-      ArticlesService,
-      mockArticle;
+      AboutMessagesService,
+      mockAboutMessage;
 
     // The $resource service augments the response object with methods for updating and deleting the resource.
     // If we were to use the standard toEqual matcher, our tests would fail because the test values would not match
@@ -36,7 +36,7 @@
     // The injector ignores leading and trailing underscores here (i.e. _$httpBackend_).
     // This allows us to inject a service but then attach it to a variable
     // with the same name as the service.
-    beforeEach(inject(function ($controller, $rootScope, _$state_, _$httpBackend_, _Authentication_, _ArticlesService_) {
+    beforeEach(inject(function ($controller, $rootScope, _$state_, _$httpBackend_, _Authentication_, _AboutMessagesService_) {
       // Set a new global scope
       $scope = $rootScope.$new();
 
@@ -44,12 +44,12 @@
       $httpBackend = _$httpBackend_;
       $state = _$state_;
       Authentication = _Authentication_;
-      ArticlesService = _ArticlesService_;
+      AboutMessagesService = _AboutMessagesService_;
 
-      // create mock article
-      mockArticle = new ArticlesService({
+      // create mock aboutMessage
+      mockAboutMessage = new AboutMessagesService({
         _id: '525a8422f6d0f87f0e407a33',
-        title: 'An Article about MEAN',
+        title: 'An AboutMessage about MEAN',
         content: 'MEAN rocks!'
       });
 
@@ -58,8 +58,8 @@
         roles: ['user']
       };
 
-      // Initialize the Articles List controller.
-      ArticlesListController = $controller('ArticlesListController as vm', {
+      // Initialize the AboutMessages List controller.
+      AboutMessagesListController = $controller('AboutMessagesListController as vm', {
         $scope: $scope
       });
 
@@ -68,15 +68,15 @@
     }));
 
     describe('Instantiate', function () {
-      var mockArticleList;
+      var mockAboutMessageList;
 
       beforeEach(function () {
-        mockArticleList = [mockArticle, mockArticle];
+        mockAboutMessageList = [mockAboutMessage, mockAboutMessage];
       });
 
-      it('should send a GET request and return all articles', inject(function (ArticlesService) {
+      it('should send a GET request and return all aboutMessages', inject(function (AboutMessagesService) {
         // Set POST response
-        $httpBackend.expectGET('/api/articles').respond(mockArticleList);
+        $httpBackend.expectGET('/api/aboutMessages').respond(mockAboutMessageList);
 
         // Ignore parent template get on state transition
         $httpBackend.whenGET('/modules/core/client/views/home.client.view.html').respond(200, '');
@@ -84,9 +84,9 @@
         $httpBackend.flush();
 
         // Test form inputs are reset
-        expect($scope.vm.articles.length).toEqual(2);
-        expect($scope.vm.articles[0]).toEqual(mockArticle);
-        expect($scope.vm.articles[1]).toEqual(mockArticle);
+        expect($scope.vm.aboutMessages.length).toEqual(2);
+        expect($scope.vm.aboutMessages[0]).toEqual(mockAboutMessage);
+        expect($scope.vm.aboutMessages[1]).toEqual(mockAboutMessage);
 
       }));
     });

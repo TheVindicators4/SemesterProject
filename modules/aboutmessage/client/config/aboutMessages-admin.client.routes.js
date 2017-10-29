@@ -2,65 +2,65 @@
   'use strict';
 
   angular
-    .module('articles.admin.routes')
+    .module('aboutMessages.admin.routes')
     .config(routeConfig);
 
   routeConfig.$inject = ['$stateProvider'];
 
   function routeConfig($stateProvider) {
     $stateProvider
-      .state('admin.articles', {
+      .state('admin.aboutMessages', {
         abstract: true,
-        url: '/articles',
+        url: '/aboutMessages',
         template: '<ui-view/>'
       })
-      .state('admin.articles.list', {
+      .state('admin.aboutMessages.list', {
         url: '',
-        templateUrl: '/modules/articles/client/views/admin/list-articles.client.view.html',
-        controller: 'ArticlesAdminListController',
+        templateUrl: '/modules/aboutMessages/client/views/admin/list-aboutMessages.client.view.html',
+        controller: 'AboutMessagesAdminListController',
         controllerAs: 'vm',
         data: {
           roles: ['admin']
         }
       })
-      .state('admin.articles.create', {
+      .state('admin.aboutMessages.create', {
         url: '/create',
-        templateUrl: '/modules/articles/client/views/admin/form-article.client.view.html',
-        controller: 'ArticlesAdminController',
+        templateUrl: '/modules/aboutMessages/client/views/admin/form-aboutMessage.client.view.html',
+        controller: 'AboutMessagesAdminController',
         controllerAs: 'vm',
         data: {
           roles: ['admin']
         },
         resolve: {
-          articleResolve: newArticle
+          aboutMessageResolve: newAboutMessage
         }
       })
-      .state('admin.articles.edit', {
-        url: '/:articleId/edit',
-        templateUrl: '/modules/articles/client/views/admin/form-article.client.view.html',
-        controller: 'ArticlesAdminController',
+      .state('admin.aboutMessages.edit', {
+        url: '/:aboutMessageId/edit',
+        templateUrl: '/modules/aboutMessages/client/views/admin/form-aboutMessage.client.view.html',
+        controller: 'AboutMessagesAdminController',
         controllerAs: 'vm',
         data: {
           roles: ['admin'],
-          pageTitle: '{{ articleResolve.title }}'
+          pageTitle: '{{ aboutMessageResolve.title }}'
         },
         resolve: {
-          articleResolve: getArticle
+          aboutMessageResolve: getAboutMessage
         }
       });
   }
 
-  getArticle.$inject = ['$stateParams', 'ArticlesService'];
+  getAboutMessage.$inject = ['$stateParams', 'AboutMessagesService'];
 
-  function getArticle($stateParams, ArticlesService) {
-    return ArticlesService.get({
-      articleId: $stateParams.articleId
+  function getAboutMessage($stateParams, AboutMessagesService) {
+    return AboutMessagesService.get({
+      aboutMessageId: $stateParams.aboutMessageId
     }).$promise;
   }
 
-  newArticle.$inject = ['ArticlesService'];
+  newAboutMessage.$inject = ['AboutMessagesService'];
 
-  function newArticle(ArticlesService) {
-    return new ArticlesService();
+  function newAboutMessage(AboutMessagesService) {
+    return new AboutMessagesService();
   }
 }());

@@ -2,43 +2,43 @@
   'use strict';
 
   angular
-    .module('articles.routes')
+    .module('aboutMessages.routes')
     .config(routeConfig);
 
   routeConfig.$inject = ['$stateProvider'];
 
   function routeConfig($stateProvider) {
     $stateProvider
-      .state('articles', {
+      .state('aboutMessages', {
         abstract: true,
-        url: '/articles',
+        url: '/aboutMessages',
         template: '<ui-view/>'
       })
-      .state('articles.list', {
+      .state('aboutMessages.list', {
         url: '',
-        templateUrl: '/modules/articles/client/views/list-articles.client.view.html',
-        controller: 'ArticlesListController',
+        templateUrl: '/modules/aboutMessages/client/views/list-aboutMessages.client.view.html',
+        controller: 'AboutMessagesListController',
         controllerAs: 'vm'
       })
-      .state('articles.view', {
-        url: '/:articleId',
-        templateUrl: '/modules/articles/client/views/view-article.client.view.html',
-        controller: 'ArticlesController',
+      .state('aboutMessages.view', {
+        url: '/:aboutMessageId',
+        templateUrl: '/modules/aboutMessages/client/views/view-aboutMessage.client.view.html',
+        controller: 'AboutMessagesController',
         controllerAs: 'vm',
         resolve: {
-          articleResolve: getArticle
+          aboutMessageResolve: getAboutMessage
         },
         data: {
-          pageTitle: '{{ articleResolve.title }}'
+          pageTitle: '{{ aboutMessageResolve.title }}'
         }
       });
   }
 
-  getArticle.$inject = ['$stateParams', 'ArticlesService'];
+  getAboutMessage.$inject = ['$stateParams', 'AboutMessagesService'];
 
-  function getArticle($stateParams, ArticlesService) {
-    return ArticlesService.get({
-      articleId: $stateParams.articleId
+  function getAboutMessage($stateParams, AboutMessagesService) {
+    return AboutMessagesService.get({
+      aboutMessageId: $stateParams.aboutMessageId
     }).$promise;
   }
 }());

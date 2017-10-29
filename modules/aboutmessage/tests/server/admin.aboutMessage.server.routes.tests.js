@@ -5,7 +5,7 @@ var should = require('should'),
   path = require('path'),
   mongoose = require('mongoose'),
   User = mongoose.model('User'),
-  Article = mongoose.model('Article'),
+  AboutMessage = mongoose.model('AboutMessage'),
   express = require(path.resolve('./config/lib/express'));
 
 /**
@@ -15,12 +15,12 @@ var app,
   agent,
   credentials,
   user,
-  article;
+  aboutMessage;
 
 /**
- * Article routes tests
+ * AboutMessage routes tests
  */
-describe('Article Admin CRUD tests', function () {
+describe('AboutMessage Admin CRUD tests', function () {
   before(function (done) {
     // Get application
     app = express.init(mongoose.connection.db);
@@ -48,12 +48,12 @@ describe('Article Admin CRUD tests', function () {
       provider: 'local'
     });
 
-    // Save a user to the test db and create new article
+    // Save a user to the test db and create new aboutMessage
     user.save()
       .then(function () {
-        article = {
-          title: 'Article Title',
-          content: 'Article Content'
+        aboutMessage = {
+          title: 'AboutMessage Title',
+          content: 'AboutMessage Content'
         };
 
         done();
@@ -61,7 +61,7 @@ describe('Article Admin CRUD tests', function () {
       .catch(done);
   });
 
-  it('should be able to save an article if logged in', function (done) {
+  it('should be able to save an aboutMessage if logged in', function (done) {
     agent.post('/api/auth/signin')
       .send(credentials)
       .expect(200)
@@ -74,30 +74,30 @@ describe('Article Admin CRUD tests', function () {
         // Get the userId
         var userId = user.id;
 
-        // Save a new article
-        agent.post('/api/articles')
-          .send(article)
+        // Save a new aboutMessage
+        agent.post('/api/aboutMessages')
+          .send(aboutMessage)
           .expect(200)
-          .end(function (articleSaveErr, articleSaveRes) {
-            // Handle article save error
-            if (articleSaveErr) {
-              return done(articleSaveErr);
+          .end(function (aboutMessageSaveErr, aboutMessageSaveRes) {
+            // Handle aboutMessage save error
+            if (aboutMessageSaveErr) {
+              return done(aboutMessageSaveErr);
             }
 
-            // Get a list of articles
-            agent.get('/api/articles')
-              .end(function (articlesGetErr, articlesGetRes) {
-                // Handle article save error
-                if (articlesGetErr) {
-                  return done(articlesGetErr);
+            // Get a list of aboutMessages
+            agent.get('/api/aboutMessages')
+              .end(function (aboutMessagesGetErr, aboutMessagesGetRes) {
+                // Handle aboutMessage save error
+                if (aboutMessagesGetErr) {
+                  return done(aboutMessagesGetErr);
                 }
 
-                // Get articles list
-                var articles = articlesGetRes.body;
+                // Get aboutMessages list
+                var aboutMessages = aboutMessagesGetRes.body;
 
                 // Set assertions
-                (articles[0].user._id).should.equal(userId);
-                (articles[0].title).should.match('Article Title');
+                (aboutMessages[0].user._id).should.equal(userId);
+                (aboutMessages[0].title).should.match('AboutMessage Title');
 
                 // Call the assertion callback
                 done();
@@ -106,7 +106,7 @@ describe('Article Admin CRUD tests', function () {
       });
   });
 
-  it('should be able to update an article if signed in', function (done) {
+  it('should be able to update an aboutMessage if signed in', function (done) {
     agent.post('/api/auth/signin')
       .send(credentials)
       .expect(200)
@@ -119,32 +119,32 @@ describe('Article Admin CRUD tests', function () {
         // Get the userId
         var userId = user.id;
 
-        // Save a new article
-        agent.post('/api/articles')
-          .send(article)
+        // Save a new aboutMessage
+        agent.post('/api/aboutMessages')
+          .send(aboutMessage)
           .expect(200)
-          .end(function (articleSaveErr, articleSaveRes) {
-            // Handle article save error
-            if (articleSaveErr) {
-              return done(articleSaveErr);
+          .end(function (aboutMessageSaveErr, aboutMessageSaveRes) {
+            // Handle aboutMessage save error
+            if (aboutMessageSaveErr) {
+              return done(aboutMessageSaveErr);
             }
 
-            // Update article title
-            article.title = 'WHY YOU GOTTA BE SO MEAN?';
+            // Update aboutMessage title
+            aboutMessage.title = 'WHY YOU GOTTA BE SO MEAN?';
 
-            // Update an existing article
-            agent.put('/api/articles/' + articleSaveRes.body._id)
-              .send(article)
+            // Update an existing aboutMessage
+            agent.put('/api/aboutMessages/' + aboutMessageSaveRes.body._id)
+              .send(aboutMessage)
               .expect(200)
-              .end(function (articleUpdateErr, articleUpdateRes) {
-                // Handle article update error
-                if (articleUpdateErr) {
-                  return done(articleUpdateErr);
+              .end(function (aboutMessageUpdateErr, aboutMessageUpdateRes) {
+                // Handle aboutMessage update error
+                if (aboutMessageUpdateErr) {
+                  return done(aboutMessageUpdateErr);
                 }
 
                 // Set assertions
-                (articleUpdateRes.body._id).should.equal(articleSaveRes.body._id);
-                (articleUpdateRes.body.title).should.match('WHY YOU GOTTA BE SO MEAN?');
+                (aboutMessageUpdateRes.body._id).should.equal(aboutMessageSaveRes.body._id);
+                (aboutMessageUpdateRes.body.title).should.match('WHY YOU GOTTA BE SO MEAN?');
 
                 // Call the assertion callback
                 done();
@@ -153,9 +153,9 @@ describe('Article Admin CRUD tests', function () {
       });
   });
 
-  it('should not be able to save an article if no title is provided', function (done) {
+  it('should not be able to save an aboutMessage if no title is provided', function (done) {
     // Invalidate title field
-    article.title = '';
+    aboutMessage.title = '';
 
     agent.post('/api/auth/signin')
       .send(credentials)
@@ -169,21 +169,21 @@ describe('Article Admin CRUD tests', function () {
         // Get the userId
         var userId = user.id;
 
-        // Save a new article
-        agent.post('/api/articles')
-          .send(article)
+        // Save a new aboutMessage
+        agent.post('/api/aboutMessages')
+          .send(aboutMessage)
           .expect(422)
-          .end(function (articleSaveErr, articleSaveRes) {
+          .end(function (aboutMessageSaveErr, aboutMessageSaveRes) {
             // Set message assertion
-            (articleSaveRes.body.message).should.match('Title cannot be blank');
+            (aboutMessageSaveRes.body.message).should.match('Title cannot be blank');
 
-            // Handle article save error
-            done(articleSaveErr);
+            // Handle aboutMessage save error
+            done(aboutMessageSaveErr);
           });
       });
   });
 
-  it('should be able to delete an article if signed in', function (done) {
+  it('should be able to delete an aboutMessage if signed in', function (done) {
     agent.post('/api/auth/signin')
       .send(credentials)
       .expect(200)
@@ -196,28 +196,28 @@ describe('Article Admin CRUD tests', function () {
         // Get the userId
         var userId = user.id;
 
-        // Save a new article
-        agent.post('/api/articles')
-          .send(article)
+        // Save a new aboutMessage
+        agent.post('/api/aboutMessages')
+          .send(aboutMessage)
           .expect(200)
-          .end(function (articleSaveErr, articleSaveRes) {
-            // Handle article save error
-            if (articleSaveErr) {
-              return done(articleSaveErr);
+          .end(function (aboutMessageSaveErr, aboutMessageSaveRes) {
+            // Handle aboutMessage save error
+            if (aboutMessageSaveErr) {
+              return done(aboutMessageSaveErr);
             }
 
-            // Delete an existing article
-            agent.delete('/api/articles/' + articleSaveRes.body._id)
-              .send(article)
+            // Delete an existing aboutMessage
+            agent.delete('/api/aboutMessages/' + aboutMessageSaveRes.body._id)
+              .send(aboutMessage)
               .expect(200)
-              .end(function (articleDeleteErr, articleDeleteRes) {
-                // Handle article error error
-                if (articleDeleteErr) {
-                  return done(articleDeleteErr);
+              .end(function (aboutMessageDeleteErr, aboutMessageDeleteRes) {
+                // Handle aboutMessage error error
+                if (aboutMessageDeleteErr) {
+                  return done(aboutMessageDeleteErr);
                 }
 
                 // Set assertions
-                (articleDeleteRes.body._id).should.equal(articleSaveRes.body._id);
+                (aboutMessageDeleteRes.body._id).should.equal(aboutMessageSaveRes.body._id);
 
                 // Call the assertion callback
                 done();
@@ -226,10 +226,10 @@ describe('Article Admin CRUD tests', function () {
       });
   });
 
-  it('should be able to get a single article if signed in and verify the custom "isCurrentUserOwner" field is set to "true"', function (done) {
-    // Create new article model instance
-    article.user = user;
-    var articleObj = new Article(article);
+  it('should be able to get a single aboutMessage if signed in and verify the custom "isCurrentUserOwner" field is set to "true"', function (done) {
+    // Create new aboutMessage model instance
+    aboutMessage.user = user;
+    var aboutMessageObj = new AboutMessage(aboutMessage);
 
     agent.post('/api/auth/signin')
       .send(credentials)
@@ -243,31 +243,31 @@ describe('Article Admin CRUD tests', function () {
         // Get the userId
         var userId = user.id;
 
-        // Save a new article
-        agent.post('/api/articles')
-          .send(article)
+        // Save a new aboutMessage
+        agent.post('/api/aboutMessages')
+          .send(aboutMessage)
           .expect(200)
-          .end(function (articleSaveErr, articleSaveRes) {
-            // Handle article save error
-            if (articleSaveErr) {
-              return done(articleSaveErr);
+          .end(function (aboutMessageSaveErr, aboutMessageSaveRes) {
+            // Handle aboutMessage save error
+            if (aboutMessageSaveErr) {
+              return done(aboutMessageSaveErr);
             }
 
-            // Get the article
-            agent.get('/api/articles/' + articleSaveRes.body._id)
+            // Get the aboutMessage
+            agent.get('/api/aboutMessages/' + aboutMessageSaveRes.body._id)
               .expect(200)
-              .end(function (articleInfoErr, articleInfoRes) {
-                // Handle article error
-                if (articleInfoErr) {
-                  return done(articleInfoErr);
+              .end(function (aboutMessageInfoErr, aboutMessageInfoRes) {
+                // Handle aboutMessage error
+                if (aboutMessageInfoErr) {
+                  return done(aboutMessageInfoErr);
                 }
 
                 // Set assertions
-                (articleInfoRes.body._id).should.equal(articleSaveRes.body._id);
-                (articleInfoRes.body.title).should.equal(article.title);
+                (aboutMessageInfoRes.body._id).should.equal(aboutMessageSaveRes.body._id);
+                (aboutMessageInfoRes.body.title).should.equal(aboutMessage.title);
 
                 // Assert that the "isCurrentUserOwner" field is set to true since the current User created it
-                (articleInfoRes.body.isCurrentUserOwner).should.equal(true);
+                (aboutMessageInfoRes.body.isCurrentUserOwner).should.equal(true);
 
                 // Call the assertion callback
                 done();
@@ -277,7 +277,7 @@ describe('Article Admin CRUD tests', function () {
   });
 
   afterEach(function (done) {
-    Article.remove().exec()
+    AboutMessage.remove().exec()
       .then(User.remove().exec())
       .then(done())
       .catch(done);

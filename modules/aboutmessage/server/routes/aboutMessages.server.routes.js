@@ -3,21 +3,21 @@
 /**
  * Module dependencies
  */
-var articlesPolicy = require('../policies/articles.server.policy'),
-  articles = require('../controllers/articles.server.controller');
+var aboutMessagesPolicy = require('../policies/aboutMessages.server.policy'),
+  aboutMessages = require('../controllers/aboutMessages.server.controller');
 
 module.exports = function (app) {
-  // Articles collection routes
-  app.route('/api/articles').all(articlesPolicy.isAllowed)
-    .get(articles.list)
-    .post(articles.create);
+  // AboutMessages collection routes
+  app.route('/api/aboutMessages').all(aboutMessagesPolicy.isAllowed)
+    .get(aboutMessages.list)
+    .post(aboutMessages.create);
 
-  // Single article routes
-  app.route('/api/articles/:articleId').all(articlesPolicy.isAllowed)
-    .get(articles.read)
-    .put(articles.update)
-    .delete(articles.delete);
+  // Single aboutMessage routes
+  app.route('/api/aboutMessages/:aboutMessageId').all(aboutMessagesPolicy.isAllowed)
+    .get(aboutMessages.read)
+    .put(aboutMessages.update)
+    .delete(aboutMessages.delete);
 
-  // Finish by binding the article middleware
-  app.param('articleId', articles.articleByID);
+  // Finish by binding the aboutMessage middleware
+  app.param('aboutMessageId', aboutMessages.aboutMessageByID);
 };

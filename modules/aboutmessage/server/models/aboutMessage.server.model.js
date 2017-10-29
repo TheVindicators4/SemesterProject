@@ -10,9 +10,9 @@ var mongoose = require('mongoose'),
   chalk = require('chalk');
 
 /**
- * Article Schema
+ * AboutMessage Schema
  */
-var ArticleSchema = new Schema({
+var AboutMessageSchema = new Schema({
   created: {
     type: Date,
     default: Date.now
@@ -34,16 +34,16 @@ var ArticleSchema = new Schema({
   }
 });
 
-ArticleSchema.statics.seed = seed;
+AboutMessageSchema.statics.seed = seed;
 
-mongoose.model('Article', ArticleSchema);
+mongoose.model('AboutMessage', AboutMessageSchema);
 
 /**
-* Seeds the User collection with document (Article)
+* Seeds the User collection with document (AboutMessage)
 * and provided options.
 */
 function seed(doc, options) {
-  var Article = mongoose.model('Article');
+  var AboutMessage = mongoose.model('AboutMessage');
 
   return new Promise(function (resolve, reject) {
 
@@ -83,7 +83,7 @@ function seed(doc, options) {
 
     function skipDocument() {
       return new Promise(function (resolve, reject) {
-        Article
+        AboutMessage
           .findOne({
             title: doc.title
           })
@@ -100,7 +100,7 @@ function seed(doc, options) {
               return resolve(true);
             }
 
-            // Remove Article (overwrite)
+            // Remove AboutMessage (overwrite)
 
             existing.remove(function (err) {
               if (err) {
@@ -117,19 +117,19 @@ function seed(doc, options) {
       return new Promise(function (resolve, reject) {
         if (skip) {
           return resolve({
-            message: chalk.yellow('Database Seeding: Article\t' + doc.title + ' skipped')
+            message: chalk.yellow('Database Seeding: AboutMessage\t' + doc.title + ' skipped')
           });
         }
 
-        var article = new Article(doc);
+        var aboutMessage = new AboutMessage(doc);
 
-        article.save(function (err) {
+        aboutMessage.save(function (err) {
           if (err) {
             return reject(err);
           }
 
           return resolve({
-            message: 'Database Seeding: Article\t' + article.title + ' added'
+            message: 'Database Seeding: AboutMessage\t' + aboutMessage.title + ' added'
           });
         });
       });

@@ -5,113 +5,113 @@
  */
 var path = require('path'),
   mongoose = require('mongoose'),
-  Article = mongoose.model('Article'),
+  AboutMessage = mongoose.model('AboutMessage'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
 
 /**
- * Create an article
+ * Create an aboutMessage
  */
 exports.create = function (req, res) {
-  var article = new Article(req.body);
-  article.user = req.user;
+  var aboutMessage = new AboutMessage(req.body);
+  aboutMessage.user = req.user;
 
-  article.save(function (err) {
+  aboutMessage.save(function (err) {
     if (err) {
       return res.status(422).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.json(article);
+      res.json(aboutMessage);
     }
   });
 };
 
 /**
- * Show the current article
+ * Show the current aboutMessage
  */
 exports.read = function (req, res) {
   // convert mongoose document to JSON
-  var article = req.article ? req.article.toJSON() : {};
+  var aboutMessage = req.aboutMessage ? req.aboutMessage.toJSON() : {};
 
-  // Add a custom field to the Article, for determining if the current User is the "owner".
-  // NOTE: This field is NOT persisted to the database, since it doesn't exist in the Article model.
-  article.isCurrentUserOwner = !!(req.user && article.user && article.user._id.toString() === req.user._id.toString());
+  // Add a custom field to the AboutMessage, for determining if the current User is the "owner".
+  // NOTE: This field is NOT persisted to the database, since it doesn't exist in the AboutMessage model.
+  aboutMessage.isCurrentUserOwner = !!(req.user && aboutMessage.user && aboutMessage.user._id.toString() === req.user._id.toString());
 
-  res.json(article);
+  res.json(aboutMessage);
 };
 
 /**
- * Update an article
+ * Update an aboutMessage
  */
 exports.update = function (req, res) {
-  var article = req.article;
+  var aboutMessage = req.aboutMessage;
 
-  article.title = req.body.title;
-  article.content = req.body.content;
+  aboutMessage.title = req.body.title;
+  aboutMessage.content = req.body.content;
 
-  article.save(function (err) {
+  aboutMessage.save(function (err) {
     if (err) {
       return res.status(422).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.json(article);
+      res.json(aboutMessage);
     }
   });
 };
 
 /**
- * Delete an article
+ * Delete an aboutMessage
  */
 exports.delete = function (req, res) {
-  var article = req.article;
+  var aboutMessage = req.aboutMessage;
 
-  article.remove(function (err) {
+  aboutMessage.remove(function (err) {
     if (err) {
       return res.status(422).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.json(article);
+      res.json(aboutMessage);
     }
   });
 };
 
 /**
- * List of Articles
+ * List of AboutMessages
  */
 exports.list = function (req, res) {
-  Article.find().sort('-created').populate('user', 'displayName').exec(function (err, articles) {
+  AboutMessage.find().sort('-created').populate('user', 'displayName').exec(function (err, aboutMessages) {
     if (err) {
       return res.status(422).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.json(articles);
+      res.json(aboutMessages);
     }
   });
 };
 
 /**
- * Article middleware
+ * AboutMessage middleware
  */
-exports.articleByID = function (req, res, next, id) {
+exports.aboutMessageByID = function (req, res, next, id) {
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(400).send({
-      message: 'Article is invalid'
+      message: 'AboutMessage is invalid'
     });
   }
 
-  Article.findById(id).populate('user', 'displayName').exec(function (err, article) {
+  AboutMessage.findById(id).populate('user', 'displayName').exec(function (err, aboutMessage) {
     if (err) {
       return next(err);
-    } else if (!article) {
+    } else if (!aboutMessage) {
       return res.status(404).send({
-        message: 'No article with that identifier has been found'
+        message: 'No aboutMessage with that identifier has been found'
       });
     }
-    req.article = article;
+    req.aboutMessage = aboutMessage;
     next();
   });
 };
