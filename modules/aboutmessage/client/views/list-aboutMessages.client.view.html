@@ -1,0 +1,18 @@
+<section>
+  <div class="page-header">
+    <h1>AboutMessages</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="aboutMessage in vm.aboutMessages" ui-sref="aboutMessages.view({ aboutMessageId: aboutMessage._id })" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="aboutMessage.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="aboutMessage.user" ng-bind="aboutMessage.user.displayName"></span>
+        <span ng-if="!aboutMessage.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="aboutMessage.title"></h4>
+      <p class="list-group-item-text" ng-bind="aboutMessage.content"></p>
+    </a>
+  </div>
+</section>
