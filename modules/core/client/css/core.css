@@ -131,7 +131,7 @@ body {
       color: white;
   }
 
-/*Home Page CSS*/
+/*Home Page CSS*
 h1,h2 {
   color: white;
 }
@@ -139,7 +139,7 @@ h1,h2 {
   display: inline-block;
   width: 300px;
   border: 1px solid #000;
-  background:white;/*#D3D3D3;*/
+  background:white;/*#D3D3D3;*
   text-align: center;
   font-family: 'Sanchez', serif;
 }
@@ -164,7 +164,7 @@ font-family: 'Sanchez', serif;
     float: left;
 }
 
-/* Left and right column */
+/* Left and right column *
 .column.side {
     width: 25%;
     padding-top: 50px;
@@ -178,7 +178,7 @@ font-family: 'Sanchez', serif;
     font-family: 'Sanchez', serif;
 }
 
-/* Middle column */
+/* Middle column *
 .column.middle {
     width: 75%;
     padding-right: 15px;
@@ -209,7 +209,7 @@ padding-top: 0;
   color:white;
   border: 2px solid lightgrey;
   border-radius: 5px;
-}*/
+}*
 .eventPaddingText{
   padding-bottom: 15px;
   padding-top: 15px;
@@ -221,4 +221,4 @@ padding-top: 0;
 {
   padding-left: 20px;
 
-}
+}*/

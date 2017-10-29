@@ -53,12 +53,18 @@
   <link rel="stylesheet" href="path/to/font-awesome-4.7.0/css/font-awesome.min.css">
   <script src="https://use.fontawesome.com/9fcf5a3414.js"></script>
 
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
   <!-- Change the names of the src and href based on the names of the
   associated css and JS files for each page we create using this -->
   <script src="/modules/core/client/services/NavigationTemplate.js" type="text/javascript"></script>
 
 	 <!--Application CSS Files-->
   {{#each cssFiles}}<link rel="stylesheet" href="/{{this}}">{{/each}}
+
   <!--<link rel="stylesheet" href="/modules/core/client/css/core.css">-->
 
 </head>
@@ -67,6 +73,9 @@
 	 <section class = 'content'>
       {{{block "content"}}}
     </section>
+		<div>
+				<a href="/login"><button style="width: 80px; height: 40px; visibility: hidden;">Button</button></a>
+		</div>
 
   <noscript>
     <style>
