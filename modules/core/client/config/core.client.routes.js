@@ -35,8 +35,8 @@
       })
       .state('about', {
         url: '/about',
-        templateUrl: '/modules/core/client/views/about.client.view.html',
-        controller: 'HomeController',
+        templateUrl: '/modules/aboutmessage/client/views/list-aboutMessages.client.view.html',
+        controller: 'AboutMessagesListController',
         controllerAs: 'vm'
       })
       .state('blog', {
