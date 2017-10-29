@@ -36,10 +36,10 @@
 <!-- To be relplaced with repeat function -->
             <tr ng-repeat="eventstream in vm.eventstream" class = "rowBoards">
               <td style="width:100px" height="100">
-                <p class = "eventPadding" style="font-size:200%">{{eventstream.title}}</p>
-                <p class = "eventPadding"  ng-bind="eventstream.created | date:'mediumDate'"><i>{{eventstream.created}}</i></p>
-                <img class = "eventPadding" src="/modules/core/client/img/img-Social/logo1.jpg"  alt="Logo" style="width:300px;height:300px;"></img>
-                <p class = "eventPadding">{{eventstream.content}}</p>
+                <p class = "eventPaddingInner" style="font-size:200%">{{eventstream.title}}</p>
+                <p class = "eventPaddingInner"  ng-bind="eventstream.created | date:'mediumDate'"><i>{{eventstream.created}}</i></p>
+                <img class = "eventPaddingInner" src="/modules/core/client/img/img-Social/logo1.jpg"  alt="Logo" style="width:300px;height:300px;"></img>
+                <p class = "eventPaddingInnerText">{{eventstream.content}}</p>
               </td>
             </tr>
     </table>
