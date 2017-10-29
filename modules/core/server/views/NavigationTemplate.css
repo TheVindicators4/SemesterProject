@@ -135,3 +135,8 @@ a.button {
     background-color: lightskyblue;
     color: white;
 }
+
+.invisible {
+	width: 40px;
+	height: 40px;
+}

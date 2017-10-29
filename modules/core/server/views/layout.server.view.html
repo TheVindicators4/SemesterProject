@@ -61,7 +61,6 @@
   {{#each cssFiles}}<link rel="stylesheet" href="/{{this}}">{{/each}}
   <!--<link rel="stylesheet" href="/modules/core/client/css/core.css">-->
 
-
 </head>
 <body>
 	<header ng-include="'/modules/core/client/views/header.client.view.html'" > </header>
@@ -80,28 +79,28 @@
     </div>
   </noscript>
 
-  <!--Embedding The User Object-->
-  <script type="text/javascript">
-    var user = {{{ user }}};
-    var env = "{{ env }}";
-  </script>
+<!--Embedding The User Object-->
+<script type="text/javascript">
+var user = {{{ user }}};
+var env = "{{ env }}";
+</script>
 
-  <!--Load The Socket.io File-->
-  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<!--Load The Socket.io File-->
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
 
-  <!--Application JavaScript Files-->
-    {{#each jsFiles}}<script type="text/javascript" src="/{{this}}"></script>{{/each}}
+<!--Application JavaScript Files-->
+{{#each jsFiles}}<script type="text/javascript" src="/{{this}}"></script>{{/each}}
 
-  <!--owasp config sync-->
-  <script type="text/javascript">
-    var sharedConfig = {{{ sharedConfig }}};
-    owaspPasswordStrengthTest.config(sharedConfig.owasp);
-  </script>
+<!--owasp config sync-->
+<script type="text/javascript">
+var sharedConfig = {{{ sharedConfig }}};
+owaspPasswordStrengthTest.config(sharedConfig.owasp);
+</script>
 
-  {{#if livereload}}
-  <!--Livereload script rendered -->
-  <script type="text/javascript" src="{{host}}:35729/livereload.js"></script>
-  {{/if}}
+{{#if livereload}}
+<!--Livereload script rendered -->
+<script type="text/javascript" src="{{host}}:35729/livereload.js"></script>
+{{/if}}
 </body>
 
 </html>

@@ -4,29 +4,30 @@
 	<link rel="stylesheet" href="/modules/core/client/css/blog.client.view.css">
 </head>
 
-<div class="blog_container" padding-top="20px" ng-controller="BlogController">
-		<h1 class="title">Blog</h1>
-		<table>
-			<tr ng-repeat="data in postings">
-				<div class="blog_post">
-					<h1 class="title">{{data.title}}</h1>
-					<h3 class="date">{{data.date}}</h3>
-					<p class="blog_message">{{data.post}}</p>
-				</div>
-			</tr>
-            			<tr ng-repeat="data in postings">
-				<div class="blog_post">
-					<h1 class="title">{{data.title}}</h1>
-					<h3 class="date">{{data.date}}</h3>
-					<p class="blog_message">{{data.post}}</p>
-				</div>
-			</tr>
-            			<tr ng-repeat="data in postings">
-				<div class="blog_post">
-					<h1 class="title">{{data.title}}</h1>
-					<h3 class="date">{{data.date}}</h3>
-					<p class="blog_message">{{data.post}}</p>
-				</div>
-			</tr>
-		</table>
- 	</div>
+<div class="blog_container" padding-top="20px" ng-controller="BlogController as vm">
+	<h1 class="title">Blog</h1>
+	<table>
+		<tr ng-repeat="data in vm">
+			<div class="blog_post">
+				<h1 class="title">{{data.title}}</h1>
+				<h3 class="date">{{data.date}}</h3>
+				<p class="blog_message">{{data.post}}</p>
+			</div>
+		</tr>
+		<tr ng-repeat="data in vm">
+			<div class="blog_post">
+				<h1 class="title">{{data.title}}</h1>
+				<h3 class="date">{{data.date}}</h3>
+				<p class="blog_message">{{data.post}}</p>
+			</div>
+		</tr>
+		<tr ng-repeat="data in vm">
+			<div class="blog_post">
+				<h1 class="title">{{data.title}}</h1>
+				<h3 class="date">{{data.date}}</h3>
+				<p class="blog_message">{{data.post}}</p>
+			</div>
+		</tr>
+	</table>
+</div>
+</html>
