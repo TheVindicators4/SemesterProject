@@ -1,0 +1,26 @@
+<section>
+  <div class="page-header">
+    <h1>
+      Blogposts
+      <a class="btn btn-primary pull-right" data-ui-sref="admin.blogposts.create">
+        <i class="glyphicon glyphicon-plus"></i>
+      </a>
+    </h1>
+  </div>
+  <div class="list-group">
+    <a data-ng-repeat="blogpost in vm.blogposts" data-ui-sref="admin.blogposts.edit({blogpostId: blogpost._id})" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span data-ng-bind="blogpost.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="blogpost.user" ng-bind="blogpost.user.displayName"></span>
+        <span ng-if="!blogpost.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" data-ng-bind="blogpost.title"></h4>
+      <p class="list-group-item-text" data-ng-bind="blogpost.content"></p>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" data-ng-if="blogposts.$resolved && !blogposts.length">
+    No blogposts yet, why don't you <a data-ui-sref="admin.blogposts.create">create one</a>?
+  </div>
+</section>

@@ -1,0 +1,26 @@
+﻿<section>
+  <div class="page-header">
+    <h1>
+      Events
+      <a class="btn btn-primary pull-right" data-ui-sref="admin.eventstream.create">
+        <i class="glyphicon glyphicon-plus"></i>
+      </a>
+    </h1>
+  </div>
+  <div class="list-group">
+    <a data-ng-repeat="eventstream in vm.eventstream" data-ui-sref="admin.eventstream.edit({eventstreamId: eventstream._id})" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span data-ng-bind="eventstream.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="eventstream.user" ng-bind="eventstream.user.displayName"></span>
+        <span ng-if="!eventstream.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" data-ng-bind="eventstream.title"></h4>
+      <p class="list-group-item-text" data-ng-bind="eventstream.content"></p>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" data-ng-if="eventstream.$resolved && !eventstream.length">
+    No events yet, why don't you <a data-ui-sref="admin.eventstream.create">create one</a>?
+  </div>
+</section>
