@@ -1,0 +1,79 @@
+<!--<section>
+  <div class="page-header">
+    <h1>Event Stream</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="eventstream in vm.eventstream" ui-sref="eventstream.view({ eventstreamId: eventstream._id })" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="eventstream.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="eventstream.user" ng-bind="eventstream.user.displayName"></span>
+        <span ng-if="!eventstream.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="eventstream.title"></h4>
+      <p class="list-group-item-text" ng-bind="eventstream.content"></p>
+    </a>
+  </div>
+</section>-->
+
+
+<!-- Beverly's HTML -->
+<div class="column middle">
+  <h1>Events</h1>
+        <div class="tableWrapper">
+          <table class="table">
+<!-- To be relplaced with repeat function -->
+            <tr ng-repeat="eventstream in vm.eventstream" class = "rowBoards">
+              <td style="width:100px" height="100">
+                <p class = "eventPadding" style="font-size:200%">{{eventstream.title}}</p>
+                <p class = "eventPadding"  ng-bind="eventstream.created | date:'mediumDate'"><i>{{eventstream.created}}</i></p>
+                <img class = "eventPadding" src="/modules/core/client/img/img-Social/logo1.jpg"  alt="Logo" style="width:300px;height:300px;"></img>
+                <p class = "eventPadding">{{eventstream.content}}</p>
+              </td>
+            </tr>
+    </table>
+    </div>
+</div>
+
+<!-- Cyrus's HTML-->
+<div class = "column side">
+    <div class = "social-media">
+      <!--Header for social media box-->
+      <center>Follow DJ E-LO on social media!</p></center>
+    <!--Icon + links to DJ E-LO's facebook page-->
+    <!--NOTICE: Additional social media icons in img folder. Can ask which ones he likes the most-->
+    <center><a href="https://www.facebook.com/djeloglobal/" target="_blank"<center>
+      <img src="/modules/core/client/img/img-Social/facebook3.png" width="60" height="60" title="Like DJ E-LO on Facebook"/><a>
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+    <!--Icon + links to DJ E-LO's instagram page-->
+    <a href="https://www.instagram.com/iamdjelo/?hl=en" target="_blank">
+      <img src="/modules/core/client/img/img-Social/instagram3.png" width="60" height="60" title="Follow DJ E-LO on Instagram"><a>
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+    <!--Icon + links to DJ E-LO's twitter page-->
+    <a href="https://twitter.com/therealdjelo?lang=en" target="_blank">
+      <img src="/modules/core/client/img/img-Social/twitter3.png" width="60" height="60" title="Follow DJ E-LO on Twitter"><a>
+    </p>
+    <hr>
+    </p>
+    </div>
+    <!--Displays snapcode (MINE) and is able to be scanned straight from website-->
+    <div class = "snapcode">
+      <center>Scan to add DJ E-LO on Snapchat!</p></center>
+      <img src="/modules/core/client/img/img-Social/snapcode.png" width="200" height="200"><a>
+    </div>
+    </p>
+    <hr>
+    </p>
+    <!--Adds spotify playlist widget (Must get DJ E-LO's spotify to change to one of his playlists)-->
+    <div class = "spotify-player">
+      <center>Dope Tunes</p></center>
+      <iframe src="https://open.spotify.com/embed/user/cyrusnaj/playlist/3k5S8FXU3lHjqc6pzCMBUt" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+    </div>
+</div>

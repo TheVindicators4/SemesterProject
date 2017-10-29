@@ -46,7 +46,7 @@
   <link href="/manifest.json" rel="manifest">
 
 
-<!-- Navigation bar References-->
+  <!--Navigation bar References-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
@@ -60,9 +60,11 @@
 	 <!--Application CSS Files-->
   {{#each cssFiles}}<link rel="stylesheet" href="/{{this}}">{{/each}}
   <!--<link rel="stylesheet" href="/modules/core/client/css/core.css">-->
+
+
 </head>
 <body>
-	<header ng-include="'/modules/core/client/views/header.client.view.html'"> </header>
+	<header ng-include="'/modules/core/client/views/header.client.view.html'" > </header>
 	 <section class = 'content'>
       {{{block "content"}}}
     </section>
