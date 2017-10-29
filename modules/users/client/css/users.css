@@ -1,3 +1,23 @@
+h1{
+  color:white;
+}
+.outline{
+  background-color: white;
+  border-radius: 5px
+}
+.form-group{
+  color:white;
+  font-size: 15px;
+}
+.help-block{
+  color:white;
+}
+
+.nav {
+  border-radius: 2px;
+  font-size: 15px;
+
+}
 @media (min-width: 992px) {
   .nav-users {
     position: fixed;

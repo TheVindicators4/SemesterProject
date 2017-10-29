@@ -1,10 +1,13 @@
-<section>
+<head>
+
+  <link rel="stylesheet" type="text/css" href="/modules/users/client/css/users.css"/>
+</head>
   <div class="page-header">
     <h1>Settings</h1>
   </div>
-  <div class="row">
-    <nav class="col-sm-3 col-md-3">
-      <ul class="nav nav-pills nav-stacked">
+  <div>
+    <nav class="col-sm-3 col-md-1 outline">
+      <ul class="nav">
         <li ui-sref-active="active">
           <a ui-sref="settings.profile">Edit Profile</a>
         </li>
@@ -17,13 +20,18 @@
         <li>
             <a href="/api/auth/signout" target="_self">Signout</a>
         </li>
+        <li>
+            <a ui-sref="admin.eventstream.create">Create Event</a>
+        </li>
+        <li>
+            <a>Approve Review</a>
+        </li>
         <!--<li ui-sref-active="active">
           <a ui-sref="settings.accounts">Manage Social Accounts</a>
         </li>-->
       </ul>
     </nav>
-    <div class="col-sm-9 col-md-8 settings-view">
+    <div class="col-sm-2 col-md-9 settings-view">
       <div ui-view></div>
     </div>
   </div>
-</section>
