@@ -1,13 +1,11 @@
-
-/*Home Page CSS*/
-h1 {
+h1,h2 {
   color: white;
 }
 .box {
   display: inline-block;
   width: 300px;
   border: 1px solid #000;
-  background:#D3D3D3;
+  background:white;/*#D3D3D3;*/
   text-align: center;
   font-family: 'Sanchez', serif;
 }
@@ -23,6 +21,10 @@ display: inline-block;
 width: auto;
 font-family: 'Sanchez', serif;
 }
+.socialMediaText{
+   font-size: 20px;
+
+}
 
 .column {
     float: left;
@@ -32,12 +34,20 @@ font-family: 'Sanchez', serif;
 .column.side {
     width: 25%;
     padding-top: 50px;
+
+    display: inline-block;
+    left: 30px;
+    border: 5px solid #000;
+    border-radius: 10px;
+    background: #D3D3D3;
+    text-align: center;
+    font-family: 'Sanchez', serif;
 }
 
 /* Middle column */
 .column.middle {
     width: 75%;
-    padding-right: 50px;
+    padding-right: 15px;
 }
 
 .tableWrapper {
@@ -57,14 +67,37 @@ font-family: 'Sanchez', serif;
     background: black;
     cursor: pointer;
 }
+.table{
+padding-top: 0;
+
+}
 /*.rowBoards{
   color:white;
   border: 2px solid lightgrey;
   border-radius: 5px;
 }*/
+.eventPaddingText{
+  padding-bottom: 15px;
+  padding-top: 15px;
+  text-align: center;
+}
 
 .eventPadding
 {
-  padding: 10px;
   padding-left: 20px;
+}
+
+.centerItem{
+  width: 25%;
+  padding-top: 50px;
+
+  display: inline-block;
+  left: 30px;
+  text-align: center;
+  font-family: 'Sanchez', serif;
+  padding: 15px;
+}
+
+.btn{
+font-size: 20px;
 }
