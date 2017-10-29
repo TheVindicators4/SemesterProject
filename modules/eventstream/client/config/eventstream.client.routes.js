@@ -11,7 +11,7 @@
     $stateProvider
       .state('eventstream', {
         abstract: true,
-        url: '/eventstream',
+        url: '/',
         template: '<ui-view/>'
       })
       .state('eventstream.list', {
