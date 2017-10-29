@@ -1,0 +1,18 @@
+<section>
+  <div class="page-header">
+    <h1>Blogposts</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="blogpost in vm.blogposts" ui-sref="blogposts.view({ blogpostId: blogpost._id })" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="blogpost.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="blogpost.user" ng-bind="blogpost.user.displayName"></span>
+        <span ng-if="!blogpost.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="blogpost.title"></h4>
+      <p class="list-group-item-text" ng-bind="blogpost.content"></p>
+    </a>
+  </div>
+</section>

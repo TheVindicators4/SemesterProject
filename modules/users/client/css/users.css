@@ -26,3 +26,8 @@
 .social-button:hover {
   opacity: 0.65;
 }
+
+div.centered {
+  width: 800px;
+  margin: 0 auto;
+}
