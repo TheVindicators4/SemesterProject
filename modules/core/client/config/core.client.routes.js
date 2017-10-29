@@ -45,6 +45,12 @@
         controller: 'BlogpostsController',
         controllerAs: 'vm'
       })
+      .state('review', {
+        url: '/reviews',
+        templateUrl: '/modules/reviews/client/views/list-reviews.client.view.html',
+        controller: 'ReviewsController',
+        controllerAs: 'vm'
+      })
       .state('contactme', {
         url: '/contact',
         templateUrl: '/modules/core/client/views/contactme.client.view.html',
