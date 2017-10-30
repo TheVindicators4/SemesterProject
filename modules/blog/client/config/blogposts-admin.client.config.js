@@ -9,11 +9,9 @@
   menuConfig.$inject = ['menuService'];
 
   function menuConfig(Menus) {
-	  /*
     Menus.addSubMenuItem('topbar', 'admin', {
       title: 'Manage Blogposts',
-      state: 'admin.articles.list'
+      state: 'admin.blogposts.list'
     });
-    */
   }
 }());
