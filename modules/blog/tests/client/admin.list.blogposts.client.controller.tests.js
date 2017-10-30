@@ -47,7 +47,7 @@
       BlogpostsService = _BlogpostsService_;
 
       // Ignore parent template get on state transitions
-      $httpBackend.whenGET('/modules/blogposts/client/views/list-blogposts.client.view.html').respond(200, '');
+      $httpBackend.whenGET('/modules/blog/client/views/list-blogposts.client.view.html').respond(200, '');
       $httpBackend.whenGET('/modules/core/client/views/home.client.view.html').respond(200, '');
 
       // create mock blogpost

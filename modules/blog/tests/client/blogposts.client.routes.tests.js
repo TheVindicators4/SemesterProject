@@ -53,7 +53,7 @@
         });
 
         it('Should have templateUrl', function () {
-          expect(liststate.templateUrl).toBe('/modules/blogposts/client/views/list-blogposts.client.view.html');
+          expect(liststate.templateUrl).toBe('/modules/blog/client/views/list-blogposts.client.view.html');
         });
       });
 
@@ -64,7 +64,7 @@
 
         beforeEach(inject(function ($controller, $state, $templateCache) {
           viewstate = $state.get('blogposts.view');
-          $templateCache.put('/modules/blogposts/client/views/view-blogpost.client.view.html', '');
+          $templateCache.put('/modules/blog/client/views/view-blogpost.client.view.html', '');
 
           // create mock blogpost
           mockBlogpost = new BlogpostsService({
@@ -104,13 +104,13 @@
         });
 
         it('Should have templateUrl', function () {
-          expect(viewstate.templateUrl).toBe('/modules/blogposts/client/views/view-blogpost.client.view.html');
+          expect(viewstate.templateUrl).toBe('/modules/blog/client/views/view-blogpost.client.view.html');
         });
       });
 
       describe('Handle Trailing Slash', function () {
         beforeEach(inject(function ($state, $rootScope, $templateCache) {
-          $templateCache.put('/modules/blogposts/client/views/list-blogposts.client.view.html', '');
+          $templateCache.put('/modules/blog/client/views/list-blogposts.client.view.html', '');
 
           $state.go('blogposts.list');
           $rootScope.$digest();
@@ -121,7 +121,7 @@
           $rootScope.$digest();
 
           expect($location.path()).toBe('/blogposts');
-          expect($state.current.templateUrl).toBe('/modules/blogposts/client/views/list-blogposts.client.view.html');
+          expect($state.current.templateUrl).toBe('/modules/blog/client/views/list-blogposts.client.view.html');
         }));
       });
     });

@@ -16,7 +16,7 @@
       })
       .state('admin.blogposts.list', {
         url: '',
-        templateUrl: '/modules/blogposts/client/views/admin/list-blogposts.client.view.html',
+        templateUrl: '/modules/blog/client/views/admin/list-blogposts.client.view.html',
         controller: 'BlogpostsAdminListController',
         controllerAs: 'vm',
         data: {
@@ -25,7 +25,7 @@
       })
       .state('admin.blogposts.create', {
         url: '/create',
-        templateUrl: '/modules/blogposts/client/views/admin/form-blogpost.client.view.html',
+        templateUrl: '/modules/blog/client/views/admin/form-blogpost.client.view.html',
         controller: 'BlogpostsAdminController',
         controllerAs: 'vm',
         data: {
@@ -37,7 +37,7 @@
       })
       .state('admin.blogposts.edit', {
         url: '/:blogpostId/edit',
-        templateUrl: '/modules/blogposts/client/views/admin/form-blogpost.client.view.html',
+        templateUrl: '/modules/blog/client/views/admin/form-blogpost.client.view.html',
         controller: 'BlogpostsAdminController',
         controllerAs: 'vm',
         data: {

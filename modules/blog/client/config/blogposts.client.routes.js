@@ -16,13 +16,13 @@
       })
       .state('blogposts.list', {
         url: '',
-        templateUrl: '/modules/blogposts/client/views/list-blogposts.client.view.html',
+        templateUrl: '/modules/blog/client/views/list-blogposts.client.view.html',
         controller: 'BlogpostsListController',
         controllerAs: 'vm'
       })
       .state('blogposts.view', {
         url: '/:blogpostId',
-        templateUrl: '/modules/blogposts/client/views/view-blogpost.client.view.html',
+        templateUrl: '/modules/blog/client/views/view-blogpost.client.view.html',
         controller: 'BlogpostsController',
         controllerAs: 'vm',
         resolve: {

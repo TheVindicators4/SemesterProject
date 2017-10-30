@@ -53,7 +53,7 @@
         });
 
         it('Should have templateUrl', function () {
-          expect(liststate.templateUrl).toBe('/modules/blogposts/client/views/admin/list-blogposts.client.view.html');
+          expect(liststate.templateUrl).toBe('/modules/blog/client/views/admin/list-blogposts.client.view.html');
         });
       });
 
@@ -64,7 +64,7 @@
 
         beforeEach(inject(function ($controller, $state, $templateCache) {
           createstate = $state.get('admin.blogposts.create');
-          $templateCache.put('/modules/blogposts/client/views/admin/form-blogpost.client.view.html', '');
+          $templateCache.put('/modules/blog/client/views/admin/form-blogpost.client.view.html', '');
 
           // Create mock blogpost
           mockBlogpost = new BlogpostsService();
@@ -99,7 +99,7 @@
         });
 
         it('Should have templateUrl', function () {
-          expect(createstate.templateUrl).toBe('/modules/blogposts/client/views/admin/form-blogpost.client.view.html');
+          expect(createstate.templateUrl).toBe('/modules/blog/client/views/admin/form-blogpost.client.view.html');
         });
       });
 
@@ -110,7 +110,7 @@
 
         beforeEach(inject(function ($controller, $state, $templateCache) {
           editstate = $state.get('admin.blogposts.edit');
-          $templateCache.put('/modules/blogposts/client/views/admin/form-blogpost.client.view.html', '');
+          $templateCache.put('/modules/blog/client/views/admin/form-blogpost.client.view.html', '');
 
           // Create mock blogpost
           mockBlogpost = new BlogpostsService({
@@ -150,7 +150,7 @@
         });
 
         it('Should have templateUrl', function () {
-          expect(editstate.templateUrl).toBe('/modules/blogposts/client/views/admin/form-blogpost.client.view.html');
+          expect(editstate.templateUrl).toBe('/modules/blog/client/views/admin/form-blogpost.client.view.html');
         });
 
         xit('Should go to unauthorized route', function () {
