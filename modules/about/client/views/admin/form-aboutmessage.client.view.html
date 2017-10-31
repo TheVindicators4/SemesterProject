@@ -2,11 +2,6 @@
   <div class="page-header">
     <h1>{{vm.aboutmessage._id ? 'Edit Aboutmessage' : 'New Aboutmessage'}}</h1>
   </div>
-  <div class="pull-right">
-    <a ng-show="vm.aboutmessage._id" class="btn btn-primary" ng-click="vm.remove()">
-      <i class="glyphicon glyphicon-trash"></i>
-    </a>
-  </div>
   <div class="col-md-12">
     <form name="vm.form.aboutmessageForm" class="form-horizontal" ng-submit="vm.save(vm.form.aboutmessageForm.$valid)" novalidate>
       <fieldset>
