@@ -10,6 +10,7 @@
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script> -->
    <link rel="stylesheet" href="/modules/eventstream/client/css/theme.css">
    <link rel="stylesheet" href="/modules/eventstream/client/css/eventstream.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 
 
@@ -72,6 +73,21 @@
     </div>
   </div>
 
+<script type="text/javascript">
+  jQuery(document).ready(function () {
+      var visited = jQuery.cookie('visited');
+      if (visited == 'yes') {
+           // don't show modal, cookie active
+      } else {
+        $("#myModal").modal("show");
+      }
+      jQuery.cookie('visited', 'yes', {
+          expires: 7 // the number of days cookie  will be effective
+      });
+      
+  });
+</script>
+
 <!-- Cyrus's HTML-->
 <div class = "column side">
 
@@ -114,41 +130,3 @@
       <iframe src="https://open.spotify.com/embed/user/cyrusnaj/playlist/3k5S8FXU3lHjqc6pzCMBUt" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
     </div>
 </div>
-
-<script>
-  $(document).ready(function() {
-    // console.log(document.cookie);
-    // var visit = getCookie("cookie");
-    // if (visit == null) {
-      // Show the Modal on load
-      $("#myModal").modal("show");
-      // Set cookie
-      // var expire = new Date();
-      // expire = new Date(expire.getTime() + 7776000000);
-      // document.cookie = "cookie=here; expires=" + expire;
-
-      // Hide the Modal
-      // $("#myBtn").click(function(){
-      //   $("#myModal").modal("hide");
-      // });
-    // }
-  });
-  // function getCookie(c_name) {
-  //   var c_value = document.cookie;
-  //   var c_start = c_value.indexOf(" " + c_name + "=");
-  //   if (c_start == -1) {
-  //     c_start = c_value.indexOf(c_name + "=");
-  //   }
-  //   if (c_start == -1) {
-  //     c_value = null;
-  //   } else {
-  //     c_start = c_value.indexOf("=", c_start) + 1;
-  //     var c_end = c_value.indexOf(";", c_start);
-  //     if (c_end == -1) {
-  //       c_end = c_value.length;
-  //     }
-  //     c_value = unescape(c_value.substring(c_start, c_end));
-  //   }
-  //   return c_value
-  // }
-</script>

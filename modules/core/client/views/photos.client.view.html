@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+<link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet">
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1f1f1;
+    padding: 20px;
+    font-family: Sanchez;
+}
+
+/* Center website */
+.gallery{
+  font-size: 50px;
+}
+.main {
+    max-width: 1000px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 50px;
+    word-break: break-all;
+}
+
+.row {
+    margin: 10px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+    padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 33.33%;
+    display: none; /* Hide all elements by default */
+}
+
+/* Clear floats after rows */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Content */
+.content {
+    background-color: white;
+    padding: 10px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<!-- MAIN (Center website) -->
+<div class="main">
+<h1><center>Gallery</center></h1>
+<div class="gallery">
+  <center>Gallery</center>
+</div>
+<hr>
+
+<h2></h2>
+<input type="radio" onclick="filterSelection('all')" name="category" checked> All
+<input type="radio" onclick="filterSelection('head')" name="category"> Headshots
+<input type="radio" onclick="filterSelection('eq')" name="category"> Equipment/Setups
+<input type="radio" onclick="filterSelection('fan')" name="category"> Fan love
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column head">
+    <div class="content">
+      <img src="modules/core/client/views/gallery-images/1.jpg" alt="Mountains" height="250" width="300">
+      <h4>Serious face</h4>
+      <p>Lorem ipsum dolor</p>
+    </div>
+  </div>
+  <div class="column fan">
+    <div class="content">
+    <img src="modules/core/client/views/gallery-images/2.jpg" alt="Lights" height="250" width="300">
+      <h4>Love my fans</h4>
+      <p>Lorem ipsum dolor</p>
+    </div>
+  </div>
+  <div class="column fan">
+    <div class="content">
+    <img src="modules/core/client/views/gallery-images/3.jpg" alt="Nature" height="250" width="300">
+      <h4>Event is liiiiit</h4>
+      <p>Lorem ipsum dolor</p>
+    </div>
+  </div>
+
+  <div class="column head">
+    <div class="content">
+      <img src="modules/core/client/views/gallery-images/4.jpg" alt="Car" height="250" width="300">
+      <h4>Security on fleek</h4>
+      <p>Lorem ipsum dolor</p>
+    </div>
+  </div>
+  <div class="column fan">
+    <div class="content">
+    <img src="modules/core/client/views/gallery-images/5.jpg" alt="Car" height="250" width="300">
+      <h4>Best fans #blessed</h4>
+      <p>Lorem ipsum dolor</p>
+    </div>
+  </div>
+  <div class="column head">
+    <div class="content">
+    <img src="modules/core/client/views/gallery-images/6.jpg" alt="Car" height="250" width="300">
+      <h4>Putting in work</h4>
+      <p>Lorem ipsum dolor</p>
+    </div>
+  </div>
+
+  <div class="column equip">
+    <div class="content">
+      <img src="modules/core/client/views/gallery-images/7.jpg" alt="Car" height="250" width="300">
+      <h4>The best equipment</h4>
+      <p>Lorem ipsum dolor</p>
+    </div>
+  </div>
+  <div class="column equip">
+    <div class="content">
+    <img src="modules/core/client/views/gallery-images/8.jpg" alt="Car" height="250" width="300">
+      <h4>Pioneer DJ up in here</h4>
+      <p>Lorem ipsum dolor</p>
+    </div>
+  </div>
+  <div class="column fan">
+    <div class="content">
+    <img src="modules/core/client/views/gallery-images/9.jpg" alt="Car" height="250" width="300">
+      <h4>Aoki fam</h4>
+      <p>Lorem ipsum dolor</p>
+    </div>
+  </div>
+<!-- END GRID -->
+</div>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+</script>
+
+</body>
+</html>
