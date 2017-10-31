@@ -35,14 +35,26 @@
       })
       .state('about', {
         url: '/about',
-        templateUrl: '/modules/core/client/views/about.client.view.html',
-        controller: 'HomeController',
+        templateUrl: '/modules/aboutmessage/client/views/list-aboutMessages.client.view.html',
+        controller: 'AboutMessagesListController',
         controllerAs: 'vm'
       })
+      .state('photo', {
+       url: '/photo',
+       templateUrl: '/modules/core/client/views/photos.client.view.html',
+       controller: 'HomeController',
+       controllerAs: 'vm'
+     })
       .state('blog', {
         url: '/blog',
         templateUrl: '/modules/blog/client/views/list-blogposts.client.view.html',
         controller: 'BlogpostsController',
+        controllerAs: 'vm'
+      })
+      .state('review', {
+        url: '/reviews',
+        templateUrl: '/modules/reviews/client/views/list-reviews.client.view.html',
+        controller: 'ReviewsController',
         controllerAs: 'vm'
       })
       .state('contactme', {
