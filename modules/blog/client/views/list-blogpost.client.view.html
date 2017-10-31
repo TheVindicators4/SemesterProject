@@ -1,0 +1,67 @@
+<section>
+
+  <head>
+    <!--Sanchez font family-->
+    <link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet">
+    <!--Includes css file-->
+    <link rel="stylesheet" href="/modules/core/client/css/social-media-box.css">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script> -->
+    <link rel="stylesheet" href="/modules/blog/client/css/theme.css">
+    <link rel="stylesheet" href="/modules/blog/client/css/blogpost.css">
+  </head>
+
+  <!-- Blog Entries Column -->
+  <div class="col-md-12">
+    <h1 class="page-header">
+      Blog
+    </h1>
+
+    <!-- First Blog Post -->
+    <div ng-repeat="blogpost in vm.blogpost">
+
+      <div class="col-md-12 blogposting">
+        <div class="col-md-12">
+          <div class="col-md-10">
+            <h2 class = "eventPaddingInner" style="font-size:200%">{{blogpost.title}}</h2>
+          </div>
+          <div class="col-md-2">
+            <p class = "eventPaddingInner"  ng-bind="blogpost.created | date:'mediumDate'"><i>{{blogpost.created}}</i></p>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <hr>
+        </div>
+        <div class="col-md-12">
+          <div class="col-md-7">
+            <img class="eventPaddingInner" src="http://placehold.it/900x300" alt="">
+          </div>
+          <div class="col-md-5">
+            <p class = "eventPaddingInnerText">{{blogpost.content}}</p>
+          </div>
+          <!--a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a-->
+        </div>
+        <div class="col-md-12">
+          <br><br>
+        </div>
+      </div>
+      <div class="col-md-12"><br><br></div>
+    </div>
+
+    <div class="col-md-12">
+      <!-- Pager -->
+      <ul class="pager">
+        <li class="previous">
+          <a href="#">&larr; Older</a>
+        </li>
+        <li class="next">
+          <a href="#">Newer &rarr;</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>

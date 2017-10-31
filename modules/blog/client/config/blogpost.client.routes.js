@@ -2,28 +2,28 @@
   'use strict';
 
   angular
-    .module('blogposts.routes')
+    .module('blogpost.routes')
     .config(routeConfig);
 
   routeConfig.$inject = ['$stateProvider'];
 
   function routeConfig($stateProvider) {
     $stateProvider
-      .state('blogposts', {
+      .state('blogpost', {
         abstract: true,
-        url: '/blogposts',
+        url: '',
         template: '<ui-view/>'
       })
-      .state('blogposts.list', {
-        url: '',
-        templateUrl: '/modules/blog/client/views/list-blogposts.client.view.html',
-        controller: 'BlogpostsListController',
+      .state('blogpost.list', {
+        url: '/blog',
+        templateUrl: '/modules/blog/client/views/list-blogpost.client.view.html',
+        controller: 'BlogpostListController',
         controllerAs: 'vm'
       })
-      .state('blogposts.view', {
+      .state('blogpost.view', {
         url: '/:blogpostId',
         templateUrl: '/modules/blog/client/views/view-blogpost.client.view.html',
-        controller: 'BlogpostsController',
+        controller: 'BlogpostController',
         controllerAs: 'vm',
         resolve: {
           blogpostResolve: getBlogpost
@@ -34,10 +34,10 @@
       });
   }
 
-  getBlogpost.$inject = ['$stateParams', 'BlogpostsService'];
+  getBlogpost.$inject = ['$stateParams', 'BlogpostService'];
 
-  function getBlogpost($stateParams, BlogpostsService) {
-    return BlogpostsService.get({
+  function getBlogpost($stateParams, BlogpostService) {
+    return BlogpostService.get({
       blogpostId: $stateParams.blogpostId
     }).$promise;
   }

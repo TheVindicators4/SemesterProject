@@ -6,18 +6,18 @@
 var should = require('should'),
   mongoose = require('mongoose'),
   User = mongoose.model('User'),
-  Blogpost = mongoose.model('Blogpost');
+  Article = mongoose.model('Article');
 
 /**
  * Globals
  */
 var user,
-  blogpost;
+  article;
 
 /**
  * Unit tests
  */
-describe('Blogpost Model Unit Tests:', function () {
+describe('Article Model Unit Tests:', function () {
 
   beforeEach(function (done) {
     user = new User({
@@ -32,9 +32,9 @@ describe('Blogpost Model Unit Tests:', function () {
 
     user.save()
       .then(function () {
-        blogpost = new Blogpost({
-          title: 'Blogpost Title',
-          content: 'Blogpost Content',
+        article = new Article({
+          title: 'Article Title',
+          content: 'Article Content',
           user: user
         });
 
@@ -46,16 +46,16 @@ describe('Blogpost Model Unit Tests:', function () {
   describe('Method Save', function () {
     it('should be able to save without problems', function (done) {
       this.timeout(10000);
-      blogpost.save(function (err) {
+      article.save(function (err) {
         should.not.exist(err);
         return done();
       });
     });
 
     it('should be able to show an error when try to save without title', function (done) {
-      blogpost.title = '';
+      article.title = '';
 
-      blogpost.save(function (err) {
+      article.save(function (err) {
         should.exist(err);
         return done();
       });
@@ -63,7 +63,7 @@ describe('Blogpost Model Unit Tests:', function () {
   });
 
   afterEach(function (done) {
-    Blogpost.remove().exec()
+    Article.remove().exec()
       .then(User.remove().exec())
       .then(done())
       .catch(done);

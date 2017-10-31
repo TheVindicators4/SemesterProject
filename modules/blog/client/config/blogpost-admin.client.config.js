@@ -1,19 +1,17 @@
 ﻿(function () {
   'use strict';
 
-  // Configuring the Blogposts Admin module
+  // Configuring the Articles Admin module
   angular
-    .module('blogposts.admin')
+    .module('blogpost.admin')
     .run(menuConfig);
 
   menuConfig.$inject = ['menuService'];
 
   function menuConfig(Menus) {
-	  /*
     Menus.addSubMenuItem('topbar', 'admin', {
-      title: 'Manage Blogposts',
-      state: 'admin.articles.list'
+      title: 'Manage Event Stream',
+      state: 'admin.blogpost.list'
     });
-    */
   }
 }());
