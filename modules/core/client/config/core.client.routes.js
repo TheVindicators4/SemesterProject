@@ -39,12 +39,12 @@
         controller: 'AboutMessagesListController',
         controllerAs: 'vm'
       })
-      .state('blog', {
+      /*.state('blog', {
         url: '/blog',
-        templateUrl: '/modules/blog/client/views/list-blogposts.client.view.html',
+        templateUrl: '/modules/blog/client/views/list-blogpost.client.view.html',
         controller: 'BlogpostsController',
         controllerAs: 'vm'
-      })
+      })*/
       .state('review', {
         url: '/reviews',
         templateUrl: '/modules/reviews/client/views/list-reviews.client.view.html',

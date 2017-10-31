@@ -1,10 +1,10 @@
 ﻿(function () {
   'use strict';
 
-  describe('Blogposts Route Tests', function () {
+  describe('Articles Route Tests', function () {
     // Initialize global variables
     var $scope,
-      BlogpostsService;
+      ArticlesService;
 
     // We can start by loading the main application module
     beforeEach(module(ApplicationConfiguration.applicationModuleName));
@@ -12,21 +12,21 @@
     // The injector ignores leading and trailing underscores here (i.e. _$httpBackend_).
     // This allows us to inject a service but then attach it to a variable
     // with the same name as the service.
-    beforeEach(inject(function ($rootScope, _BlogpostsService_) {
+    beforeEach(inject(function ($rootScope, _ArticlesService_) {
       // Set a new global scope
       $scope = $rootScope.$new();
-      BlogpostsService = _BlogpostsService_;
+      ArticlesService = _ArticlesService_;
     }));
 
     describe('Route Config', function () {
       describe('Main Route', function () {
         var mainstate;
         beforeEach(inject(function ($state) {
-          mainstate = $state.get('admin.blogposts');
+          mainstate = $state.get('admin.articles');
         }));
 
         it('Should have the correct URL', function () {
-          expect(mainstate.url).toEqual('/blogposts');
+          expect(mainstate.url).toEqual('/articles');
         });
 
         it('Should be abstract', function () {
@@ -41,7 +41,7 @@
       describe('List Route', function () {
         var liststate;
         beforeEach(inject(function ($state) {
-          liststate = $state.get('admin.blogposts.list');
+          liststate = $state.get('admin.articles.list');
         }));
 
         it('Should have the correct URL', function () {
@@ -53,26 +53,26 @@
         });
 
         it('Should have templateUrl', function () {
-          expect(liststate.templateUrl).toBe('/modules/blog/client/views/admin/list-blogposts.client.view.html');
+          expect(liststate.templateUrl).toBe('/modules/articles/client/views/admin/list-articles.client.view.html');
         });
       });
 
       describe('Create Route', function () {
         var createstate,
-          BlogpostsAdminController,
-          mockBlogpost;
+          ArticlesAdminController,
+          mockArticle;
 
         beforeEach(inject(function ($controller, $state, $templateCache) {
-          createstate = $state.get('admin.blogposts.create');
-          $templateCache.put('/modules/blog/client/views/admin/form-blogpost.client.view.html', '');
+          createstate = $state.get('admin.articles.create');
+          $templateCache.put('/modules/articles/client/views/admin/form-article.client.view.html', '');
 
-          // Create mock blogpost
-          mockBlogpost = new BlogpostsService();
+          // Create mock article
+          mockArticle = new ArticlesService();
 
           // Initialize Controller
-          BlogpostsAdminController = $controller('BlogpostsAdminController as vm', {
+          ArticlesAdminController = $controller('ArticlesAdminController as vm', {
             $scope: $scope,
-            blogpostResolve: mockBlogpost
+            articleResolve: mockArticle
           });
         }));
 
@@ -82,16 +82,16 @@
 
         it('Should have a resolve function', function () {
           expect(typeof createstate.resolve).toEqual('object');
-          expect(typeof createstate.resolve.blogpostResolve).toEqual('function');
+          expect(typeof createstate.resolve.articleResolve).toEqual('function');
         });
 
         it('should respond to URL', inject(function ($state) {
-          expect($state.href(createstate)).toEqual('/admin/blogposts/create');
+          expect($state.href(createstate)).toEqual('/admin/articles/create');
         }));
 
-        it('should attach an blogpost to the controller scope', function () {
-          expect($scope.vm.blogpost._id).toBe(mockBlogpost._id);
-          expect($scope.vm.blogpost._id).toBe(undefined);
+        it('should attach an article to the controller scope', function () {
+          expect($scope.vm.article._id).toBe(mockArticle._id);
+          expect($scope.vm.article._id).toBe(undefined);
         });
 
         it('Should not be abstract', function () {
@@ -99,50 +99,50 @@
         });
 
         it('Should have templateUrl', function () {
-          expect(createstate.templateUrl).toBe('/modules/blog/client/views/admin/form-blogpost.client.view.html');
+          expect(createstate.templateUrl).toBe('/modules/articles/client/views/admin/form-article.client.view.html');
         });
       });
 
       describe('Edit Route', function () {
         var editstate,
-          BlogpostsAdminController,
-          mockBlogpost;
+          ArticlesAdminController,
+          mockArticle;
 
         beforeEach(inject(function ($controller, $state, $templateCache) {
-          editstate = $state.get('admin.blogposts.edit');
-          $templateCache.put('/modules/blog/client/views/admin/form-blogpost.client.view.html', '');
+          editstate = $state.get('admin.articles.edit');
+          $templateCache.put('/modules/articles/client/views/admin/form-article.client.view.html', '');
 
-          // Create mock blogpost
-          mockBlogpost = new BlogpostsService({
+          // Create mock article
+          mockArticle = new ArticlesService({
             _id: '525a8422f6d0f87f0e407a33',
-            title: 'An Blogpost about MEAN',
+            title: 'An Article about MEAN',
             content: 'MEAN rocks!'
           });
 
           // Initialize Controller
-          BlogpostsAdminController = $controller('BlogpostsAdminController as vm', {
+          ArticlesAdminController = $controller('ArticlesAdminController as vm', {
             $scope: $scope,
-            blogpostResolve: mockBlogpost
+            articleResolve: mockArticle
           });
         }));
 
         it('Should have the correct URL', function () {
-          expect(editstate.url).toEqual('/:blogpostId/edit');
+          expect(editstate.url).toEqual('/:articleId/edit');
         });
 
         it('Should have a resolve function', function () {
           expect(typeof editstate.resolve).toEqual('object');
-          expect(typeof editstate.resolve.blogpostResolve).toEqual('function');
+          expect(typeof editstate.resolve.articleResolve).toEqual('function');
         });
 
         it('should respond to URL', inject(function ($state) {
           expect($state.href(editstate, {
-            blogpostId: 1
-          })).toEqual('/admin/blogposts/1/edit');
+            articleId: 1
+          })).toEqual('/admin/articles/1/edit');
         }));
 
-        it('should attach an blogpost to the controller scope', function () {
-          expect($scope.vm.blogpost._id).toBe(mockBlogpost._id);
+        it('should attach an article to the controller scope', function () {
+          expect($scope.vm.article._id).toBe(mockArticle._id);
         });
 
         it('Should not be abstract', function () {
@@ -150,7 +150,7 @@
         });
 
         it('Should have templateUrl', function () {
-          expect(editstate.templateUrl).toBe('/modules/blog/client/views/admin/form-blogpost.client.view.html');
+          expect(editstate.templateUrl).toBe('/modules/articles/client/views/admin/form-article.client.view.html');
         });
 
         xit('Should go to unauthorized route', function () {

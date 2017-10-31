@@ -15,28 +15,28 @@ exports.invokeRolesPolicies = function () {
   acl.allow([{
     roles: ['admin'],
     allows: [{
-      resources: '/api/blogposts',
+      resources: '/api/blogpost',
       permissions: '*'
     }, {
-      resources: '/api/blogposts/:blogpostId',
+      resources: '/api/blogpost/:blogpostId',
       permissions: '*'
     }]
   }, {
     roles: ['user'],
     allows: [{
-      resources: '/api/blogposts',
+      resources: '/api/blogpost',
       permissions: ['get']
     }, {
-      resources: '/api/blogposts/:blogpostId',
+      resources: '/api/blogpost/:blogpostId',
       permissions: ['get']
     }]
   }, {
     roles: ['guest'],
     allows: [{
-      resources: '/api/blogposts',
+      resources: '/api/blogpost',
       permissions: ['get']
     }, {
-      resources: '/api/blogposts/:blogpostId',
+      resources: '/api/blogpost/:blogpostId',
       permissions: ['get']
     }]
   }]);

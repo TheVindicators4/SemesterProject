@@ -5,7 +5,7 @@ var should = require('should'),
   path = require('path'),
   mongoose = require('mongoose'),
   User = mongoose.model('User'),
-  Blogpost = mongoose.model('Blogpost'),
+  Article = mongoose.model('Article'),
   express = require(path.resolve('./config/lib/express'));
 
 /**
@@ -15,12 +15,12 @@ var app,
   agent,
   credentials,
   user,
-  blogpost;
+  article;
 
 /**
- * Blogpost routes tests
+ * Article routes tests
  */
-describe('Blogpost Admin CRUD tests', function () {
+describe('Article Admin CRUD tests', function () {
   before(function (done) {
     // Get application
     app = express.init(mongoose.connection.db);
@@ -48,12 +48,12 @@ describe('Blogpost Admin CRUD tests', function () {
       provider: 'local'
     });
 
-    // Save a user to the test db and create new blogpost
+    // Save a user to the test db and create new article
     user.save()
       .then(function () {
-        blogpost = {
-          title: 'Blogpost Title',
-          content: 'Blogpost Content'
+        article = {
+          title: 'Article Title',
+          content: 'Article Content'
         };
 
         done();
@@ -61,7 +61,7 @@ describe('Blogpost Admin CRUD tests', function () {
       .catch(done);
   });
 
-  it('should be able to save an blogpost if logged in', function (done) {
+  it('should be able to save an article if logged in', function (done) {
     agent.post('/api/auth/signin')
       .send(credentials)
       .expect(200)
@@ -74,30 +74,30 @@ describe('Blogpost Admin CRUD tests', function () {
         // Get the userId
         var userId = user.id;
 
-        // Save a new blogpost
-        agent.post('/api/blogposts')
-          .send(blogpost)
+        // Save a new article
+        agent.post('/api/articles')
+          .send(article)
           .expect(200)
-          .end(function (blogpostSaveErr, blogpostSaveRes) {
-            // Handle blogpost save error
-            if (blogpostSaveErr) {
-              return done(blogpostSaveErr);
+          .end(function (articleSaveErr, articleSaveRes) {
+            // Handle article save error
+            if (articleSaveErr) {
+              return done(articleSaveErr);
             }
 
-            // Get a list of blogposts
-            agent.get('/api/blogposts')
-              .end(function (blogpostsGetErr, blogpostsGetRes) {
-                // Handle blogpost save error
-                if (blogpostsGetErr) {
-                  return done(blogpostsGetErr);
+            // Get a list of articles
+            agent.get('/api/articles')
+              .end(function (articlesGetErr, articlesGetRes) {
+                // Handle article save error
+                if (articlesGetErr) {
+                  return done(articlesGetErr);
                 }
 
-                // Get blogposts list
-                var blogposts = blogpostsGetRes.body;
+                // Get articles list
+                var articles = articlesGetRes.body;
 
                 // Set assertions
-                (blogposts[0].user._id).should.equal(userId);
-                (blogposts[0].title).should.match('Blogpost Title');
+                (articles[0].user._id).should.equal(userId);
+                (articles[0].title).should.match('Article Title');
 
                 // Call the assertion callback
                 done();
@@ -106,7 +106,7 @@ describe('Blogpost Admin CRUD tests', function () {
       });
   });
 
-  it('should be able to update an blogpost if signed in', function (done) {
+  it('should be able to update an article if signed in', function (done) {
     agent.post('/api/auth/signin')
       .send(credentials)
       .expect(200)
@@ -119,32 +119,32 @@ describe('Blogpost Admin CRUD tests', function () {
         // Get the userId
         var userId = user.id;
 
-        // Save a new blogpost
-        agent.post('/api/blogposts')
-          .send(blogpost)
+        // Save a new article
+        agent.post('/api/articles')
+          .send(article)
           .expect(200)
-          .end(function (blogpostSaveErr, blogpostSaveRes) {
-            // Handle blogpost save error
-            if (blogpostSaveErr) {
-              return done(blogpostSaveErr);
+          .end(function (articleSaveErr, articleSaveRes) {
+            // Handle article save error
+            if (articleSaveErr) {
+              return done(articleSaveErr);
             }
 
-            // Update blogpost title
-            blogpost.title = 'WHY YOU GOTTA BE SO MEAN?';
+            // Update article title
+            article.title = 'WHY YOU GOTTA BE SO MEAN?';
 
-            // Update an existing blogpost
-            agent.put('/api/blogposts/' + blogpostSaveRes.body._id)
-              .send(blogpost)
+            // Update an existing article
+            agent.put('/api/articles/' + articleSaveRes.body._id)
+              .send(article)
               .expect(200)
-              .end(function (blogpostUpdateErr, blogpostUpdateRes) {
-                // Handle blogpost update error
-                if (blogpostUpdateErr) {
-                  return done(blogpostUpdateErr);
+              .end(function (articleUpdateErr, articleUpdateRes) {
+                // Handle article update error
+                if (articleUpdateErr) {
+                  return done(articleUpdateErr);
                 }
 
                 // Set assertions
-                (blogpostUpdateRes.body._id).should.equal(blogpostSaveRes.body._id);
-                (blogpostUpdateRes.body.title).should.match('WHY YOU GOTTA BE SO MEAN?');
+                (articleUpdateRes.body._id).should.equal(articleSaveRes.body._id);
+                (articleUpdateRes.body.title).should.match('WHY YOU GOTTA BE SO MEAN?');
 
                 // Call the assertion callback
                 done();
@@ -153,9 +153,9 @@ describe('Blogpost Admin CRUD tests', function () {
       });
   });
 
-  it('should not be able to save an blogpost if no title is provided', function (done) {
+  it('should not be able to save an article if no title is provided', function (done) {
     // Invalidate title field
-    blogpost.title = '';
+    article.title = '';
 
     agent.post('/api/auth/signin')
       .send(credentials)
@@ -169,21 +169,21 @@ describe('Blogpost Admin CRUD tests', function () {
         // Get the userId
         var userId = user.id;
 
-        // Save a new blogpost
-        agent.post('/api/blogposts')
-          .send(blogpost)
+        // Save a new article
+        agent.post('/api/articles')
+          .send(article)
           .expect(422)
-          .end(function (blogpostSaveErr, blogpostSaveRes) {
+          .end(function (articleSaveErr, articleSaveRes) {
             // Set message assertion
-            (blogpostSaveRes.body.message).should.match('Title cannot be blank');
+            (articleSaveRes.body.message).should.match('Title cannot be blank');
 
-            // Handle blogpost save error
-            done(blogpostSaveErr);
+            // Handle article save error
+            done(articleSaveErr);
           });
       });
   });
 
-  it('should be able to delete an blogpost if signed in', function (done) {
+  it('should be able to delete an article if signed in', function (done) {
     agent.post('/api/auth/signin')
       .send(credentials)
       .expect(200)
@@ -196,28 +196,28 @@ describe('Blogpost Admin CRUD tests', function () {
         // Get the userId
         var userId = user.id;
 
-        // Save a new blogpost
-        agent.post('/api/blogposts')
-          .send(blogpost)
+        // Save a new article
+        agent.post('/api/articles')
+          .send(article)
           .expect(200)
-          .end(function (blogpostSaveErr, blogpostSaveRes) {
-            // Handle blogpost save error
-            if (blogpostSaveErr) {
-              return done(blogpostSaveErr);
+          .end(function (articleSaveErr, articleSaveRes) {
+            // Handle article save error
+            if (articleSaveErr) {
+              return done(articleSaveErr);
             }
 
-            // Delete an existing blogpost
-            agent.delete('/api/blogposts/' + blogpostSaveRes.body._id)
-              .send(blogpost)
+            // Delete an existing article
+            agent.delete('/api/articles/' + articleSaveRes.body._id)
+              .send(article)
               .expect(200)
-              .end(function (blogpostDeleteErr, blogpostDeleteRes) {
-                // Handle blogpost error error
-                if (blogpostDeleteErr) {
-                  return done(blogpostDeleteErr);
+              .end(function (articleDeleteErr, articleDeleteRes) {
+                // Handle article error error
+                if (articleDeleteErr) {
+                  return done(articleDeleteErr);
                 }
 
                 // Set assertions
-                (blogpostDeleteRes.body._id).should.equal(blogpostSaveRes.body._id);
+                (articleDeleteRes.body._id).should.equal(articleSaveRes.body._id);
 
                 // Call the assertion callback
                 done();
@@ -226,10 +226,10 @@ describe('Blogpost Admin CRUD tests', function () {
       });
   });
 
-  it('should be able to get a single blogpost if signed in and verify the custom "isCurrentUserOwner" field is set to "true"', function (done) {
-    // Create new blogpost model instance
-    blogpost.user = user;
-    var blogpostObj = new Blogpost(blogpost);
+  it('should be able to get a single article if signed in and verify the custom "isCurrentUserOwner" field is set to "true"', function (done) {
+    // Create new article model instance
+    article.user = user;
+    var articleObj = new Article(article);
 
     agent.post('/api/auth/signin')
       .send(credentials)
@@ -243,31 +243,31 @@ describe('Blogpost Admin CRUD tests', function () {
         // Get the userId
         var userId = user.id;
 
-        // Save a new blogpost
-        agent.post('/api/blogposts')
-          .send(blogpost)
+        // Save a new article
+        agent.post('/api/articles')
+          .send(article)
           .expect(200)
-          .end(function (blogpostSaveErr, blogpostSaveRes) {
-            // Handle blogpost save error
-            if (blogpostSaveErr) {
-              return done(blogpostSaveErr);
+          .end(function (articleSaveErr, articleSaveRes) {
+            // Handle article save error
+            if (articleSaveErr) {
+              return done(articleSaveErr);
             }
 
-            // Get the blogpost
-            agent.get('/api/blogposts/' + blogpostSaveRes.body._id)
+            // Get the article
+            agent.get('/api/articles/' + articleSaveRes.body._id)
               .expect(200)
-              .end(function (blogpostInfoErr, blogpostInfoRes) {
-                // Handle blogpost error
-                if (blogpostInfoErr) {
-                  return done(blogpostInfoErr);
+              .end(function (articleInfoErr, articleInfoRes) {
+                // Handle article error
+                if (articleInfoErr) {
+                  return done(articleInfoErr);
                 }
 
                 // Set assertions
-                (blogpostInfoRes.body._id).should.equal(blogpostSaveRes.body._id);
-                (blogpostInfoRes.body.title).should.equal(blogpost.title);
+                (articleInfoRes.body._id).should.equal(articleSaveRes.body._id);
+                (articleInfoRes.body.title).should.equal(article.title);
 
                 // Assert that the "isCurrentUserOwner" field is set to true since the current User created it
-                (blogpostInfoRes.body.isCurrentUserOwner).should.equal(true);
+                (articleInfoRes.body.isCurrentUserOwner).should.equal(true);
 
                 // Call the assertion callback
                 done();
@@ -277,7 +277,7 @@ describe('Blogpost Admin CRUD tests', function () {
   });
 
   afterEach(function (done) {
-    Blogpost.remove().exec()
+    Article.remove().exec()
       .then(User.remove().exec())
       .then(done())
       .catch(done);

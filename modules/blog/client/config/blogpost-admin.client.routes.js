@@ -2,31 +2,31 @@
   'use strict';
 
   angular
-    .module('blogposts.admin.routes')
+    .module('blogpost.admin.routes')
     .config(routeConfig);
 
   routeConfig.$inject = ['$stateProvider'];
 
   function routeConfig($stateProvider) {
     $stateProvider
-      .state('admin.blogposts', {
+      .state('admin.blogpost', {
         abstract: true,
-        url: '/blogposts',
+        url: '/blogpost',
         template: '<ui-view/>'
       })
-      .state('admin.blogposts.list', {
+      .state('admin.blogpost.list', {
         url: '',
-        templateUrl: '/modules/blog/client/views/admin/list-blogposts.client.view.html',
-        controller: 'BlogpostsAdminListController',
+        templateUrl: '/modules/blog/client/views/admin/list-blogpost.client.view.html',
+        controller: 'BlogpostAdminListController',
         controllerAs: 'vm',
         data: {
           roles: ['admin']
         }
       })
-      .state('admin.blogposts.create', {
+      .state('admin.blogpost.create', {
         url: '/create',
         templateUrl: '/modules/blog/client/views/admin/form-blogpost.client.view.html',
-        controller: 'BlogpostsAdminController',
+        controller: 'BlogpostAdminController',
         controllerAs: 'vm',
         data: {
           roles: ['admin']
@@ -35,10 +35,10 @@
           blogpostResolve: newBlogpost
         }
       })
-      .state('admin.blogposts.edit', {
+      .state('admin.blogpost.edit', {
         url: '/:blogpostId/edit',
         templateUrl: '/modules/blog/client/views/admin/form-blogpost.client.view.html',
-        controller: 'BlogpostsAdminController',
+        controller: 'BlogpostAdminController',
         controllerAs: 'vm',
         data: {
           roles: ['admin'],
@@ -50,17 +50,17 @@
       });
   }
 
-  getBlogpost.$inject = ['$stateParams', 'BlogpostsService'];
+  getBlogpost.$inject = ['$stateParams', 'BlogpostService'];
 
-  function getBlogpost($stateParams, BlogpostsService) {
-    return BlogpostsService.get({
+  function getBlogpost($stateParams, BlogpostService) {
+    return BlogpostService.get({
       blogpostId: $stateParams.blogpostId
     }).$promise;
   }
 
-  newBlogpost.$inject = ['BlogpostsService'];
+  newBlogpost.$inject = ['BlogpostService'];
 
-  function newBlogpost(BlogpostsService) {
-    return new BlogpostsService();
+  function newBlogpost(BlogpostService) {
+    return new BlogpostService();
   }
 }());

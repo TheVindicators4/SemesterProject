@@ -2,13 +2,13 @@
   'use strict';
 
   angular
-    .module('blogposts.services')
-    .factory('BlogpostsService', BlogpostsService);
+    .module('blogpost.services')
+    .factory('BlogpostService', BlogpostService);
 
-  BlogpostsService.$inject = ['$resource', '$log'];
+  BlogpostService.$inject = ['$resource', '$log'];
 
-  function BlogpostsService($resource, $log) {
-    var Blogpost = $resource('/api/blogposts/:blogpostId', {
+  function BlogpostService($resource, $log) {
+    var Blogpost = $resource('/api/blogpost/:blogpostId', {
       blogpostId: '@_id'
     }, {
       update: {

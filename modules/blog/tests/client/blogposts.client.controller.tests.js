@@ -1,15 +1,15 @@
 (function () {
   'use strict';
 
-  describe('Blogposts Controller Tests', function () {
+  describe('Articles Controller Tests', function () {
     // Initialize global variables
-    var BlogpostsController,
+    var ArticlesController,
       $scope,
       $httpBackend,
       $state,
       Authentication,
-      BlogpostsService,
-      mockBlogpost;
+      ArticlesService,
+      mockArticle;
 
     // The $resource service augments the response object with methods for updating and deleting the resource.
     // If we were to use the standard toEqual matcher, our tests would fail because the test values would not match
@@ -36,7 +36,7 @@
     // The injector ignores leading and trailing underscores here (i.e. _$httpBackend_).
     // This allows us to inject a service but then attach it to a variable
     // with the same name as the service.
-    beforeEach(inject(function ($controller, $rootScope, _$state_, _$httpBackend_, _Authentication_, _BlogpostsService_) {
+    beforeEach(inject(function ($controller, $rootScope, _$state_, _$httpBackend_, _Authentication_, _ArticlesService_) {
       // Set a new global scope
       $scope = $rootScope.$new();
 
@@ -44,12 +44,12 @@
       $httpBackend = _$httpBackend_;
       $state = _$state_;
       Authentication = _Authentication_;
-      BlogpostsService = _BlogpostsService_;
+      ArticlesService = _ArticlesService_;
 
-      // create mock blogpost
-      mockBlogpost = new BlogpostsService({
+      // create mock article
+      mockArticle = new ArticlesService({
         _id: '525a8422f6d0f87f0e407a33',
-        title: 'An Blogpost about MEAN',
+        title: 'An Article about MEAN',
         content: 'MEAN rocks!'
       });
 
@@ -58,10 +58,10 @@
         roles: ['user']
       };
 
-      // Initialize the Blogposts controller.
-      BlogpostsController = $controller('BlogpostsController as vm', {
+      // Initialize the Articles controller.
+      ArticlesController = $controller('ArticlesController as vm', {
         $scope: $scope,
-        blogpostResolve: {}
+        articleResolve: {}
       });
 
       // Spy on state go
