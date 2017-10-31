@@ -1,0 +1,25 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.aboutmessage._id ? 'Edit Aboutmessage' : 'New Aboutmessage'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.aboutmessageForm" class="form-horizontal" ng-submit="vm.save(vm.form.aboutmessageForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="title">Title</label>
+          <input name="title" type="text" ng-model="vm.aboutmessage.title" id="title" class="form-control" placeholder="Title" required autofocus>
+          <div ng-messages="vm.form.aboutmessageForm.title.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Aboutmessage title is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="content">Content</label>
+          <textarea name="content" data-ng-model="vm.aboutmessage.content" id="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.aboutmessage._id ? 'Update' : 'Create'}}</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>
