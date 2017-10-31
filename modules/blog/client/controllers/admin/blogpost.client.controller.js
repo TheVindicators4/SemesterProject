@@ -2,12 +2,12 @@
   'use strict';
 
   angular
-    .module('blogposts.admin')
-    .controller('BlogpostsAdminController', BlogpostsAdminController);
+    .module('blogpost.admin')
+    .controller('BlogpostAdminController', BlogpostAdminController);
 
-  BlogpostsAdminController.$inject = ['$scope', '$state', '$window', 'blogpostResolve', 'Authentication', 'Notification'];
+  BlogpostAdminController.$inject = ['$scope', '$state', '$window', 'blogpostResolve', 'Authentication', 'Notification'];
 
-  function BlogpostsAdminController($scope, $state, $window, blogpost, Authentication, Notification) {
+  function BlogpostAdminController($scope, $state, $window, blogpost, Authentication, Notification) {
     var vm = this;
 
     vm.blogpost = blogpost;
@@ -20,7 +20,7 @@
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {
         vm.blogpost.$remove(function () {
-          $state.go('admin.blogposts.list');
+          $state.go('admin.blogpost.list');
           Notification.success({ message: '<i class="glyphicon glyphicon-ok"></i> Blogpost deleted successfully!' });
         });
       }
@@ -39,7 +39,7 @@
         .catch(errorCallback);
 
       function successCallback(res) {
-        $state.go('admin.blogposts.list'); // should we send the User to the list or the updated Blogpost's view?
+        $state.go('admin.blogpost.list'); // should we send the User to the list or the updated Blogpost's view?
         Notification.success({ message: '<i class="glyphicon glyphicon-ok"></i> Blogpost saved successfully!' });
       }
 

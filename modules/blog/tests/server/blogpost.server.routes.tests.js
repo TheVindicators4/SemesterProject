@@ -5,7 +5,7 @@ var should = require('should'),
   path = require('path'),
   mongoose = require('mongoose'),
   User = mongoose.model('User'),
-  Blogpost = mongoose.model('Blogpost'),
+  Article = mongoose.model('Article'),
   express = require(path.resolve('./config/lib/express'));
 
 /**
@@ -15,12 +15,12 @@ var app,
   agent,
   credentials,
   user,
-  blogpost;
+  article;
 
 /**
- * Blogpost routes tests
+ * Article routes tests
  */
-describe('Blogpost CRUD tests', function () {
+describe('Article CRUD tests', function () {
 
   before(function (done) {
     // Get application
@@ -48,12 +48,12 @@ describe('Blogpost CRUD tests', function () {
       provider: 'local'
     });
 
-    // Save a user to the test db and create new blogpost
+    // Save a user to the test db and create new article
     user.save()
       .then(function () {
-        blogpost = {
-          title: 'Blogpost Title',
-          content: 'Blogpost Content'
+        article = {
+          title: 'Article Title',
+          content: 'Article Content'
         };
 
         done();
@@ -61,7 +61,7 @@ describe('Blogpost CRUD tests', function () {
       .catch(done);
   });
 
-  it('should not be able to save an blogpost if logged in without the "admin" role', function (done) {
+  it('should not be able to save an article if logged in without the "admin" role', function (done) {
     agent.post('/api/auth/signin')
       .send(credentials)
       .expect(200)
@@ -71,28 +71,28 @@ describe('Blogpost CRUD tests', function () {
           return done(signinErr);
         }
 
-        agent.post('/api/blogposts')
-          .send(blogpost)
+        agent.post('/api/articles')
+          .send(article)
           .expect(403)
-          .end(function (blogpostSaveErr, blogpostSaveRes) {
+          .end(function (articleSaveErr, articleSaveRes) {
             // Call the assertion callback
-            done(blogpostSaveErr);
+            done(articleSaveErr);
           });
 
       });
   });
 
-  it('should not be able to save an blogpost if not logged in', function (done) {
-    agent.post('/api/blogposts')
-      .send(blogpost)
+  it('should not be able to save an article if not logged in', function (done) {
+    agent.post('/api/articles')
+      .send(article)
       .expect(403)
-      .end(function (blogpostSaveErr, blogpostSaveRes) {
+      .end(function (articleSaveErr, articleSaveRes) {
         // Call the assertion callback
-        done(blogpostSaveErr);
+        done(articleSaveErr);
       });
   });
 
-  it('should not be able to update an blogpost if signed in without the "admin" role', function (done) {
+  it('should not be able to update an article if signed in without the "admin" role', function (done) {
     agent.post('/api/auth/signin')
       .send(credentials)
       .expect(200)
@@ -102,24 +102,24 @@ describe('Blogpost CRUD tests', function () {
           return done(signinErr);
         }
 
-        agent.post('/api/blogposts')
-          .send(blogpost)
+        agent.post('/api/articles')
+          .send(article)
           .expect(403)
-          .end(function (blogpostSaveErr, blogpostSaveRes) {
+          .end(function (articleSaveErr, articleSaveRes) {
             // Call the assertion callback
-            done(blogpostSaveErr);
+            done(articleSaveErr);
           });
       });
   });
 
-  it('should be able to get a list of blogposts if not signed in', function (done) {
-    // Create new blogpost model instance
-    var blogpostObj = new Blogpost(blogpost);
+  it('should be able to get a list of articles if not signed in', function (done) {
+    // Create new article model instance
+    var articleObj = new Article(article);
 
-    // Save the blogpost
-    blogpostObj.save(function () {
-      // Request blogposts
-      agent.get('/api/blogposts')
+    // Save the article
+    articleObj.save(function () {
+      // Request articles
+      agent.get('/api/articles')
         .end(function (req, res) {
           // Set assertion
           res.body.should.be.instanceof(Array).and.have.lengthOf(1);
@@ -131,16 +131,16 @@ describe('Blogpost CRUD tests', function () {
     });
   });
 
-  it('should be able to get a single blogpost if not signed in', function (done) {
-    // Create new blogpost model instance
-    var blogpostObj = new Blogpost(blogpost);
+  it('should be able to get a single article if not signed in', function (done) {
+    // Create new article model instance
+    var articleObj = new Article(article);
 
-    // Save the blogpost
-    blogpostObj.save(function () {
-      agent.get('/api/blogposts/' + blogpostObj._id)
+    // Save the article
+    articleObj.save(function () {
+      agent.get('/api/articles/' + articleObj._id)
         .end(function (req, res) {
           // Set assertion
-          res.body.should.be.instanceof(Object).and.have.property('title', blogpost.title);
+          res.body.should.be.instanceof(Object).and.have.property('title', article.title);
 
           // Call the assertion callback
           done();
@@ -148,31 +148,31 @@ describe('Blogpost CRUD tests', function () {
     });
   });
 
-  it('should return proper error for single blogpost with an invalid Id, if not signed in', function (done) {
+  it('should return proper error for single article with an invalid Id, if not signed in', function (done) {
     // test is not a valid mongoose Id
-    agent.get('/api/blogposts/test')
+    agent.get('/api/articles/test')
       .end(function (req, res) {
         // Set assertion
-        res.body.should.be.instanceof(Object).and.have.property('message', 'Blogpost is invalid');
+        res.body.should.be.instanceof(Object).and.have.property('message', 'Article is invalid');
 
         // Call the assertion callback
         done();
       });
   });
 
-  it('should return proper error for single blogpost which doesnt exist, if not signed in', function (done) {
-    // This is a valid mongoose Id but a non-existent blogpost
-    agent.get('/api/blogposts/559e9cd815f80b4c256a8f41')
+  it('should return proper error for single article which doesnt exist, if not signed in', function (done) {
+    // This is a valid mongoose Id but a non-existent article
+    agent.get('/api/articles/559e9cd815f80b4c256a8f41')
       .end(function (req, res) {
         // Set assertion
-        res.body.should.be.instanceof(Object).and.have.property('message', 'No blogpost with that identifier has been found');
+        res.body.should.be.instanceof(Object).and.have.property('message', 'No article with that identifier has been found');
 
         // Call the assertion callback
         done();
       });
   });
 
-  it('should not be able to delete an blogpost if signed in without the "admin" role', function (done) {
+  it('should not be able to delete an article if signed in without the "admin" role', function (done) {
     agent.post('/api/auth/signin')
       .send(credentials)
       .expect(200)
@@ -182,40 +182,40 @@ describe('Blogpost CRUD tests', function () {
           return done(signinErr);
         }
 
-        agent.post('/api/blogposts')
-          .send(blogpost)
+        agent.post('/api/articles')
+          .send(article)
           .expect(403)
-          .end(function (blogpostSaveErr, blogpostSaveRes) {
+          .end(function (articleSaveErr, articleSaveRes) {
             // Call the assertion callback
-            done(blogpostSaveErr);
+            done(articleSaveErr);
           });
       });
   });
 
-  it('should not be able to delete an blogpost if not signed in', function (done) {
-    // Set blogpost user
-    blogpost.user = user;
+  it('should not be able to delete an article if not signed in', function (done) {
+    // Set article user
+    article.user = user;
 
-    // Create new blogpost model instance
-    var blogpostObj = new Blogpost(blogpost);
+    // Create new article model instance
+    var articleObj = new Article(article);
 
-    // Save the blogpost
-    blogpostObj.save(function () {
-      // Try deleting blogpost
-      agent.delete('/api/blogposts/' + blogpostObj._id)
+    // Save the article
+    articleObj.save(function () {
+      // Try deleting article
+      agent.delete('/api/articles/' + articleObj._id)
         .expect(403)
-        .end(function (blogpostDeleteErr, blogpostDeleteRes) {
+        .end(function (articleDeleteErr, articleDeleteRes) {
           // Set message assertion
-          (blogpostDeleteRes.body.message).should.match('User is not authorized');
+          (articleDeleteRes.body.message).should.match('User is not authorized');
 
-          // Handle blogpost error error
-          done(blogpostDeleteErr);
+          // Handle article error error
+          done(articleDeleteErr);
         });
 
     });
   });
 
-  it('should be able to get a single blogpost that has an orphaned user reference', function (done) {
+  it('should be able to get a single article that has an orphaned user reference', function (done) {
     // Create orphan user creds
     var _creds = {
       usernameOrEmail: 'orphan',
@@ -252,22 +252,22 @@ describe('Blogpost CRUD tests', function () {
           // Get the userId
           var orphanId = orphan._id;
 
-          // Save a new blogpost
-          agent.post('/api/blogposts')
-            .send(blogpost)
+          // Save a new article
+          agent.post('/api/articles')
+            .send(article)
             .expect(200)
-            .end(function (blogpostSaveErr, blogpostSaveRes) {
-              // Handle blogpost save error
-              if (blogpostSaveErr) {
-                return done(blogpostSaveErr);
+            .end(function (articleSaveErr, articleSaveRes) {
+              // Handle article save error
+              if (articleSaveErr) {
+                return done(articleSaveErr);
               }
 
-              // Set assertions on new blogpost
-              (blogpostSaveRes.body.title).should.equal(blogpost.title);
-              should.exist(blogpostSaveRes.body.user);
-              should.equal(blogpostSaveRes.body.user._id, orphanId);
+              // Set assertions on new article
+              (articleSaveRes.body.title).should.equal(article.title);
+              should.exist(articleSaveRes.body.user);
+              should.equal(articleSaveRes.body.user._id, orphanId);
 
-              // force the blogpost to have an orphaned user reference
+              // force the article to have an orphaned user reference
               orphan.remove(function () {
                 // now signin with valid user
                 agent.post('/api/auth/signin')
@@ -279,19 +279,19 @@ describe('Blogpost CRUD tests', function () {
                       return done(err);
                     }
 
-                    // Get the blogpost
-                    agent.get('/api/blogposts/' + blogpostSaveRes.body._id)
+                    // Get the article
+                    agent.get('/api/articles/' + articleSaveRes.body._id)
                       .expect(200)
-                      .end(function (blogpostInfoErr, blogpostInfoRes) {
-                        // Handle blogpost error
-                        if (blogpostInfoErr) {
-                          return done(blogpostInfoErr);
+                      .end(function (articleInfoErr, articleInfoRes) {
+                        // Handle article error
+                        if (articleInfoErr) {
+                          return done(articleInfoErr);
                         }
 
                         // Set assertions
-                        (blogpostInfoRes.body._id).should.equal(blogpostSaveRes.body._id);
-                        (blogpostInfoRes.body.title).should.equal(blogpost.title);
-                        should.equal(blogpostInfoRes.body.user, undefined);
+                        (articleInfoRes.body._id).should.equal(articleSaveRes.body._id);
+                        (articleInfoRes.body.title).should.equal(article.title);
+                        should.equal(articleInfoRes.body.user, undefined);
 
                         // Call the assertion callback
                         done();
@@ -303,19 +303,19 @@ describe('Blogpost CRUD tests', function () {
     });
   });
 
-  it('should be able to get a single blogpost if not signed in and verify the custom "isCurrentUserOwner" field is set to "false"', function (done) {
-    // Create new blogpost model instance
-    var blogpostObj = new Blogpost(blogpost);
+  it('should be able to get a single article if not signed in and verify the custom "isCurrentUserOwner" field is set to "false"', function (done) {
+    // Create new article model instance
+    var articleObj = new Article(article);
 
-    // Save the blogpost
-    blogpostObj.save(function (err) {
+    // Save the article
+    articleObj.save(function (err) {
       if (err) {
         return done(err);
       }
-      agent.get('/api/blogposts/' + blogpostObj._id)
+      agent.get('/api/articles/' + articleObj._id)
         .end(function (req, res) {
           // Set assertion
-          res.body.should.be.instanceof(Object).and.have.property('title', blogpost.title);
+          res.body.should.be.instanceof(Object).and.have.property('title', article.title);
           // Assert the custom field "isCurrentUserOwner" is set to false for the un-authenticated User
           res.body.should.be.instanceof(Object).and.have.property('isCurrentUserOwner', false);
           // Call the assertion callback
@@ -324,15 +324,15 @@ describe('Blogpost CRUD tests', function () {
     });
   });
 
-  it('should be able to get single blogpost, that a different user created, if logged in & verify the "isCurrentUserOwner" field is set to "false"', function (done) {
+  it('should be able to get single article, that a different user created, if logged in & verify the "isCurrentUserOwner" field is set to "false"', function (done) {
     // Create temporary user creds
     var _creds = {
-      usernameOrEmail: 'blogpostowner',
+      usernameOrEmail: 'articleowner',
       password: 'M3@n.jsI$Aw3$0m3'
     };
 
-    // Create user that will create the Blogpost
-    var _blogpostOwner = new User({
+    // Create user that will create the Article
+    var _articleOwner = new User({
       firstName: 'Full',
       lastName: 'Name',
       displayName: 'Full Name',
@@ -343,13 +343,13 @@ describe('Blogpost CRUD tests', function () {
       roles: ['admin', 'user']
     });
 
-    _blogpostOwner.save(function (err, _user) {
+    _articleOwner.save(function (err, _user) {
       // Handle save error
       if (err) {
         return done(err);
       }
 
-      // Sign in with the user that will create the Blogpost
+      // Sign in with the user that will create the Article
       agent.post('/api/auth/signin')
         .send(_creds)
         .expect(200)
@@ -362,20 +362,20 @@ describe('Blogpost CRUD tests', function () {
           // Get the userId
           var userId = _user._id;
 
-          // Save a new blogpost
-          agent.post('/api/blogposts')
-            .send(blogpost)
+          // Save a new article
+          agent.post('/api/articles')
+            .send(article)
             .expect(200)
-            .end(function (blogpostSaveErr, blogpostSaveRes) {
-              // Handle blogpost save error
-              if (blogpostSaveErr) {
-                return done(blogpostSaveErr);
+            .end(function (articleSaveErr, articleSaveRes) {
+              // Handle article save error
+              if (articleSaveErr) {
+                return done(articleSaveErr);
               }
 
-              // Set assertions on new blogpost
-              (blogpostSaveRes.body.title).should.equal(blogpost.title);
-              should.exist(blogpostSaveRes.body.user);
-              should.equal(blogpostSaveRes.body.user._id, userId);
+              // Set assertions on new article
+              (articleSaveRes.body.title).should.equal(article.title);
+              should.exist(articleSaveRes.body.user);
+              should.equal(articleSaveRes.body.user._id, userId);
 
               // now signin with the test suite user
               agent.post('/api/auth/signin')
@@ -387,20 +387,20 @@ describe('Blogpost CRUD tests', function () {
                     return done(err);
                   }
 
-                  // Get the blogpost
-                  agent.get('/api/blogposts/' + blogpostSaveRes.body._id)
+                  // Get the article
+                  agent.get('/api/articles/' + articleSaveRes.body._id)
                     .expect(200)
-                    .end(function (blogpostInfoErr, blogpostInfoRes) {
-                      // Handle blogpost error
-                      if (blogpostInfoErr) {
-                        return done(blogpostInfoErr);
+                    .end(function (articleInfoErr, articleInfoRes) {
+                      // Handle article error
+                      if (articleInfoErr) {
+                        return done(articleInfoErr);
                       }
 
                       // Set assertions
-                      (blogpostInfoRes.body._id).should.equal(blogpostSaveRes.body._id);
-                      (blogpostInfoRes.body.title).should.equal(blogpost.title);
+                      (articleInfoRes.body._id).should.equal(articleSaveRes.body._id);
+                      (articleInfoRes.body.title).should.equal(article.title);
                       // Assert that the custom field "isCurrentUserOwner" is set to false since the current User didn't create it
-                      (blogpostInfoRes.body.isCurrentUserOwner).should.equal(false);
+                      (articleInfoRes.body.isCurrentUserOwner).should.equal(false);
 
                       // Call the assertion callback
                       done();
@@ -412,7 +412,7 @@ describe('Blogpost CRUD tests', function () {
   });
 
   afterEach(function (done) {
-    Blogpost.remove().exec()
+    Article.remove().exec()
       .then(User.remove().exec())
       .then(done())
       .catch(done);

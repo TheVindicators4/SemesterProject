@@ -14,11 +14,11 @@
           <label class="control-label" for="title">Title</label>
           <input name="title" type="text" ng-model="vm.blogpost.title" id="title" class="form-control" placeholder="Title" required autofocus>
           <div ng-messages="vm.form.blogpostForm.title.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Blogpost title is required.</p>
+            <p class="help-block error-text" ng-message="required">Blogposting title is required.</p>
           </div>
         </div>
         <div class="form-group">
-          <label class="control-label" for="content">Content</label>
+          <label class="control-label" for="content">Post Content</label>
           <textarea name="content" data-ng-model="vm.blogpost.content" id="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
         </div>
         <div class="form-group">
