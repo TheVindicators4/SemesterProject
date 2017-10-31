@@ -39,6 +39,12 @@
         controller: 'AboutMessagesListController',
         controllerAs: 'vm'
       })
+      .state('photo', {
+       url: '/photo',
+       templateUrl: '/modules/core/client/views/photos.client.view.html',
+       controller: 'HomeController',
+       controllerAs: 'vm'
+     })
       .state('blog', {
         url: '/blog',
         templateUrl: '/modules/blog/client/views/list-blogposts.client.view.html',
