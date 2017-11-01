@@ -21,7 +21,7 @@
     </h1>
 
     <!-- First Blog Post -->
-    <div ng-repeat="blogpost in vm.blogpost">
+    <div class="container-fluid" ng-repeat="blogpost in vm.blogpost">
 
       <div class="col-md-12 blogposting">
         <div class="col-md-12">
@@ -36,10 +36,10 @@
           <hr>
         </div>
         <div class="col-md-12">
-          <div class="col-md-7">
-            <img class="eventPaddingInner" src="http://placehold.it/900x300" alt="">
+          <div class="col-md-6">
+            <img class="eventPaddingInner img-responsive img-rounded" src="http://placehold.it/900x300" alt="">
           </div>
-          <div class="col-md-5">
+          <div class="col-md-6">
             <p class = "eventPaddingInnerText">{{blogpost.content}}</p>
           </div>
           <!--a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a-->
