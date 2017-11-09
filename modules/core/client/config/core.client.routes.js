@@ -20,7 +20,7 @@
     });
 
     // Redirect to 404 when route not found
-  $urlRouterProvider.otherwise(function ($injector, $location) {
+    $urlRouterProvider.otherwise(function ($injector, $location) {
       $injector.get('$state').transitionTo('not-found', null, {
         location: false
       });
@@ -28,14 +28,40 @@
 
     $stateProvider
       .state('home', {
-        url: '/',
+        url: '/home',
         templateUrl: '/modules/core/client/views/home.client.view.html',
         controller: 'HomeController',
         controllerAs: 'vm'
       })
-      .state('eventsList', {
-        url: '/eventList',
-        templateUrl: '/modules/core/client/views/list-listings.client.view.html',
+      .state('about', {
+        url: '/about',
+        templateUrl: '/modules/aboutmessage/client/views/list-aboutMessages.client.view.html',
+        controller: 'AboutMessagesListController',
+        controllerAs: 'vm'
+      })
+      .state('photo', {
+       url: '/photo',
+       templateUrl: '/modules/core/client/views/photos.client.view.html',
+       controller: 'HomeController',
+       controllerAs: 'vm'
+     })
+      .state('review', {
+        url: '/reviews',
+        templateUrl: '/modules/reviews/client/views/list-reviews.client.view.html',
+        controller: 'ReviewsController',
+        controllerAs: 'vm'
+      })
+      .state('contactme', {
+        url: '/contact',
+        templateUrl: '/modules/core/client/views/contactme.client.view.html',
+        controller: 'HomeController',
+        controllerAs: 'vm'
+      })
+      .state('login', {
+        url: '/login',
+        templateUrl: '/modules/users/client/views/authentication/signin.client.view.html',
+        controller: 'AuthenticationController',
+        controllerAs: 'vm'
       })
       .state('not-found', {
         url: '/not-found',

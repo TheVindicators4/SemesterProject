@@ -41,4 +41,4 @@
       return $q.reject(rejection);
     }
   }
-}())
+}());
