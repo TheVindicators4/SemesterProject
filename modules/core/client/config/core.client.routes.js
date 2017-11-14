@@ -28,15 +28,21 @@
 
     $stateProvider
       .state('home', {
-        url: '/home',
-        templateUrl: '/modules/core/client/views/home.client.view.html',
-        controller: 'HomeController',
+        url: '/',
+        templateUrl: '/modules/eventstream/client/views/list-eventstream.client.view.html',
+        controller: 'EventstreamController',
         controllerAs: 'vm'
       })
       .state('about', {
         url: '/about',
         templateUrl: '/modules/aboutmessage/client/views/list-aboutMessages.client.view.html',
         controller: 'AboutMessagesListController',
+        controllerAs: 'vm'
+      })
+      .state('shop', {
+        url: '/shop',
+        templateUrl: '/modules/shops/client/views/list-shops.client.view.html',
+        controller: 'ShopsListController',
         controllerAs: 'vm'
       })
       .state('photo', {
