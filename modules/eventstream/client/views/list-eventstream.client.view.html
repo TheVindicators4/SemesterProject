@@ -30,11 +30,28 @@
 </style>
 
 <!-- Beverly's HTML -->
-<div class="column middle col-10">
+<!---<div class="column middle col-10">
   <h1 class= "eventPaddingText">Events</h1>
   <div class="tableWrapper">
-    <table class="table">
-      <!-- To be relplaced with repeat function -->
+    <table class = "table">
+      <!-- To be relplaced with repeat function --
+      <tr class = "roundedBorders" ng-repeat="eventstream in vm.eventstream" class = "rowBoards">
+        <td style="width:100px" height="100">
+          <p class = "eventPaddingInner" style="font-size:200%">{{eventstream.title}}</p>
+          <p class = "eventPaddingInner"  ng-bind="eventstream.created | date:'mediumDate'"><i>{{eventstream.created}}</i></p>
+          <img class = "eventPaddingInner" src="/modules/core/client/img/img-Social/logo1.jpg"  alt="Logo" style="width:300px;height:300px;"></img>
+          <p class = "eventPaddingInnerText">{{eventstream.content}}</p>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>-->
+
+<!--<div class="column middle col-10">
+  <h1 class= "eventPaddingText">Events</h1>
+  <div class="tableWrapper">
+    <table class = "table">
+      <!-- To be relplaced with repeat function --
       <tr ng-repeat="eventstream in vm.eventstream" class = "rowBoards">
         <td style="width:100px" height="100">
           <p class = "eventPaddingInner" style="font-size:200%">{{eventstream.title}}</p>
@@ -45,8 +62,33 @@
       </tr>
     </table>
   </div>
-</div>
+</div>-->
 
+<!--<div class="column middle col-10">
+  <div id = "scrollbox3" class="card">
+    <div class="card text-center" ng-repeat="eventstream in vm.eventstream">
+      <div class="card-header">{{eventstream.title}}</div>
+      <div class="card-block">
+        <h4 class="card-title">Special title treatment</h4>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+  </div>
+</div>-->
+
+<div class="column middle">
+    <h4 class = "eventPaddingText">Events</h4>
+  <div class = "panelBox" id= "style-2">
+    <div class="panel" ng-repeat="eventstream in vm.eventstream">
+      <div class = "eventPaddingTitle" style="font-size:200%">{{eventstream.title}}</div>
+        <div class="panel-body">
+          <p class = "eventPaddingInner"  ng-bind="eventstream.created | date:'mediumDate'"><i>{{eventstream.created}}</i></p>
+          <img class = "eventPaddingImage" src="/modules/core/client/img/img-Social/logo1.jpg"  alt="Logo" style="width:300px;height:300px;"></img>
+          <p class = "eventPaddingInnerText">{{eventstream.content}}</p>
+        </div>
+    </div>
+  </div>
+</div>
 
 <!-- Email List Pop-up -->
 <div class = "centerItem">

@@ -49,49 +49,76 @@ font-family: 'Sanchez', serif;
 .column.middle {
     width: 75%;
     padding-right: 15px;
+    padding-top: 0px;
 }
 
 .tableWrapper {
+/*  border-radius: 10px;
   max-height: 800px;
-  overflow: auto;
+  overflow: auto;*/
+/*  border: 10px solid #000;
+  border-radius: 20px;*/
 }
 
-.tableWrapper .rowBoards:nth-child(odd) {
-    background-color: lightgray;
+/*Panel Info */
+.panelBox{
+  max-height: 800px;
+  padding: 10px;
+  padding-right: 15px;
+  /*border-width: 5px;
+  border-color: black;
+  border-style: solid;*/
+  border-radius: 10px;
+
+    overflow: auto;
 }
 
-.tableWrapper .rowBoards:nth-child(even) {
-    background-color: white;
+.panel{
+  height: auto;
+  border-width: 5px;
+  border-radius: 20px;
+  border-color: black;
+  box-shadow: 5px 5px 10px #000000;
+    background-color: #1e151d;
 }
 
-.tableWrapper.rowBoards:hover {
-    background: black;
-    cursor: pointer;
-}
-.table{
-padding-top: 0;
-
-}
-/*.rowBoards{
-  color:white;
-  border: 2px solid lightgrey;
-  border-radius: 5px;
-}*/
-.eventPaddingText{
-  padding-bottom: 15px;
-  padding-top: 15px;
-  text-align: center;
-}
-
-.eventPadding
+/*Scroll Bar*/
+#style-2::-webkit-scrollbar-track
 {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: gray;
+}
+
+#style-2::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: transparent;
+}
+
+#style-2::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #5a3f57;
+}
+
+
+.eventPaddingText
+{
+  padding-bottom: 0px;
+  padding-top: 0px;
   padding-left: 20px;
+  color:white;
+  text-align: left;
+  font-size: 35px;
 }
 
 .eventPaddingInner
 {
-  padding-left: 20px;
-  padding-top: 20px;
+  padding-left: 10px;
+  padding-top: 10px;
+  color:white;
 }
 
 .eventPaddingInnerText
@@ -99,6 +126,20 @@ padding-top: 0;
   padding-left: 20px;
   padding-top: 20px;
   font-size: 20px;
+  color: white;
+}
+.eventPaddingImage{
+  display: block;
+  margin: 0 auto;
+}
+
+.eventPaddingTitle{
+  background: #3c2a3a;
+  border-top-right-radius: 19px;
+  border-top-left-radius: 19px;
+  color:white;
+  padding: 10px;
+  padding-bottom: 10px;
 }
 
 .centerItem{
