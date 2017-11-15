@@ -26,9 +26,14 @@ font-family: 'Sanchez', serif;
 
 }
 
-.column {
-    float: left;
+/*.row {
+  display: table; /* Make the container element behave like a table *
+  width: 100%;
 }
+
+.rowSub{
+  display: table-cell;
+}*/
 
 /* Left and right column */
 .column.side {
@@ -52,19 +57,9 @@ font-family: 'Sanchez', serif;
     padding-top: 0px;
 }
 
-.tableWrapper {
-/*  border-radius: 10px;
-  max-height: 800px;
-  overflow: auto;*/
-/*  border: 10px solid #000;
-  border-radius: 20px;*/
-}
-.row{
-  display:flex;
-}
 /*Panel Info */
 .panelBox{
-  max-height: 800px
+  max-height: 800px;
   padding: 10px;
   padding-right: 15px;
   /*border-width: 5px;
