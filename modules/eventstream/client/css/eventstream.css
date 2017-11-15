@@ -11,50 +11,50 @@ h1,h2 {
 }
 
 .divider{
-    width: 5px;
-    height: auto;
-    display: inline-block;
+  width: 5px;
+  height: auto;
+  display: inline-block;
 }
 
 .box2 {
-display: inline-block;
-width: auto;
-font-family: 'Sanchez', serif;
+  display: inline-block;
+  width: auto;
+  font-family: 'Sanchez', serif;
 }
 .socialMediaText{
-   font-size: 20px;
+  font-size: 20px;
 
 }
 
 /*.row {
-  display: table; /* Make the container element behave like a table *
-  width: 100%;
+display: table; /* Make the container element behave like a table *
+width: 100%;
 }
 
 .rowSub{
-  display: table-cell;
+display: table-cell;
 }*/
 
 /* Left and right column */
 .column.side {
-    width: 25%;
-    padding-top: 50px;
-    padding-bottom: 50px;
+  width: 25%;
+  padding-top: 50px;
+  padding-bottom: 50px;
 
-    display: inline-block;
-    left: 30px;
-    border: 5px solid #000;
-    border-radius: 10px;
-    background: #D3D3D3;
-    text-align: center;
-    font-family: 'Sanchez', serif;
+  display: inline-block;
+  left: 30px;
+  border: 5px solid #000;
+  border-radius: 10px;
+  background: #D3D3D3;
+  text-align: center;
+  font-family: 'Sanchez', serif;
 }
 
 /* Middle column */
 .column.middle {
-    width: 75%;
-    padding-right: 15px;
-    padding-top: 0px;
+  width: 75%;
+  padding-right: 15px;
+  padding-top: 0px;
 }
 
 /*Panel Info */
@@ -67,7 +67,7 @@ font-family: 'Sanchez', serif;
   border-style: solid;*/
   border-radius: 10px;
 
-    overflow: auto;
+  overflow: auto;
 }
 
 .panel{
@@ -76,28 +76,28 @@ font-family: 'Sanchez', serif;
   border-radius: 20px;
   border-color: black;
   box-shadow: 5px 5px 10px #000000;
-    background-color: #1e151d;
+  background-color: #1e151d;
 }
 
 /*Scroll Bar*/
 #style-2::-webkit-scrollbar-track
 {
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 10px;
-	background-color: gray;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: gray;
 }
 
 #style-2::-webkit-scrollbar
 {
-	width: 12px;
-	background-color: transparent;
+  width: 12px;
+  background-color: transparent;
 }
 
 #style-2::-webkit-scrollbar-thumb
 {
-	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: #5a3f57;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #5a3f57;
 }
 
 
@@ -151,5 +151,5 @@ font-family: 'Sanchez', serif;
 }
 
 .btn{
-font-size: 20px;
+  font-size: 20px;
 }
