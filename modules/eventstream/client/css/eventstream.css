@@ -59,10 +59,12 @@ font-family: 'Sanchez', serif;
 /*  border: 10px solid #000;
   border-radius: 20px;*/
 }
-
+.row{
+  display:flex;
+}
 /*Panel Info */
 .panelBox{
-  max-height: 800px;
+  max-height: 800px
   padding: 10px;
   padding-right: 15px;
   /*border-width: 5px;
