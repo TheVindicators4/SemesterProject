@@ -26,14 +26,57 @@ font-family: 'Sanchez', serif;
 
 }
 
-/*.row {
-  display: table; /* Make the container element behave like a table *
-  width: 100%;
+* {
+    box-sizing: border-box;
 }
 
-.rowSub{
-  display: table-cell;
+.col-container {
+    display: table;
+    width: 100%;
+}
+.col-mid {
+    display: table-cell;
+    padding: 16px;
+    width:75%
+}
+.col-sid {
+    display: table-cell;
+    padding: 16px;
+    width:25%
+
+}
+
+@media only screen and (max-width: 600px) {
+    .col-mid {
+        display: block;
+        width: 100%;
+    }
+}
+
+/* Create three equal columns that floats next to each other */
+/*.column {
+    height: 100%;
+    float: left;
+    width: 50%;
+    border: 5px solid #000;
+    border-radius: 10px;
+    background: #D3D3D3;
 }*/
+
+ /*Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media only screen and (max-width: 600px) {
+  .row{
+    display: block;
+    width: 100%;
+  }
+
+}
 
 /* Left and right column */
 .column.side {
@@ -52,6 +95,7 @@ font-family: 'Sanchez', serif;
 
 /* Middle column */
 .column.middle {
+  height: inherit;
     width: 75%;
     padding-right: 15px;
     padding-top: 0px;
@@ -59,7 +103,7 @@ font-family: 'Sanchez', serif;
 
 /*Panel Info */
 .panelBox{
-  max-height: 800px;
+  max-height: 90%;
   padding: 10px;
   padding-right: 15px;
   /*border-width: 5px;

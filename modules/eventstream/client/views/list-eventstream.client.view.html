@@ -75,9 +75,12 @@
     </div>
   </div>
 </div>-->
+
+
+<!--<div class = "row">
 <div class="column middle">
     <h4 class = "eventPaddingText">Events</h4>
-  <div class = "panelBox" id= "style-2">
+ <div class = "panelBox" id= "style-2">
     <div class="panel" ng-repeat="eventstream in vm.eventstream">
       <div class = "eventPaddingTitle" style="font-size:200%">{{eventstream.title}}</div>
         <div class="panel-body">
@@ -89,14 +92,14 @@
   </div>
 </div>
 
-<!-- Email List Pop-up -->
+<!-- Email List Pop-up --
 <div class = "centerItem">
   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Join Mailing List!</button></div>
-  <!-- Modal -->
+  <!-- Modal --
   <div class="modal custom" id="myModal" role="dialog">
     <div class="modal-dialog" >
 
-      <!-- Modal content-->
+      <!-- Modal content--
       <div class="modal-content">
         <div class="modal-header-custom">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:black">x</button>
@@ -113,7 +116,6 @@
       </div>
     </div>
   </div>
-</div>
 
   <script type="text/javascript">
   jQuery(document).ready(function () {
@@ -128,15 +130,15 @@
     });
 
   });
-  </script>
+</script>-->
 
-  <!-- Cyrus's HTML-->
+  <!-- Cyrus's HTML--
   <div class = "column side">
     <div class = "social-media">
-      <!--Header for social media box-->
+      <!--Header for social media box--
       <center class = "socialMediaText">Follow DJ E-LO on social media!</center>
       <!--Icon + links to DJ E-LO's facebook page-->
-      <!--NOTICE: Additional social media icons in img folder. Can ask which ones he likes the most-->
+      <!--NOTICE: Additional social media icons in img folder. Can ask which ones he likes the most--
       <center>
         <a href="https://www.facebook.com/djeloglobal/" target="_blank">
           <img src="/modules/core/client/img/img-Social/facebook3.png" width="60" height="60" title="Like DJ E-LO on Facebook"/>
@@ -145,7 +147,7 @@
         &nbsp;
         &nbsp;
         &nbsp;
-        <!--Icon + links to DJ E-LO's instagram page-->
+        <!--Icon + links to DJ E-LO's instagram page--
         <a href="https://www.instagram.com/iamdjelo/?hl=en" target="_blank">
           <img src="/modules/core/client/img/img-Social/instagram3.png" width="60" height="60" title="Follow DJ E-LO on Instagram">
         </a>
@@ -153,7 +155,7 @@
         &nbsp;
         &nbsp;
         &nbsp;
-        <!--Icon + links to DJ E-LO's twitter page-->
+        <!--Icon + links to DJ E-LO's twitter page--
         <a href="https://twitter.com/therealdjelo?lang=en" target="_blank">
           <img src="/modules/core/client/img/img-Social/twitter3.png" width="60" height="60" title="Follow DJ E-LO on Twitter">
         </a>
@@ -162,7 +164,7 @@
         </p>
       </center>
     </div>
-    <!--Displays snapcode (MINE) and is able to be scanned straight from website-->
+    <!--Displays snapcode (MINE) and is able to be scanned straight from website--
     <div class = "snapcode">
       <center class="socialMediaText">Scan to add DJ E-LO on Snapchat!</center>
       <center><img class="img-responsive" src="/modules/core/client/img/img-Social/snapcode.png" width="200" height="200"></center>
@@ -170,8 +172,39 @@
     <p>
       <hr>
     </p>
-    <!--Adds spotify playlist widget (Must get DJ E-LO's spotify to change to one of his playlists)-->
+    <!--Adds spotify playlist widget (Must get DJ E-LO's spotify to change to one of his playlists)--
     <div class = "spotify-player">
       <center class="socialMediaText">Dope Tunes</p></center>
       <iframe src="https://open.spotify.com/embed/user/cyrusnaj/playlist/3k5S8FXU3lHjqc6pzCMBUt" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
     </div>
+</div>
+</div>-->
+
+
+
+
+
+<div class = "col-container">
+<div class = "col-mid">
+  <div class = "panelBox" id= "style-2">
+     <div class="panel" ng-repeat="eventstream in vm.eventstream">
+       <div class = "eventPaddingTitle" style="font-size:200%">{{eventstream.title}}</div>
+         <div class="panel-body">
+           <p class = "eventPaddingInner"  ng-bind="eventstream.created | date:'mediumDate'"><i>{{eventstream.created}}</i></p>
+           <img class = "eventPaddingImage" src="/modules/core/client/img/img-Social/logo1.jpg"  alt="Logo" style="width:300px;height:300px;"></img>
+           <p class = "eventPaddingInnerText">{{eventstream.content}}</p>
+         </div>
+     </div>
+   </div>
+</div>
+
+     <div class = "col-sid" style="background:yellow">
+       <h2>Column 2</h2>
+       <p>Hello World!</p>
+       <p>Hello World!</p>
+       <p>Hello World!</p>
+       <p>Hello World!</p>
+
+     </div>
+
+</div>
