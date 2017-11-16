@@ -62,7 +62,7 @@ font-family: 'Sanchez', serif;
 
 /*Panel Info */
 .panelBox{
-  max-height: 800px;
+  max-height: 100%;
   padding: 10px;
   padding-right: 15px;
   /*border-width: 5px;
