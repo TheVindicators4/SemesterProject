@@ -30,7 +30,7 @@
       .state('home', {
         url: '/',
         templateUrl: '/modules/eventstream/client/views/list-eventstream.client.view.html',
-        controller: 'EventstreamController',
+        controller: 'EventstreamListController',
         controllerAs: 'vm'
       })
       .state('about', {

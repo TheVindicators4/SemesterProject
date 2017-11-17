@@ -11,87 +11,173 @@ h1,h2 {
 }
 
 .divider{
-    width: 5px;
-    height: auto;
-    display: inline-block;
+  width: 5px;
+  height: auto;
+  display: inline-block;
 }
 
 .box2 {
-display: inline-block;
-width: auto;
-font-family: 'Sanchez', serif;
+  display: inline-block;
+  width: auto;
+  font-family: 'Sanchez', serif;
 }
 .socialMediaText{
-   font-size: 20px;
+  font-size: 20px;
 
 }
 
-.column {
-    float: left;
+* {
+  box-sizing: border-box;
+}
+
+.col-container {
+  display: table;
+  width: 100%;
+  max-height: 975px;
+}
+.col-mid {
+  max-height: inherit;
+  display: table-cell;
+  padding: 16px;
+  width:75%
+}
+.col-sid {
+  display: table-cell;
+  padding: 16px;
+  width:25%
+  left: 30px;
+  border: 5px solid #000;
+  border-radius: 10px;
+  background: #D3D3D3;
+  text-align: center;
+  font-family: 'Sanchez', serif;
+}
+
+.col-padding{
+  max-height: inherit;
+}
+
+@media only screen and (max-width: 600px) {
+  .col-padding{
+    margin-bottom: 100px;
+  }
+  .col-mid {
+    display: block;
+    width: 100%;
+  }
+  .col-sid {
+    display: block;
+    width: 100%;
+  }
+}
+
+/* Create three equal columns that floats next to each other */
+/*.column {
+height: 100%;
+float: left;
+width: 50%;
+border: 5px solid #000;
+border-radius: 10px;
+background: #D3D3D3;
+}*/
+
+/*Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media only screen and (max-width: 600px) {
+  .row{
+    display: block;
+    width: 100%;
+  }
+
 }
 
 /* Left and right column */
 .column.side {
-    width: 25%;
-    padding-top: 50px;
-    padding-bottom: 50px;
+  width: 25%;
+  padding-top: 50px;
+  padding-bottom: 50px;
 
-    display: inline-block;
-    left: 30px;
-    border: 5px solid #000;
-    border-radius: 10px;
-    background: #D3D3D3;
-    text-align: center;
-    font-family: 'Sanchez', serif;
+  display: inline-block;
+  left: 30px;
+  border: 5px solid #000;
+  border-radius: 10px;
+  background: #D3D3D3;
+  text-align: center;
+  font-family: 'Sanchez', serif;
 }
 
 /* Middle column */
 .column.middle {
-    width: 75%;
-    padding-right: 15px;
+  height: inherit;
+  width: 75%;
+  padding-right: 15px;
+  padding-top: 0px;
 }
 
-.tableWrapper {
-  max-height: 800px;
+/*Panel Info */
+.panelBox{
+  max-height: inherit;
+  padding: 10px;
+  padding-right: 15px;
+  /*border-width: 5px;
+  border-color: black;
+  border-style: solid;*/
+  border-radius: 10px;
+
   overflow: auto;
 }
 
-.tableWrapper .rowBoards:nth-child(odd) {
-    background-color: lightgray;
+.panel{
+  height: auto;
+  border-width: 5px;
+  border-radius: 20px;
+  border-color: black;
+  box-shadow: 5px 5px 10px #000000;
+  background-color: #1e151d;
 }
 
-.tableWrapper .rowBoards:nth-child(even) {
-    background-color: white;
-}
-
-.tableWrapper.rowBoards:hover {
-    background: black;
-    cursor: pointer;
-}
-.table{
-padding-top: 0;
-
-}
-/*.rowBoards{
-  color:white;
-  border: 2px solid lightgrey;
-  border-radius: 5px;
-}*/
-.eventPaddingText{
-  padding-bottom: 15px;
-  padding-top: 15px;
-  text-align: center;
-}
-
-.eventPadding
+/*Scroll Bar*/
+#style-2::-webkit-scrollbar-track
 {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: gray;
+}
+
+#style-2::-webkit-scrollbar
+{
+  width: 12px;
+  background-color: transparent;
+}
+
+#style-2::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #5a3f57;
+}
+
+
+.eventPaddingText
+{
+  padding-bottom: 0px;
+  padding-top: 0px;
   padding-left: 20px;
+  color:white;
+  text-align: left;
+  font-size: 35px;
 }
 
 .eventPaddingInner
 {
-  padding-left: 20px;
-  padding-top: 20px;
+  padding-left: 10px;
+  padding-top: 10px;
+  color:white;
 }
 
 .eventPaddingInnerText
@@ -99,6 +185,20 @@ padding-top: 0;
   padding-left: 20px;
   padding-top: 20px;
   font-size: 20px;
+  color: white;
+}
+.eventPaddingImage{
+  display: block;
+  margin: 0 auto;
+}
+
+.eventPaddingTitle{
+  background: #3c2a3a;
+  border-top-right-radius: 19px;
+  border-top-left-radius: 19px;
+  color:white;
+  padding: 10px;
+  padding-bottom: 10px;
 }
 
 .centerItem{
@@ -113,5 +213,5 @@ padding-top: 0;
 }
 
 .btn{
-font-size: 20px;
+  font-size: 20px;
 }
