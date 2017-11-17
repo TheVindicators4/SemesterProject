@@ -59,19 +59,22 @@ body {
   color: white;
 }
 
-.image{
-	height: 35%;
+.image2{
+  height: 35%;
+  /*background-color: blue;*/
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
-
+	background: url("/modules/core/client/img/nav/partytime.jpg");
 }
 
 .textTop{
+  padding:100px;
 	text-align: center;
 	position: absolute;
-	top: 25%;
+
+	top: 20%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	color: white;
@@ -117,6 +120,7 @@ body {
 
   .nav-link {
       color: white;
+      padding:5px;
   }
 
   .navbar-nav  li {
@@ -131,94 +135,55 @@ body {
       color: white;
   }
 
-/*Home Page CSS*
-h1,h2 {
-  color: white;
-}
-.box {
-  display: inline-block;
-  width: 300px;
-  border: 1px solid #000;
-  background:white;/*#D3D3D3;*
-  text-align: center;
-  font-family: 'Sanchez', serif;
+
+/*Navigation bar fixed the top and collapse*/
+.showHide{
+  display: inline;
 }
 
-.divider{
-    width: 5px;
-    height: auto;
-    display: inline-block;
-}
-
-.box2 {
-display: inline-block;
-width: auto;
-font-family: 'Sanchez', serif;
-}
-.socialMediaText{
-   font-size: 20px;
+.showHideMobile{
+  display: none;
 
 }
 
-.column {
-    float: left;
-}
+/*@media only screen and (min-width: 600px){
+  .showHide{
+    display: inline;
+  }
 
-/* Left and right column *
-.column.side {
-    width: 25%;
-    padding-top: 50px;
+  .showHideMobile{
+    display: none;
 
-    display: inline-block;
-    left: 30px;
-    border: 5px solid #000;
-    border-radius: 10px;
-    background: #D3D3D3;
-    text-align: center;
-    font-family: 'Sanchez', serif;
-}
-
-/* Middle column *
-.column.middle {
-    width: 75%;
-    padding-right: 15px;
-}
-
-.tableWrapper {
-  max-height: 800px;
-  overflow: auto;
-}
-
-.tableWrapper .rowBoards:nth-child(odd) {
-    background-color: lightgray;
-}
-
-.tableWrapper .rowBoards:nth-child(even) {
-    background-color: white;
-}
-
-.tableWrapper.rowBoards:hover {
-    background: black;
-    cursor: pointer;
-}
-.table{
-padding-top: 0;
-
-}
-/*.rowBoards{
-  color:white;
-  border: 2px solid lightgrey;
-  border-radius: 5px;
-}*
-.eventPaddingText{
-  padding-bottom: 15px;
-  padding-top: 15px;
-  background: green;
-  text-align: center;
-}
-
-.eventPadding
-{
-  padding-left: 20px;
+  }
 
 }*/
+
+@media only screen and (max-width: 850px){
+  .navbar-nav  li {
+      float:none;
+      display:table-cell;
+      text-align:center;
+      font-size: 15px;
+  }
+
+  .nav-link {
+      color: white;
+      padding:5px;
+  }
+
+
+
+}
+
+
+@media only screen and (max-width: 600px){
+  .showHide{
+    display: none;
+  }
+
+  .showHideMobile{
+    display: inline;
+
+  }
+
+}
