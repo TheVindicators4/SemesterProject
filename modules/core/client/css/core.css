@@ -71,14 +71,14 @@ body {
 
 .textTop{
   padding:100px;
-	text-align: center;
+	/*text-align: center;
 	position: absolute;
 
-	top: 20%;
+	/*top: 20%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	color: white;
-	font-family: 'Work Sans', sans-serif;
+	font-family: 'Work Sans', sans-serif;*/
 }
 
 .textTop h1{
@@ -158,25 +158,8 @@ body {
 
 }*/
 
-@media only screen and (max-width: 850px){
-  .navbar-nav  li {
-      float:none;
-      display:table-cell;
-      text-align:center;
-      font-size: 15px;
-  }
 
-  .nav-link {
-      color: white;
-      padding:5px;
-  }
-
-
-
-}
-
-
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 800px){
   .showHide{
     display: none;
   }
