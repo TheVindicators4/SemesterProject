@@ -124,9 +124,6 @@ background: #D3D3D3;
   max-height: inherit;
   padding: 10px;
   padding-right: 15px;
-  /*border-width: 5px;
-  border-color: black;
-  border-style: solid;*/
   border-radius: 10px;
 
   overflow: auto;

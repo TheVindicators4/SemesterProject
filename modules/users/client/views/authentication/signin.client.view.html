@@ -37,7 +37,7 @@
 
 
 <section class="container">
-<style media="screen">
+<!--<style media="screen">
 @media (min-width: 992px) {
   .nav-users {
     position: fixed;
@@ -71,10 +71,13 @@ div.centered {
   width: 800px;
   margin: 0 auto;
 }
-</style>
+</style>-->
+
+<head>  <link rel="stylesheet" href="/modules/user/client/css/user.css"></head>
+
 <div class="row" style="margin: 50px">
   <div class="centered col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4">
-    <form name="vm.userForm" ng-submit="vm.signin(vm.userForm.$valid)" class="signin" novalidate autocomplete="off">
+    <form class = "signInBox"name="vm.userForm" ng-submit="vm.signin(vm.userForm.$valid)" class="signin" novalidate autocomplete="off">
       <fieldset>
         <div class="form-group" show-errors>
           <uib-alert type="danger" ng-show="vm.error" class="text-center text-danger">
@@ -90,10 +93,6 @@ div.centered {
         <div class="text-center form-group">
           <button type="submit" class="btn btn-primary">Sign in</button>
         </div>
-        <!--<div class="text-center forgot-password">
-          <a ui-sref="password.forgot">Forgot your password?</a>
-        </div>-->
-        <br />
       </fieldset>
     </form>
   </div>

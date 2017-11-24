@@ -20,6 +20,13 @@
         controller: 'ReviewsListController',
         controllerAs: 'vm'
       })
+      /*.state('reviews.create', {
+        url: '/create',
+        templateUrl: '/modules/reviews/client/views/create-reviews.client.view.html',
+        controller: 'ReviewsController',
+        controllerAs: 'vm'
+
+      })*/
       .state('reviews.view', {
         url: '/:reviewId',
         templateUrl: '/modules/reviews/client/views/view-review.client.view.html',
