@@ -2,18 +2,22 @@
   <div class="page-header">
     <h1>Reviews</h1>
   </div>
-  
+  <div style = "padding: 20px;"><button type="button" class="btn btn-info btn-lg" ui-sref = 'reviews.create'>Submit a Review</button></div>
   <div class="list-group">
-    <a ng-repeat="review in vm.reviews" ui-sref="reviews.view({ reviewId: review._id })" class="list-group-item">
-      <small class="list-group-item-text">
-        Posted on
-        <span ng-bind="review.created | date:'mediumDate'"></span>
-        by
-        <span ng-if="review.user" ng-bind="review.user.displayName"></span>
-        <span ng-if="!review.user">Deleted User</span>
-      </small>
-      <h4 class="list-group-item-heading" ng-bind="review.title"></h4>
-      <p class="list-group-item-text" ng-bind="review.content"></p>
-    </a>
+    <a ng-repeat="review in vm.reviews | filter : review.approve !== true" ui-sref="reviews.view({ reviewId: review._id })" class="list-group-item">
+  <!--  <div ng-Show = "review.approve">-->
+        <small class="list-group-item-text">
+          Posted on
+          <span ng-bind="review.created | date:'mediumDate'"></span>
+          by
+          <span ng-if="review.user" ng-bind="review.user"></span>
+          <!--<span ng-if="!review.user">Deleted User</span>-->
+        </small>
+        <h4 class="list-group-item-heading" ng-bind="review.title"></h4>
+        <p class="list-group-item-text" ng-bind="review.content"></p>
+          <h1>Approved:</h1>
+        <p class="list-group-item-text" ng-bind="review.approve"></p>
+      </a>
+<!--  </div>-->
   </div>
 </section>

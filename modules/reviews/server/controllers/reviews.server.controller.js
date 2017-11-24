@@ -13,8 +13,9 @@ var path = require('path'),
  */
 exports.create = function (req, res) {
   var review = new Review(req.body);
-  review.user = req.user;
-
+  review.user = req.body.user;
+console.log(review.user);
+console.log(req.body.user);
   review.save(function (err) {
     if (err) {
       return res.status(422).send({
@@ -81,7 +82,7 @@ exports.delete = function (req, res) {
  * List of Reviews
  */
 exports.list = function (req, res) {
-  Review.find().sort('-created').populate('user', 'displayName').exec(function (err, reviews) {
+  Review.find().sort('-created').exec(function (err, reviews) {
     if (err) {
       return res.status(422).send({
         message: errorHandler.getErrorMessage(err)
