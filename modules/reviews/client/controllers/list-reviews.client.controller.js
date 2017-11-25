@@ -1,15 +1,15 @@
 (function () {
-  'use strict';
+	'use strict';
 
-  angular
-    .module('reviews')
-    .controller('ReviewsListController', ReviewsListController);
+	angular
+	.module('reviews')
+	.controller('ReviewsListController', ReviewsListController);
 
-  ReviewsListController.$inject = ['ReviewsService'];
+	ReviewsListController.$inject = ['ReviewsService'];
 
-  function ReviewsListController(ReviewsService) {
-    var vm = this;
+	function ReviewsListController(ReviewsService) {
+		var vm = this;
 
-    vm.reviews = ReviewsService.query();
-  }
+		vm.reviews = ReviewsService.query();
+	}
 }());
