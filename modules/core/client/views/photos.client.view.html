@@ -12,6 +12,17 @@ body {
     padding: 20px;
     font-family: Sanchez;
 }
+.column {
+    float: left;
+    width: 33.33%;
+    display: none; /* Hide all elements by default */
+}
+
+/* Content */
+.content {
+    background-color: white;
+    padding: 10px;
+}
 
 /* Center website */
 .gallery{
@@ -38,11 +49,7 @@ h1 {
 }
 
 /* Create three equal columns that floats next to each other */
-.column {
-    float: left;
-    width: 33.33%;
-    display: none; /* Hide all elements by default */
-}
+
 
 /* Clear floats after rows */
 .row:after {
@@ -51,11 +58,7 @@ h1 {
     clear: both;
 }
 
-/* Content */
-.content {
-    background-color: white;
-    padding: 10px;
-}
+
 
 /* The "show" class is added to the filtered elements */
 .show {
