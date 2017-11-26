@@ -26,10 +26,6 @@ h1,h2 {
 
 }
 
-* {
-    box-sizing: border-box;
-}
-
 .col-container {
     display: table;
     width: 100%;
@@ -39,7 +35,8 @@ h1,h2 {
     max-height: inherit;
     display: table-cell;
     padding: 16px;
-    width:75%
+    width:75%;
+    font-family: 'Sanchez', serif;
 }
 .col-sid {
     display: table-cell;
@@ -71,64 +68,12 @@ h1,h2 {
     }
 }
 
-/* Create three equal columns that floats next to each other */
-/*.column {
-    height: 100%;
-    float: left;
-    width: 50%;
-    border: 5px solid #000;
-    border-radius: 10px;
-    background: #D3D3D3;
-}*/
-
- /*Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-@media only screen and (max-width: 600px) {
-  .row{
-    display: block;
-    width: 100%;
-  }
-
-}
-
-/* Left and right column */
-.column.side {
-  width: 25%;
-  padding-top: 50px;
-  padding-bottom: 50px;
-
-  display: inline-block;
-  left: 30px;
-  border: 5px solid #000;
-  border-radius: 10px;
-  background: #D3D3D3;
-  text-align: center;
-  font-family: 'Sanchez', serif;
-}
-
-/* Middle column */
-.column.middle {
-  height: inherit;
-    width: 75%;
-    padding-right: 15px;
-    padding-top: 0px;
-}
-
 /*Panel Info */
 .panelBox{
   max-height: inherit;
   padding: 10px;
   padding-right: 15px;
-  /*border-width: 5px;
-  border-color: black;
-  border-style: solid;*/
   border-radius: 10px;
-
   overflow: auto;
 }
 
@@ -161,7 +106,6 @@ h1,h2 {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
   background-color: #5a3f57;
 }
-
 
 .eventPaddingText
 {
