@@ -1,4 +1,4 @@
-<head>
+<!--<head>
   <link rel="stylesheet" type="text/css" href="/modules/users/client/css/users.css"/>
 </head>
 
@@ -15,31 +15,62 @@
       <li ui-sref-active="active">
         <a ui-sref="settings.profile">Edit Profile</a>
       </li>
-      <!--<li ui-sref-active="active">
-      <a ui-sref="settings.picture">Change Profile Picture</a>
-    </li>-->
-    <li ui-sref-active="active" ng-show="vm.user.provider === 'local'">
-      <a ui-sref="settings.password">Change Password</a>
-    </li>
-    <li>
-      <a ui-sref="admin.eventstream.list">Create/Edit Events</a>
-    </li>
-    <li>
-      <a ui-sref="admin.blogpost.list">Create/Edit Blogposts</a>
-    </li>
-    <li>
-      <a ui-sref="admin.reviews.list">Approve Reviews</a>
-    </li>
-    <li>
-      <a href="/api/auth/signout" target="_self">Signout</a>
-    </li>
+      <li ui-sref-active="active" ng-show="vm.user.provider === 'local'">
+        <a ui-sref="settings.password">Change Password</a>
+      </li>
+      <li>
+        <a ui-sref="admin.eventstream.list">Create/Edit Events</a>
+      </li>
+      <li>
+        <a ui-sref="admin.blogpost.list">Create/Edit Blogposts</a>
+      </li>
+      <li>
+        <a ui-sref="admin.reviews.list">Approve Reviews</a>
+      </li>
+      <li>
+        <a href="/api/auth/signout" target="_self">Signout</a>
+      </li>
     <!--<li ui-sref-active="active">
     <a ui-sref="settings.accounts">Manage Social Accounts</a>
-  </li>-->
+  </li>--
 </ul>
 </nav>
 <div class="col-sm-12 col-md-9 col-lg-10 col-xl-10 settings-view">
   <div><br></div>
   <div ui-view></div>
 </div>
+</div>-->
+
+<head>
+  <link rel="stylesheet" type="text/css" href="/modules/users/client/css/users.css"/>
+</head>
+
+<div class="page-header">
+  <h1>Settings</h1>
 </div>
+  <div class = "col-sid">
+  <!--  <nav class="col-sm-12 col-md-3 col-lg-2 col-xl-1 outline">-->
+  <div class = "column">
+      <div class="column">
+        <h3 class = "class">Profile</h3>
+        <button class="btn btn-primary"ui-sref-active="active" ui-sref="admin.users">Create User</button>
+        <button class="btn btn-primary" ui-sref-active="active" ui-sref="settings.profile">Edit Profile</button>
+        <button class="btn btn-primary"ui-sref-active="active" ng-show="vm.user.provider === 'local'" ui-sref="settings.password">Change Password</button>
+        <button class="btn btn-primary"href="/api/auth/signout" target="_self">Signout</button>
+      <!--<li ui-sref-active="active">
+      <a ui-sref="settings.accounts">Manage Social Accounts</a>
+    </li>-->
+      </div>
+    <div class = "column">
+      <h3>Tools</h3>
+      <button class="btn btn-primary" ui-sref="admin.eventstream.list">Create/Edit Events</button>
+      <button class="btn btn-primary" ui-sref="admin.blogpost.list">Create/Edit Blogposts</button>
+      <button class="btn btn-primary" ui-sref="admin.reviews.list">Approve Reviews</button>
+    </div>
+  </div>
+</div>
+  <!--</nav>-->
+  <div class="col-mid settings-view">
+  <!--  <div><br></div>-->
+    <div ui-view></div>
+  </div>

@@ -1,4 +1,4 @@
-h1{
+h1,h2,h3{
   color:white;
 }
 .outline{
@@ -48,7 +48,6 @@ h1{
 }
 
 
-
 /*Sign-in Page Css*/
 
 @media (min-width: 992px) {
@@ -87,9 +86,75 @@ div.centered {
 
 .signInBox{
   padding: 20px;
-  border-width: 10px;
   border-radius: 20px;
-  border-color: gray;
+  border: 10px solid #262626;
+  box-shadow: 10px 10px 10px #000000;
   background:black;
+}
 
+
+
+/*Button Grouping*/
+
+.btn-group button {
+  /*background-color: #4CAF50; /* Green background *
+    border: 1px solid green; /* Green border *
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    /*width: 50%; /* Set a width if needed */
+    display: block; /* Make the buttons appear below each other */
+}
+
+.btn-group button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+    background-color: #3e8e41;
+}
+
+.btn{
+  display:block;
+  padding: 10px;
+  margin: 10px;
+  font-size: 1.5em;
+}
+
+
+/*Panels*/
+.col-container {
+  display: table;
+  width: 100%;
+  max-height: 975px;
+}
+.col-mid {
+  max-height: inherit;
+  display: table-cell;
+  padding: 16px;
+  width:50%;
+
+}
+.col-sid {
+  display: table-cell;
+  padding: 16px;
+  width:50%
+  left: 30px;
+  background:none;
+  border: none;
+}
+
+.class{
+  text-align: left;
+  padding-left: 10px;
+  padding-top: 0px;
+}
+
+/*Edit Profile page*/
+.settingsDiv{
+  background: white;
+  padding: 20px;
+  width: inherit;
+   text-align: center;
 }
