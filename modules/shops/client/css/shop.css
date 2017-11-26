@@ -1,0 +1,85 @@
+/*Shop CSS Page*/
+
+/*List in column formate*/
+
+/*.custom{
+  margin: 20px;
+  padding: 25px;
+  border-radius: 20px;
+  border-top-left-radius: 20px;
+  display: block;
+  background: white;
+}
+
+h4{
+  font-weight: bold;
+}
+
+/*.center{
+  text-align: center;
+}*
+
+.spacing{
+  margin: 20px;
+}
+
+.btn{
+  color:white;
+  background:#800080;
+  border-color: #800080;
+  font-size: 16px;
+}
+
+.btn:hover{
+  color:white;
+  background:#330033;
+  border-color: #330033;
+  font-size: 16px;
+}
+
+.btn:target{
+    outline:none;
+  color:white;
+  background:#330033;
+  border-color: #330033;
+  font-size: 16px;
+}
+
+.btn:active{
+  color:white;
+  background:#330033;
+  border-color: #330033;
+  font-size: 16px;
+}
+
+.btn:focus{
+  outline:none;
+  color:white;
+  background:#330033;
+  border-color: #330033;
+  font-size: 16px;
+}
+
+
+
+
+/*.btn{
+  background:#800080;
+  border-color: #800080;
+  font-size: 16px;
+  color: white;
+  border-radius: 5px;
+  padding:5px;
+
+}
+
+.btn:hover {
+  color:white;
+  background:#330033;
+}
+
+
+.btn:active{
+  background: black;
+}
+*/
