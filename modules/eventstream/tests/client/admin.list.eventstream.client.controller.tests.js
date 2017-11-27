@@ -1,15 +1,15 @@
-(function () {
+﻿(function () {
   'use strict';
 
-  describe('Shops List Controller Tests', function () {
+  describe('Admin Eventstream List Controller Tests', function () {
     // Initialize global variables
-    var ShopsListController,
+    var EventstreamAdminListController,
       $scope,
       $httpBackend,
       $state,
       Authentication,
-      ShopsService,
-      mockShop;
+      EventstreamService,
+      mockEventstream;
 
     // The $resource service augments the response object with methods for updating and deleting the resource.
     // If we were to use the standard toEqual matcher, our tests would fail because the test values would not match
@@ -36,7 +36,7 @@
     // The injector ignores leading and trailing underscores here (i.e. _$httpBackend_).
     // This allows us to inject a service but then attach it to a variable
     // with the same name as the service.
-    beforeEach(inject(function ($controller, $rootScope, _$state_, _$httpBackend_, _Authentication_, _ShopsService_) {
+    beforeEach(inject(function ($controller, $rootScope, _$state_, _$httpBackend_, _Authentication_, _EventstreamService_) {
       // Set a new global scope
       $scope = $rootScope.$new();
 
@@ -44,22 +44,26 @@
       $httpBackend = _$httpBackend_;
       $state = _$state_;
       Authentication = _Authentication_;
-      ShopsService = _ShopsService_;
+      EventstreamService = _EventstreamService_;
 
-      // create mock shop
-      mockShop = new ShopsService({
+      // Ignore parent template get on state transitions
+      $httpBackend.whenGET('/modules/eventstream/client/views/list-eventstream.client.view.html').respond(200, '');
+      $httpBackend.whenGET('/modules/core/client/views/home.client.view.html').respond(200, '');
+
+      // create mock eventstream
+      mockEventstream = new EventstreamService({
         _id: '525a8422f6d0f87f0e407a33',
-        title: 'An Shop about MEAN',
+        title: 'An Eventstream about MEAN',
         content: 'MEAN rocks!'
       });
 
       // Mock logged in user
       Authentication.user = {
-        roles: ['user']
+        roles: ['user', 'admin']
       };
 
-      // Initialize the Shops List controller.
-      ShopsListController = $controller('ShopsListController as vm', {
+      // Initialize the Eventstream List controller.
+      EventstreamAdminListController = $controller('EventstreamAdminListController as vm', {
         $scope: $scope
       });
 
@@ -68,26 +72,23 @@
     }));
 
     describe('Instantiate', function () {
-      var mockShopList;
+      var mockEventstreamList;
 
       beforeEach(function () {
-        mockShopList = [mockShop, mockShop];
+        mockEventstreamList = [mockEventstream, mockEventstream];
       });
 
-      it('should send a GET request and return all shops', inject(function (ShopsService) {
+      it('should send a GET request and return all eventstream', inject(function (EventstreamService) {
         // Set POST response
-        $httpBackend.expectGET('/api/shops').respond(mockShopList);
+        $httpBackend.expectGET('/api/eventstream').respond(mockEventstreamList);
 
-        // Ignore parent template get on state transition
-        //$httpBackend.whenGET('/modules/core/client/views/home.client.view.html').respond(200, '');
-        $httpBackend.whenGET('/modules/eventstream/client/views/list-eventstream.client.view.html').respond(200, '');
-        
+
         $httpBackend.flush();
 
         // Test form inputs are reset
-        expect($scope.vm.shops.length).toEqual(2);
-        expect($scope.vm.shops[0]).toEqual(mockShop);
-        expect($scope.vm.shops[1]).toEqual(mockShop);
+        expect($scope.vm.eventstream.length).toEqual(2);
+        expect($scope.vm.eventstream[0]).toEqual(mockEventstream);
+        expect($scope.vm.eventstream[1]).toEqual(mockEventstream);
 
       }));
     });
