@@ -21,15 +21,15 @@
       });
     }));
 
-    /*it('should expose the authentication service', function () {
+    it('should expose the authentication service', function () {
       expect(scope.vm.authentication).toBe(Authentication);
-    });*/
+    });
 
-    /*it('should default menu to collapsed', function () {
+    it('should default menu to collapsed', function () {
       expect(scope.vm.isCollapsed).toBeFalsy();
-    });*/
+    });
 
-  /*  describe('when toggleCollapsibleMenu', function () {
+    describe('when toggleCollapsibleMenu', function () {
       var defaultCollapse;
       beforeEach(function () {
         defaultCollapse = scope.vm.isCollapsed;
@@ -45,7 +45,7 @@
         scope.vm.isCollapsed = !scope.vm.isCollapsed;
         expect(scope.vm.isCollapsed).toBe(defaultCollapse);
       });
-    });*/
+    });
 
     describe('when view state changes', function () {
       beforeEach(function () {
