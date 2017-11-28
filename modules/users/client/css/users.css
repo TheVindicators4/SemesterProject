@@ -134,11 +134,7 @@ div.centered {
 
 
 /*Panels*/
-.col-container {
-  display: table;
-  width: 100%;
-  max-height: 975px;
-}
+
 .col-mid2 {
   max-height: inherit;
   display: table-cell;
