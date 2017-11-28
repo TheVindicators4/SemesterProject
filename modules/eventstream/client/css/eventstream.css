@@ -25,6 +25,13 @@ h1,h2 {
   font-size: 20px;
 
 }
+.charity{
+  font-size: 15px;
+  text-align: left;
+  margin-left: 5px;
+}
+.column {
+    float: left;
 
 * {
     box-sizing: border-box;
