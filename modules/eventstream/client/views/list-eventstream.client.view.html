@@ -30,32 +30,76 @@
 </style>
 
 <!-- Beverly's HTML -->
-<div class="column middle col-10">
-  <h1 class= "eventPaddingText">Events</h1>
-  <div class="tableWrapper">
-    <table class="table">
-      <!-- To be relplaced with repeat function -->
-      <tr ng-repeat="eventstream in vm.eventstream" class = "rowBoards">
-        <td style="width:100px" height="100">
-          <p class = "eventPaddingInner" style="font-size:200%">{{eventstream.title}}</p>
-          <p class = "eventPaddingInner"  ng-bind="eventstream.created | date:'mediumDate'"><i>{{eventstream.created}}</i></p>
-          <img class = "eventPaddingInner" src="/modules/core/client/img/img-Social/logo1.jpg"  alt="Logo" style="width:300px;height:300px;"></img>
-          <p class = "eventPaddingInnerText">{{eventstream.content}}</p>
-        </td>
-      </tr>
-    </table>
+<!---<div class="column middle col-10">
+<h1 class= "eventPaddingText">Events</h1>
+<div class="tableWrapper">
+<table class = "table">
+<!-- To be relplaced with repeat function --
+<tr class = "roundedBorders" ng-repeat="eventstream in vm.eventstream" class = "rowBoards">
+<td style="width:100px" height="100">
+<p class = "eventPaddingInner" style="font-size:200%">{{eventstream.title}}</p>
+<p class = "eventPaddingInner"  ng-bind="eventstream.created | date:'mediumDate'"><i>{{eventstream.created}}</i></p>
+<img class = "eventPaddingInner" src="/modules/core/client/img/img-Social/logo1.jpg"  alt="Logo" style="width:300px;height:300px;"></img>
+<p class = "eventPaddingInnerText">{{eventstream.content}}</p>
+</td>
+</tr>
+</table>
+</div>
+</div>-->
+
+<!--<div class="column middle col-10">
+<h1 class= "eventPaddingText">Events</h1>
+<div class="tableWrapper">
+<table class = "table">
+<!-- To be relplaced with repeat function --
+<tr ng-repeat="eventstream in vm.eventstream" class = "rowBoards">
+<td style="width:100px" height="100">
+<p class = "eventPaddingInner" style="font-size:200%">{{eventstream.title}}</p>
+<p class = "eventPaddingInner"  ng-bind="eventstream.created | date:'mediumDate'"><i>{{eventstream.created}}</i></p>
+<img class = "eventPaddingInner" src="/modules/core/client/img/img-Social/logo1.jpg"  alt="Logo" style="width:300px;height:300px;"></img>
+<p class = "eventPaddingInnerText">{{eventstream.content}}</p>
+</td>
+</tr>
+</table>
+</div>
+</div>-->
+
+<!--<div class="column middle col-10">
+<div id = "scrollbox3" class="card">
+<div class="card text-center" ng-repeat="eventstream in vm.eventstream">
+<div class="card-header">{{eventstream.title}}</div>
+<div class="card-block">
+<h4 class="card-title">Special title treatment</h4>
+<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+</div>
+</div>
+</div>
+</div>-->
+
+
+<!--<div class = "row">
+<div class="column middle">
+    <h4 class = "eventPaddingText">Events</h4>
+ <div class = "panelBox" id= "style-2">
+    <div class="panel" ng-repeat="eventstream in vm.eventstream">
+      <div class = "eventPaddingTitle" style="font-size:200%">{{eventstream.title}}</div>
+      <div class="panel-body">
+        <p class = "eventPaddingInner"  ng-bind="eventstream.created | date:'mediumDate'"><i>{{eventstream.created}}</i></p>
+        <img class = "eventPaddingImage" src="/modules/core/client/img/img-Social/logo1.jpg"  alt="Logo" style="width:300px;height:300px;"></img>
+        <p class = "eventPaddingInnerText">{{eventstream.content}}</p>
+      </div>
+    </div>
   </div>
 </div>
 
-
-<!-- Email List Pop-up -->
+<!-- Email List Pop-up --
 <div class = "centerItem">
   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Join Mailing List!</button></div>
-  <!-- Modal -->
+  <!-- Modal --
   <div class="modal custom" id="myModal" role="dialog">
     <div class="modal-dialog" >
 
-      <!-- Modal content-->
+      <!-- Modal content--
       <div class="modal-content">
         <div class="modal-header-custom">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:black">x</button>
@@ -73,25 +117,39 @@
     </div>
   </div>
 
-  <script type="text/javascript">
-  jQuery(document).ready(function () {
-    var visited = jQuery.cookie('visited');
-    if (visited == 'yes') {
-      // don't show modal, cookie active
-    } else {
-      $("#myModal").modal("show");
-    }
-    jQuery.cookie('visited', 'yes', {
-      expires: 7 // the number of days cookie  will be effective
-    });
-
+<script type="text/javascript">
+jQuery(document).ready(function () {
+  var visited = jQuery.cookie('visited');
+  if (visited == 'yes') {
+    // don't show modal, cookie active
+  } else {
+    $("#myModal").modal("show");
+  }
+  jQuery.cookie('visited', 'yes', {
+    expires: 7 // the number of days cookie  will be effective
   });
-  </script>
+</script>-->
+</div>
+</div>-->
 
-  <!-- Cyrus's HTML-->
-  <div class = "column side">
+<div class = "col-container">
+<div class = "col-padding">
+  <div class = "col-mid">
+    <div class = "panelBox" id= "style-2">
+       <div class="panel" ng-repeat="eventstream in vm.eventstream">
+         <div class = "eventPaddingTitle" style="font-size:200%">{{eventstream.title}}</div>
+           <div class="panel-body">
+             <p class = "eventPaddingInner"  ng-bind="eventstream.created | date:'mediumDate'"><i>{{eventstream.created}}</i></p>
+             <img class = "eventPaddingImage" src="/modules/core/client/img/img-Social/logo1.jpg"  alt="Logo" style="width:300px;height:300px;"></img>
+             <p class = "eventPaddingInnerText">{{eventstream.content}}</p>
+           </div>
+       </div>
+     </div>
+  </div>
+</div>
 
-    <div class = "social-media">
+<div class = 'col-sid'>
+  <div class = "social-media">
       <!--Header for social media box-->
       <center class = "socialMediaText">Follow DJ E-LO on Social Media!</center>
       <!--Icon + links to DJ E-LO's facebook page-->
@@ -152,3 +210,6 @@
         <center><a href="https://www.paypal.com/fundraiser/charity/2739" target="blank" style="text-decoration : none;">
           <img src="/modules/core/client/img/img-Social/donate.gif" title="Donate"/></center>
   </div>
+</div>
+
+</div>

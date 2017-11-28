@@ -124,10 +124,42 @@ span.wpcf7-list-item {
   margin-left: -.02em;
 }
 </style>
-<div class="landing-page">
-
+<div class="col-12">
   <h1>Calender</h1>
+</div>
+<div class="list-group col-8">
+<button type="button" name="button">hello</button>
+  <div class="container-fluid" ng-repeat="blogpost in vm.blogpost">
 
+    <div class="blogposting">
+      <div class="col-8">
+        <div class="col-8">
+          <h2 class = "eventPaddingInner" style="font-size:200%">{{blogpost.title}}</h2>
+        </div>
+        <div class="col-8">
+          <p class = "eventPaddingInner"  ng-bind="blogpost.created | date:'mediumDate'"><i>{{blogpost.created}}</i></p>
+        </div>
+      </div>
+      <div class="col-8">
+        <hr>
+      </div>
+      <div class="col-8">
+        <div class="col-8">
+          <img class="eventPaddingInner img-responsive" src="http://placehold.it/900x300" alt="">
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <p class = "eventPaddingInnerText">{{blogpost.content}}</p>
+        </div>
+        <!--a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a-->
+      </div>
+      <div class="col-xs-12">
+        <br><br>
+      </div>
+    </div>
+    <div class="col-md-12"><br><br></div>
+  </div>
+</div>
+<div class="col-4">
   <div class="form-appointment">
     <div class="wpcf7" id="wpcf7-f560-p590-o1">
       <form action="/landing-page-template-do-not-delete/#wpcf7-f560-p590-o1" method="post" class="wpcf7-form" novalidate="novalidate" _lpchecked="1">
