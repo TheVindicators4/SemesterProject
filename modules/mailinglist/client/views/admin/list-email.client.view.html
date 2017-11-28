@@ -1,0 +1,26 @@
+﻿<section>
+  <div class="page-header">
+    <h1>
+      Events
+      <a class="btn btn-primary pull-right" data-ui-sref="admin.email.create">
+        <i class="glyphicon glyphicon-plus"></i>
+      </a>
+    </h1>
+  </div>
+  <div class="list-group">
+    <a data-ng-repeat="email in vm.email" data-ui-sref="admin.email.edit({emailId: email._id})" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span data-ng-bind="email.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="email.user" ng-bind="email.user.displayName"></span>
+        <span ng-if="!email.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" data-ng-bind="email.title"></h4>
+      <p class="list-group-item-text" data-ng-bind="email.content"></p>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" data-ng-if="email.$resolved && !email.length">
+    No events yet, why don't you <a data-ui-sref="admin.email.create">create one</a>?
+  </div>
+</section>
