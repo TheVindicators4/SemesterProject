@@ -11,6 +11,11 @@
   <style media="screen">
   .angular-with-newlines {
     white-space: pre-wrap;
+    font-size: 1.0em;
+    padding:5px;
+    font-weight:500;
+    font-family: 'Sanchez', serif;
+    color:black
   }
   .group:after {
     content: "";
@@ -19,7 +24,7 @@
   }
 
   .landing-page {
-    width: 882px;
+    width: 1200px;
     margin: 0 auto 0;
   }
 
@@ -137,14 +142,20 @@
   </style>
 
   <head>
-    <link rel="stylesheet" type="text/css" href="/modules/eventstream/client/css/eventstream.css"/>
+    <link rel="stylesheet" type="text/css" href="/modules/core/client/css/eventstream.css"/>
+    <link rel="stylesheet" type="text/css" href="/modules/core/client/css/eventstream.css"/>
+
+
   </head>
-  <div class="landing-page">
+  <div>
+    <div class = "page-header center">
     <a ng-repeat="aboutMessage in vm.aboutMessages">
       <h2>{{aboutMessage.title}}</h2>
     </a>
-    <div class=landing-page>
-      <a ng-repeat="aboutMessage in vm.aboutMessages" class="list-group-item">
+    </div>
+
+    <div class="custom2">
+      <a ng-repeat="aboutMessage in vm.aboutMessages">
         <div class="image-wrap" id="wrapper">
           <img alt="logo.JS" class="img-responsive text-center" src="/modules/core/client/img/img-Social/DJELO2.png" width="50%" style="padding:20px" align="left"/>
         </div>

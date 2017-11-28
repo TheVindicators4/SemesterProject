@@ -8,8 +8,6 @@
 }
 
 body {
-    background-color: #f1f1f1;
-    padding: 20px;
     font-family: Sanchez;
 }
 .column {
@@ -22,11 +20,13 @@ body {
 .content {
     background-color: white;
     padding: 10px;
+    border-radius: 10px;
 }
 
 /* Center website */
 .gallery{
   font-size: 50px;
+  padding-top:20px;
 }
 .main {
     max-width: 1000px;
@@ -219,24 +219,27 @@ h1 {
         width: 100%;
     }
 }
+
+
+
 </style>
 </head>
 <body>
 
 <!-- MAIN (Center website) -->
 <div class="main">
-<h1><center>Gallery</center></h1>
 <div class="gallery">
   <center>Gallery</center>
 </div>
 <hr>
 
 <h2></h2>
+
 <!-- Filter categories -->
-<input type="radio" onclick="filterSelection('all')" name="category" checked> All
-<input type="radio" onclick="filterSelection('head')" name="category"> Headshots
-<input type="radio" onclick="filterSelection('eq')" name="category"> Equipment/Setups
-<input type="radio" onclick="filterSelection('fan')" name="category"> Fan Love
+<input class= "radioText"type="radio" onclick="filterSelection('all')" name="category" checked> All
+<input class= "radioText"type="radio" onclick="filterSelection('head')" name="category"> Headshots
+<input class= "radioText"type="radio" onclick="filterSelection('eq')" name="category"> Equipment/Setups
+<input class= "radioText"type="radio" onclick="filterSelection('fan')" name="category"> Fan Love
 
 <!-- Portfolio Gallery Grid -->
 <!-- All images listed with captions -->

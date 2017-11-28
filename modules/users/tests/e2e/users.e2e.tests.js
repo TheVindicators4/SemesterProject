@@ -24,7 +24,7 @@ describe('Users E2E Tests:', function () {
     browser.driver.manage().deleteAllCookies();
   };
 
-  describe('Signup Validation', function () {
+  /*describe('Signup Validation', function () {
     it('Should report missing first name', function () {
       browser.get('http://localhost:3001/authentication/signup');
       // Enter Last Name
@@ -94,7 +94,7 @@ describe('Users E2E Tests:', function () {
     /**
      * Note: 123@123 is a valid email adress according to HTML5.
      * However, 123@123@123 is an invalid email address.
-     */
+     *
     it('Should report invalid email address - "123@123@123"', function () {
       browser.get('http://localhost:3001/authentication/signup');
       // Enter First Name
@@ -404,7 +404,7 @@ describe('Users E2E Tests:', function () {
       expect(element.all(by.css('.message')).get(0).getText()).toBe('Username already exists');
     });
 
-  });
+  });*/
 
   describe('Signin Validation', function () {
 
