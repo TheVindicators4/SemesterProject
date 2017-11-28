@@ -52,9 +52,9 @@
         controllerAs: 'vm'
       })
       .state('contactme', {
-        url: '/contact',
-        templateUrl: '/modules/core/client/views/contactme.client.view.html',
-        controller: 'HomeController',
+        url: '/contactme',
+        templateUrl: '/modules/calendar/client/views/calendar.client.view.html',
+        controller: 'CalendarListController',
         controllerAs: 'vm'
       })
       .state('login', {
