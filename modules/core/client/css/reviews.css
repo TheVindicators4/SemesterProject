@@ -6,6 +6,15 @@
     font-family: 'Sanchez', serif;
 }
 
+.divLine{
+  border-style: inset;
+  border-width: 1px;
+  display:block;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-color: gray;
+}
+
 .form-control{
     font-size: 1.0em;
     padding:5px;
@@ -19,9 +28,9 @@
   padding-left:50px;
   padding-right:50px;
   border-radius: 20px;
-  background: #330014;
-  border: 5px solid #1a000a;
-  box-shadow: 5px 5px 10px #000000;
+/*  background: transparent;
+  border: 5px solid #808080;
+  box-shadow: 5px 5px 10px #000000;*/
 }
 
 .list-group{
@@ -32,15 +41,18 @@
   margin: 10px;
   border-radius: 20px;
   display: block;
-  background: #330014;
-  border: 5px solid #1a000a;
+  /*background:#ffe6f0;
+  border: 5px solid #660029;*/
+  background: white;
+  border: 5px solid #d9d9d9;
+
   box-shadow: 5px 5px 10px #000000;
   font-family: 'Sanchez', serif;
 }
 
 .list-group-itemMOD:hover{
 text-decoration: none;
-background: #800033;
+background: #ffb3d1;
 border: 5px solid #660029;
 
 }
@@ -48,20 +60,25 @@ border: 5px solid #660029;
 
 .list-group-item-heading{
   font-size: 2.0em;
-  color:white;
+  color:black;
+  padding: 20px;
+  padding-bottom: 2px;
   border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  /*border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   padding: 20px;
   padding-bottom: 20px;
-  background:#4d001f;
+  background:#4d001f;*/
 
 }
 
 .list-group-item-text2{
-    font-size: 20px;
-  color:white;
+  font-size: 20px;
+  font-weight: bold;
+  color:black;
   padding: 30px;
   padding-bottom: 25px;
-  padding-top: 20px;
+  padding-top: 10px;
 
 }

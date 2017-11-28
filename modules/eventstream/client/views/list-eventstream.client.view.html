@@ -3,9 +3,9 @@
   <link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet">
   <!--Includes css file-->
   <!--<link rel="stylesheet" href="/modules/core/client/css/social-media-box.css">-->
-  <!-- <link rel="stylesheet" href="/modules/eventstream/client/css/theme.css"> -->
+   <link rel="stylesheet" href="/modules/eventstream/client/css/theme.css">
   <link rel="stylesheet" href="/modules/core/client/css/eventstream.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
 </head>
 
 <div class = "col-container">
@@ -31,38 +31,6 @@
       <p>
         <hr>
       </p>
-      <!-- Modal -->
-      <div class="modal custom" id="myModal" role="dialog">
-        <div class="modal-dialog" >
-
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header-custom">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:black">x</button>
-              <h4 class="modal-title-custom" style="text-align: center">Join the DJ ELO<br> Mailing List</h4>
-            </div>
-            <div class="modal-body-custom">
-              <p style="text-align:center">Stay updated on the newest happenings on DJ ELO!</p>
-
-              <!-- from mailchimp -->
-              <form action="https://herokuapp.us17.list-manage.com/subscribe/post" method="POST">
-                <input type="hidden" name="u" value="3755f95698833862e584ab7ac">
-                <input type="hidden" name="id" value="606f4077f6">
-                <div class="modal-body-custom"  style="text-align:center">
-                  <input type="text" placeholder="First Name" name="MERGE1" required="" class="news_input" style="color:black">
-                  <input type="text" placeholder="Last Name" name="MERGE2" required="" class="news_input" style="color:black">
-                  <br>
-                  <br>
-                  <input type="email" placeholder="Email Address" name="MERGE0" required="" class="news_input" style="color:black">
-                  <br>
-                  <br>
-                  <input type="submit" value="Sign Up!" class="news_btn" style="color:black">
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
 
     <!--Header for social media box-->
     <center>
@@ -121,6 +89,40 @@
 </div>
 <!--</div>-->
 </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal custom" id="myModal" role="dialog">
+  <div class="modal-dialog" >
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header-custom">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:black">x</button>
+        <h4 class="modal-title-custom" style="text-align: center">Join the DJ ELO<br> Mailing List</h4>
+      </div>
+      <div class="modal-body-custom">
+        <p style="text-align:center">Stay updated on the newest happenings on DJ ELO!</p>
+
+        <!-- from mailchimp -->
+        <form action="https://herokuapp.us17.list-manage.com/subscribe/post" method="POST">
+          <input type="hidden" name="u" value="3755f95698833862e584ab7ac">
+          <input type="hidden" name="id" value="606f4077f6">
+          <div class="modal-body-custom"  style="text-align:center">
+            <input type="text" placeholder="First Name" name="MERGE1" required="" class="news_input" style="color:black">
+            <input type="text" placeholder="Last Name" name="MERGE2" required="" class="news_input" style="color:black">
+            <br>
+            <br>
+            <input type="email" placeholder="Email Address" name="MERGE0" required="" class="news_input" style="color:black">
+            <br>
+            <br>
+            <input type="submit" value="Sign Up!" class="news_btn" style="color:black">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script type="text/javascript">
