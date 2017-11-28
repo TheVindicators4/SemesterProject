@@ -2,12 +2,7 @@
   <div class="page-header">
     <h1>{{vm.calendar._id ? 'Edit Calendar' : 'New Calendar'}}</h1>
   </div>
-  <div class="pull-right">
-    <a ng-show="vm.calendar._id" class="btn btn-primary" ng-click="vm.remove()">
-      <i class="glyphicon glyphicon-trash"></i>
-    </a>
-  </div>
-  <div class="col-md-12">
+    <div class="col-md-12">
     <form name="vm.form.calendarForm" class="form-horizontal" ng-submit="vm.save(vm.form.calendarForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group">
