@@ -8,154 +8,123 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script> -->
-  <link rel="stylesheet" href="/modules/eventstream/client/css/theme.css">
-  <link rel="stylesheet" href="/modules/eventstream/client/css/eventstream.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!--<link rel="stylesheet" href="/modules/eventstream/client/css/theme.css">-->
+  <link rel="stylesheet" href="/modules/core/client/css/eventstream.css">
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
 </head>
 
-
-<!--For email popup-->
-<style>
-#myBtn {
-  width: 700px;
-  padding: 10px;
-  font-size:20px;
-  position: absolute;
-  margin: 0 auto;
-  right: 0;
-  left: 0;
-  bottom: 50px;
-  z-index: 9999;
-}
-</style>
-
-<!-- Beverly's HTML -->
-<div class="column middle col-10">
-  <h1 class= "eventPaddingText">Events</h1>
-  <div class="tableWrapper">
-    <table class="table">
-      <!-- To be relplaced with repeat function -->
-      <tr ng-repeat="eventstream in vm.eventstream" class = "rowBoards">
-        <td style="width:100px" height="100">
-          <p class = "eventPaddingInner" style="font-size:200%">{{eventstream.title}}</p>
-          <p class = "eventPaddingInner"  ng-bind="eventstream.created | date:'mediumDate'"><i>{{eventstream.created}}</i></p>
-          <img class = "eventPaddingInner" src="/modules/core/client/img/img-Social/logo1.jpg"  alt="Logo" style="width:300px;height:300px;"></img>
-          <p class = "eventPaddingInnerText">{{eventstream.content}}</p>
-        </td>
-      </tr>
-    </table>
+<div class = "col-container">
+<div class = "col-padding">
+  <div class = "col-mid">
+    <div class = "panelBox" id= "style-2">
+       <div class="panel" ng-repeat="eventstream in vm.eventstream">
+         <div class = "eventPaddingTitle" style="font-size:200%">{{eventstream.title}}</div>
+           <div class="panel-body">
+             <p class = "eventPaddingInner"  ng-bind="eventstream.created | date:'mediumDate'"><i>{{eventstream.created}}</i></p>
+             <img class = "eventPaddingImage" src="/modules/core/client/img/img-Social/logo1.jpg"  alt="Logo" style="width:300px;height:300px;"></img>
+             <p class = "eventPaddingInnerText">{{eventstream.content}}</p>
+           </div>
+       </div>
+     </div>
   </div>
 </div>
 
-<!-- Email List Pop-up -->
-<div class = "centerItem">
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Join Mailing List!</button></div>
-  <!-- Modal -->
-  <div class="modal custom" id="myModal" role="dialog">
-    <div class="modal-dialog" >
 
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header-custom">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:black">x</button>
-          <h4 class="modal-title-custom" style="text-align: center">Join the DJ ELO<br>Mailing List</h4>
-        </div>
-        <div class="modal-body-custom">
-          <p style="text-align:center">Stay updated on the newest happenings on DJ ELO!</p>
+<div class = 'col-sid'>
+<!--  <div class = "social-media">-->
+      <button type="button" class="btn" data-toggle="modal" data-target="#myModal">Join Mailing List!</button>
+      <p>
+        <hr>
+      </p>
+      <!-- Modal -->
+      <div class="modal custom" id="myModal" role="dialog">
+        <div class="modal-dialog" >
 
-          <!-- from mailchimp -->
-          <form action="https://herokuapp.us17.list-manage.com/subscribe/post" method="POST">
-            <input type="hidden" name="u" value="3755f95698833862e584ab7ac">
-            <input type="hidden" name="id" value="606f4077f6">
-            <div class="modal-body-custom"  style="text-align:center">
-              <input type="text" placeholder="Your Name" name="MERGE1" required="" class="news_input" style="color:black">
-              <input type="email" placeholder="Email Address" name="MERGE0" required="" class="news_input" style="color:black">
-              <br>
-              <br>
-              <input type="submit" value="Sign Up!" class="news_btn" style="color:black">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header-custom">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:black">x</button>
+              <h4 class="modal-title-custom" style="text-align: center">Join the DJ ELO <br> Mailing List</h4>
             </div>
-          </form>
+            <div class="modal-body-custom">
+              <p style="text-align:center">Stay updated on the newest happenings on DJ ELO!</p>
+              <div class="form-group"><label>Name</label><input class="form-control email" data-placement="top" data-trigger="manual" type="text"></div>
+              <div class="form-group"><label>E-Mail</label><input class="form-control email" data-placement="top" data-trigger="manual" data-content="Must be a valid e-mail address (user@gmail.com)" type="text"></div>
+              <div style="text-align:center">
+                <button type="button" type="submit" class="btn btn-default">Submit!!</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    <!--Header for social media box-->
+    <center>
+      <a href="https://www.facebook.com/djeloglobal/" target="blank" style="text-decoration : none;">
+        <img src="/modules/core/client/img/img-Social/facebook3.png" width="60" height="60" title="Like DJ E-LO on Facebook"/>
+      </a>
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      <!--Icon + links to DJ E-LO's instagram page-->
+      <a href="https://www.instagram.com/iamdjelo/?hl=en" target="blank" style="text-decoration : none;">
+        <img src="/modules/core/client/img/img-Social/instagram3.png" width="60" height="60" title="Follow DJ E-LO on Instagram"/>
+      </a>
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      <!--Icon + links to DJ E-LO's twitter page-->
+      <a href="https://twitter.com/therealdjelo?lang=en" target="blank" style="text-decoration : none;">
+        <img src="/modules/core/client/img/img-Social/twitter3.png" width="60" height="60" title="Follow DJ E-LO on Twitter"/>
+      </a>
+      <p>
+        <hr>
+      </p>
+    </center>
+  <!--Displays snapcode and is able to be scanned straight from website-->
+  <div class = "snapcode">
+    <center class="socialMediaText">Scan to Add DJ E-LO on Snapchat!</center>
+    <!-- Adds space between above text and snapcode -->
+    <p></p>
+    <center><img class="img-responsive" src="/modules/core/client/img/img-Social/elo-snapcode.png" width="200" height="200"></center>
+  </div>
+  <p>
+    <hr>
+  </p>
+  <!--Adds spotify playlist widget-->
+  <div class = "spotify-player">
+    <center class="socialMediaText">DJ E-LO's Favorite Jams</p></center>
+    <iframe src="https://open.spotify.com/embed/user/r2b95cdfyouorre5l3r11weri/playlist/3XGANZySqqOJrxvmKdKQao"
+            width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
   </div>
 
-  <script type="text/javascript">
-  jQuery(document).ready(function () {
-    var visited = jQuery.cookie('visited');
-    if (visited == 'yes') {
-      // don't show modal, cookie active
-    } else {
-      $("#myModal").modal("show");
-    }
-    jQuery.cookie('visited', 'yes', {
-      expires: 7 // the number of days cookie  will be effective
-    });
 
+  <!--Div for charity section-->
+  <div class = "charity">
+    <center class = "socialMediaText">DJ E-LO Giving Back</p></center>
+    <center><img class="img-responsive" src="/modules/core/client/img/img-Social/charity.png" width="200" height="100"></center>
+    <p></p>
+    <class = "charityText">A big part of why DJ E-LO began DJing was to help raise money for charity. DJ E-LO is a big supporter of the St. Jude Children's Research Hospital. St. Jude works tediously to treat cancer and other life-threatening diseases for children. Part of what makes St. Jude so great is that care is absolutely free, so no child gets refused treatment for financial reasons. As a result, these children rely on the generousity of donors to receive their treatment. Click here to support this amazing cause!</p>
+      <!--Adds button that redirects to paypal in new tab-->
+      <center><a href="https://www.paypal.com/fundraiser/charity/2739" target="blank" style="text-decoration : none;">
+        <img src="/modules/core/client/img/img-Social/donate.gif" title="Donate"/></center>
+</div>
+<!--</div>-->
+</div>
+</div>
+
+<script type="text/javascript">
+jQuery(document).ready(function () {
+  var visited = jQuery.cookie('visited');
+  if (visited == 'yes') {
+    // don't show modal, cookie active
+  } else {
+    $("#myModal").modal("show");
+  }
+  jQuery.cookie('visited', 'yes', {
+    expires: 7 // the number of days cookie  will be effective
   });
-  </script>
-
-<!-- Cyrus's HTML-->
-  <div class = "column side">
-
-    <div class = "social-media">
-      <!--Header for social media box-->
-      <center class = "socialMediaText">Follow DJ E-LO on Social Media!</center>
-      <!--Icon + links to DJ E-LO's facebook page-->
-      <!--NOTICE: Additional social media icons in img folder. Can ask which ones he likes the most-->
-      <center>
-        <a href="https://www.facebook.com/djeloglobal/" target="blank" style="text-decoration : none;">
-          <img src="/modules/core/client/img/img-Social/facebook3.png" width="60" height="60" title="Like DJ E-LO on Facebook"/>
-        </a>
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        <!--Icon + links to DJ E-LO's instagram page-->
-        <a href="https://www.instagram.com/iamdjelo/?hl=en" target="blank" style="text-decoration : none;">
-          <img src="/modules/core/client/img/img-Social/instagram3.png" width="60" height="60" title="Follow DJ E-LO on Instagram"/>
-        </a>
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        <!--Icon + links to DJ E-LO's twitter page-->
-        <a href="https://twitter.com/therealdjelo?lang=en" target="blank" style="text-decoration : none;">
-          <img src="/modules/core/client/img/img-Social/twitter3.png" width="60" height="60" title="Follow DJ E-LO on Twitter"/>
-        </a>
-        <p>
-          <hr>
-        </p>
-      </center>
-    </div>
-    <!--Displays snapcode and is able to be scanned straight from website-->
-    <div class = "snapcode">
-      <center class="socialMediaText">Scan to Add DJ E-LO on Snapchat!</center>
-      <!-- Adds space between above text and snapcode -->
-      <p></p>
-      <center><img class="img-responsive" src="/modules/core/client/img/img-Social/elo-snapcode.png" width="200" height="200"></center>
-    </div>
-    <p>
-      <hr>
-    </p>
-    <!--Adds spotify playlist widget-->
-    <div class = "spotify-player">
-      <center class="socialMediaText">DJ E-LO's Favorite Jams</p></center>
-      <iframe src="https://open.spotify.com/embed/user/r2b95cdfyouorre5l3r11weri/playlist/3XGANZySqqOJrxvmKdKQao"
-              width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
-    </div>
-    <p>
-      <hr>
-    </p>
-    <!--Div for charity section-->
-    <div class = "charity">
-      <center class = "socialMediaText">DJ E-LO Giving Back</p></center>
-      <center><img class="img-responsive" src="/modules/core/client/img/img-Social/charity.png" width="200" height="100"></center>
-      <p></p>
-      <class = "charityText">A big part of why DJ E-LO began DJing was to help raise money for charity. DJ E-LO is a big supporter of the St. Jude Children's Research Hospital. St. Jude works tediously to treat cancer and other life-threatening diseases for children. Part of what makes St. Jude so great is that care is absolutely free, so no child gets refused treatment for financial reasons. As a result, these children rely on the generousity of donors to receive their treatment. Click here to support this amazing cause!</p>
-        <!--Adds button that redirects to paypal in new tab-->
-        <center><a href="https://www.paypal.com/fundraiser/charity/2739" target="blank" style="text-decoration : none;">
-          <img src="/modules/core/client/img/img-Social/donate.gif" title="Donate"/></center>
-  </div>
+</script>

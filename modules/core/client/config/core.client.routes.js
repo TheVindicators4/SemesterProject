@@ -63,6 +63,12 @@
         controller: 'AuthenticationController',
         controllerAs: 'vm'
       })
+      .state('profile', {
+        url: '/settings',
+        templateUrl: '/modules/users/client/views/settings/settings.client.view.html',
+        controller: 'SettingsController',
+        controllerAs: 'vm'
+      })
       .state('not-found', {
         url: '/not-found',
         templateUrl: '/modules/core/client/views/404.client.view.html',
