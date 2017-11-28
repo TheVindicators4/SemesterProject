@@ -2,8 +2,8 @@
   'use strict';
 
   angular
-    .module('core.routes')
-    .config(routeConfig);
+  .module('core.routes')
+  .config(routeConfig);
 
   routeConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
@@ -27,82 +27,70 @@
     });
 
     $stateProvider
-      .state('home', {
-        url: '/',
-        templateUrl: '/modules/eventstream/client/views/list-eventstream.client.view.html',
-        controller: 'EventstreamListController',
-        controllerAs: 'vm'
-      })
-      .state('about', {
-        url: '/about',
-        templateUrl: '/modules/aboutmessage/client/views/list-aboutMessages.client.view.html',
-        controller: 'AboutMessagesListController',
-        controllerAs: 'vm'
-      })
-      .state('photo', {
-       url: '/photo',
-       templateUrl: '/modules/core/client/views/photos.client.view.html',
-       controller: 'HomeController',
-       controllerAs: 'vm'
-     })
-    /*  .state('reviews', {
-        url: '/reviews',
-        templateUrl: '/modules/reviews/client/views/list-reviews.client.view.html',
-        controller: 'ReviewsController',
-        controllerAs: 'vm'
-      })*/
-      .state('contactme', {
-        url: '/contact',
-        templateUrl: '/modules/core/client/views/contactme.client.view.html',
-        controller: 'HomeController',
-        controllerAs: 'vm'
-      })
-      .state('login', {
-        url: '/login',
-        templateUrl: '/modules/users/client/views/authentication/signin.client.view.html',
-        controller: 'AuthenticationController',
-        controllerAs: 'vm'
-      })
-      .state('profile', {
-        url: '/settings',
-        templateUrl: '/modules/users/client/views/settings/settings.client.view.html',
-        controller: 'SettingsController',
-        controllerAs: 'vm'
-      })
-      .state('not-found', {
-        url: '/not-found',
-        templateUrl: '/modules/core/client/views/404.client.view.html',
-        controller: 'ErrorController',
-        controllerAs: 'vm',
-        params: {
-          message: function ($stateParams) {
-            return $stateParams.message;
-          }
-        },
-        data: {
-          ignoreState: true
+    .state('home', {
+      url: '/',
+      templateUrl: '/modules/eventstream/client/views/list-eventstream.client.view.html',
+      controller: 'EventstreamListController',
+      controllerAs: 'vm'
+    })
+    .state('about', {
+      url: '/about',
+      templateUrl: '/modules/aboutmessage/client/views/list-aboutMessages.client.view.html',
+      controller: 'AboutMessagesListController',
+      controllerAs: 'vm'
+    })
+    .state('photo', {
+      url: '/photo',
+      templateUrl: '/modules/core/client/views/photos.client.view.html',
+      controller: 'HomeController',
+      controllerAs: 'vm'
+    })
+    .state('login', {
+      url: '/login',
+      templateUrl: '/modules/users/client/views/authentication/signin.client.view.html',
+      controller: 'AuthenticationController',
+      controllerAs: 'vm'
+    })
+    .state('profile', {
+      url: '/settings',
+      templateUrl: '/modules/users/client/views/settings/settings.client.view.html',
+      controller: 'SettingsController',
+      controllerAs: 'vm'
+    })
+    .state('not-found', {
+      url: '/not-found',
+      templateUrl: '/modules/core/client/views/404.client.view.html',
+      controller: 'ErrorController',
+      controllerAs: 'vm',
+      params: {
+        message: function ($stateParams) {
+          return $stateParams.message;
         }
-      })
-      .state('bad-request', {
-        url: '/bad-request',
-        templateUrl: '/modules/core/client/views/400.client.view.html',
-        controller: 'ErrorController',
-        controllerAs: 'vm',
-        params: {
-          message: function ($stateParams) {
-            return $stateParams.message;
-          }
-        },
-        data: {
-          ignoreState: true
+      },
+      data: {
+        ignoreState: true
+      }
+    })
+    .state('bad-request', {
+      url: '/bad-request',
+      templateUrl: '/modules/core/client/views/400.client.view.html',
+      controller: 'ErrorController',
+      controllerAs: 'vm',
+      params: {
+        message: function ($stateParams) {
+          return $stateParams.message;
         }
-      })
-      .state('forbidden', {
-        url: '/forbidden',
-        templateUrl: '/modules/core/client/views/403.client.view.html',
-        data: {
-          ignoreState: true
-        }
-      });
+      },
+      data: {
+        ignoreState: true
+      }
+    })
+    .state('forbidden', {
+      url: '/forbidden',
+      templateUrl: '/modules/core/client/views/403.client.view.html',
+      data: {
+        ignoreState: true
+      }
+    });
   }
 }());

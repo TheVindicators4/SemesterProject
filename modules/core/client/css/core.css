@@ -206,3 +206,7 @@ body {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: black;
+}
