@@ -94,7 +94,6 @@ h1,h2 {
   border-color:#804000;
 }
 /*Blue*/
-
 .blue{
   color:white;
   background:#5900b3;
@@ -123,7 +122,6 @@ h1,h2 {
 }
 
 /*Pink*/
-
 .pink{
   color:white;
   background:#ff0066;
@@ -149,6 +147,34 @@ h1,h2 {
   color:white;
   background:#330066;
   border-color: #330066;
+}
+
+/*lightBlue*/
+.lightBlue{
+  color:white;
+  background:#2eb8b8;
+  border-color:#2eb8b8;
+}
+.lightBlue:hover{
+  color:white;
+  background:#145252;
+  border-color:#145252;
+}
+
+.lightBlue:target{
+  color:white;
+  background:#145252;
+  border-color:#145252;
+}
+.lightBlue:active{
+  color:white;
+  background:#145252;
+  border-color:#145252;
+}
+.lightBlue:focus{
+  color:white;
+  background:#145252;
+  border-color:#145252;
 }
 
 
