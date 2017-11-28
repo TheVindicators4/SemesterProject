@@ -28,9 +28,9 @@
 
     $stateProvider
       .state('home', {
-        url: '/home',
-        templateUrl: '/modules/core/client/views/home.client.view.html',
-        controller: 'HomeController',
+        url: '/',
+        templateUrl: '/modules/eventstream/client/views/list-eventstream.client.view.html',
+        controller: 'EventstreamListController',
         controllerAs: 'vm'
       })
       .state('about', {

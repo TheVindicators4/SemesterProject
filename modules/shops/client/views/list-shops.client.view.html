@@ -1,0 +1,18 @@
+<section>
+  <div class="page-header">
+    <h1>Shops</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="shop in vm.shops" ui-sref="shops.view({ shopId: shop._id })" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="shop.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="shop.user" ng-bind="shop.user.displayName"></span>
+        <span ng-if="!shop.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="shop.title"></h4>
+      <p class="list-group-item-text" ng-bind="shop.content"></p>
+    </a>
+  </div>
+</section>

@@ -1,36 +1,77 @@
-<div class="image">
-  <div  class="textTop">
-    <h1>
-    <img src="/modules/core/client/img/nav/ELO_LOGO_COLOR.png" alt="ELO LOGO" style="width:209;height:223px;">
-    </h1>
+<div class="image2">
+  <span onclick="openNav()">open</span
+    <div  class="textTop">
+      <h1>
+        <img src="/modules/core/client/img/nav/ELO_LOGO_COLOR.png" alt="ELO LOGO" style="padding-top:20%;width:209;height:230px;">
+      </h1>
+    </div>
   </div>
-</div>
-<!-- Navbar using bootstrap -->
-<nav class="navbar top navbar-expand-lg" id = "navbar-font" >
-  <div class="collapse navbar-collapse" id="navbarNavDropdown" ng-controller="HeaderController as vm">
-    <ul class="navbar-nav">
-      <!-- inside each href put the link to the proper page -->
-      <li class="nav-item">
-        <a class="nav-link" ui-sref="eventstream.list">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link"  ui-sref="about">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Shop</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="photo">Photos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" ui-sref="blogpost.list">Blog</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" ui-sref="reviews.list">Reviews</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="contact">Contact</a>
-      </li>
-    </ul>
+  <!-- Navbar using bootstrap -->
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a class="nav-link" onclick="closeNav()" ui-sref="eventstream.list">Home</a>
+    <a class="nav-link" onclick="closeNav()" ui-sref="about">About</a>
+    <a class="nav-link" onclick="closeNav()" href="#">Shop</a>
+    <a class="nav-link" onclick="closeNav()" href="photo">Photos</a>
+    <a class="nav-link" onclick="closeNav()" ui-sref="blogpost.list">Blog</a>
+    <a class="nav-link" onclick="closeNav()" ui-sref="reviews.list">Reviews</a>
+    <a class="nav-link" onclick="closeNav()" href="contact">Contact</a>
   </div>
-</nav>
+  <div class = "showHide">
+    <nav class="navbar top navbar-expand-lg" id = "navbar-font" >
+      <div class="collapse navbar-collapse" ng-controller="HeaderController as vm">
+        <ul class="navbar-nav">
+          <!-- inside each href put the link to the proper page -->
+          <li class="nav-item">
+            <a class="nav-link" ui-sref="eventstream.list">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  ui-sref="about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="photo">Photos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ui-sref="blogpost.list">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ui-sref="reviews.list">Reviews</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Mobile Nav bar-->
+  <div class = "showHideMobile">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">WebSiteName</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Page 1</a></li>
+            <li><a href="#">Page 2</a></li>
+            <li><a href="#">Page 3</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
