@@ -1,15 +1,15 @@
 ﻿(function () {
   'use strict';
 
-  describe('Shops Admin Controller Tests', function () {
+  describe('Articles Admin Controller Tests', function () {
     // Initialize global variables
-    var ShopsAdminController,
+    var ArticlesAdminController,
       $scope,
       $httpBackend,
       $state,
       Authentication,
-      ShopsService,
-      mockShop,
+      ArticlesService,
+      mockArticle,
       Notification;
 
     // The $resource service augments the response object with methods for updating and deleting the resource.
@@ -37,7 +37,7 @@
     // The injector ignores leading and trailing underscores here (i.e. _$httpBackend_).
     // This allows us to inject a service but then attach it to a variable
     // with the same name as the service.
-    beforeEach(inject(function ($controller, $rootScope, _$state_, _$httpBackend_, _Authentication_, _ShopsService_, _Notification_) {
+    beforeEach(inject(function ($controller, $rootScope, _$state_, _$httpBackend_, _Authentication_, _ArticlesService_, _Notification_) {
       // Set a new global scope
       $scope = $rootScope.$new();
 
@@ -45,17 +45,17 @@
       $httpBackend = _$httpBackend_;
       $state = _$state_;
       Authentication = _Authentication_;
-      ShopsService = _ShopsService_;
+      ArticlesService = _ArticlesService_;
       Notification = _Notification_;
 
       // Ignore parent template get on state transitions
-      //$httpBackend.whenGET('/modules/core/client/views/home.client.view.html').respond(200, '');
-      $httpBackend.whenGET('/modules/eventstream/client/views/list-eventstream.client.view.html').respond(200, '');
+    //  $httpBackend.whenGET('/modules/core/client/views/home.client.view.html').respond(200, '');
+        $httpBackend.whenGET('/modules/eventstream/client/views/list-eventstream.client.view.html').respond(200, '');
 
-      // create mock shop
-      mockShop = new ShopsService({
+      // create mock article
+      mockArticle = new ArticlesService({
         _id: '525a8422f6d0f87f0e407a33',
-        title: 'An Shop about MEAN',
+        title: 'An Article about MEAN',
         content: 'MEAN rocks!'
       });
 
@@ -64,10 +64,10 @@
         roles: ['user']
       };
 
-      // Initialize the Shops controller.
-      ShopsAdminController = $controller('ShopsAdminController as vm', {
+      // Initialize the Articles controller.
+      ArticlesAdminController = $controller('ArticlesAdminController as vm', {
         $scope: $scope,
-        shopResolve: {}
+        articleResolve: {}
       });
 
       // Spy on state go
@@ -77,98 +77,98 @@
     }));
 
     describe('vm.save() as create', function () {
-      var sampleShopPostData;
+      var sampleArticlePostData;
 
       beforeEach(function () {
-        // Create a sample shop object
-        sampleShopPostData = new ShopsService({
-          title: 'An Shop about MEAN',
+        // Create a sample article object
+        sampleArticlePostData = new ArticlesService({
+          title: 'An Article about MEAN',
           content: 'MEAN rocks!'
         });
 
-        $scope.vm.shop = sampleShopPostData;
+        $scope.vm.article = sampleArticlePostData;
       });
 
-      it('should send a POST request with the form input values and then locate to new object URL', inject(function (ShopsService) {
+      it('should send a POST request with the form input values and then locate to new object URL', inject(function (ArticlesService) {
         // Set POST response
-        $httpBackend.expectPOST('/api/shops', sampleShopPostData).respond(mockShop);
+        $httpBackend.expectPOST('/api/articles', sampleArticlePostData).respond(mockArticle);
 
         // Run controller functionality
         $scope.vm.save(true);
         $httpBackend.flush();
 
         // Test Notification success was called
-        expect(Notification.success).toHaveBeenCalledWith({ message: '<i class="glyphicon glyphicon-ok"></i> Shop saved successfully!' });
-        // Test URL redirection after the shop was created
-        expect($state.go).toHaveBeenCalledWith('admin.shops.list');
+        expect(Notification.success).toHaveBeenCalledWith({ message: '<i class="glyphicon glyphicon-ok"></i> Article saved successfully!' });
+        // Test URL redirection after the article was created
+        expect($state.go).toHaveBeenCalledWith('admin.articles.list');
       }));
 
       it('should call Notification.error if error', function () {
         var errorMessage = 'this is an error message';
-        $httpBackend.expectPOST('/api/shops', sampleShopPostData).respond(400, {
+        $httpBackend.expectPOST('/api/articles', sampleArticlePostData).respond(400, {
           message: errorMessage
         });
 
         $scope.vm.save(true);
         $httpBackend.flush();
 
-        expect(Notification.error).toHaveBeenCalledWith({ message: errorMessage, title: '<i class="glyphicon glyphicon-remove"></i> Shop save error!' });
+        expect(Notification.error).toHaveBeenCalledWith({ message: errorMessage, title: '<i class="glyphicon glyphicon-remove"></i> Article save error!' });
       });
     });
 
     describe('vm.save() as update', function () {
       beforeEach(function () {
-        // Mock shop in $scope
-        $scope.vm.shop = mockShop;
+        // Mock article in $scope
+        $scope.vm.article = mockArticle;
       });
 
-      it('should update a valid shop', inject(function (ShopsService) {
+      it('should update a valid article', inject(function (ArticlesService) {
         // Set PUT response
-        $httpBackend.expectPUT(/api\/shops\/([0-9a-fA-F]{24})$/).respond();
+        $httpBackend.expectPUT(/api\/articles\/([0-9a-fA-F]{24})$/).respond();
 
         // Run controller functionality
         $scope.vm.save(true);
         $httpBackend.flush();
 
         // Test Notification success was called
-        expect(Notification.success).toHaveBeenCalledWith({ message: '<i class="glyphicon glyphicon-ok"></i> Shop saved successfully!' });
+        expect(Notification.success).toHaveBeenCalledWith({ message: '<i class="glyphicon glyphicon-ok"></i> Article saved successfully!' });
         // Test URL location to new object
-        expect($state.go).toHaveBeenCalledWith('admin.shops.list');
+        expect($state.go).toHaveBeenCalledWith('admin.articles.list');
       }));
 
-      it('should  call Notification.error if error', inject(function (ShopsService) {
+      it('should  call Notification.error if error', inject(function (ArticlesService) {
         var errorMessage = 'error';
-        $httpBackend.expectPUT(/api\/shops\/([0-9a-fA-F]{24})$/).respond(400, {
+        $httpBackend.expectPUT(/api\/articles\/([0-9a-fA-F]{24})$/).respond(400, {
           message: errorMessage
         });
 
         $scope.vm.save(true);
         $httpBackend.flush();
 
-        expect(Notification.error).toHaveBeenCalledWith({ message: errorMessage, title: '<i class="glyphicon glyphicon-remove"></i> Shop save error!' });
+        expect(Notification.error).toHaveBeenCalledWith({ message: errorMessage, title: '<i class="glyphicon glyphicon-remove"></i> Article save error!' });
       }));
     });
 
     describe('vm.remove()', function () {
       beforeEach(function () {
-        // Setup shops
-        $scope.vm.shop = mockShop;
+        // Setup articles
+        $scope.vm.article = mockArticle;
       });
 
-      it('should delete the shop and redirect to shops', function () {
+      it('should delete the article and redirect to articles', function () {
         // Return true on confirm message
         spyOn(window, 'confirm').and.returnValue(true);
 
-        $httpBackend.expectDELETE(/api\/shops\/([0-9a-fA-F]{24})$/).respond(204);
+        $httpBackend.expectDELETE(/api\/articles\/([0-9a-fA-F]{24})$/).respond(204);
 
         $scope.vm.remove();
         $httpBackend.flush();
 
-        expect(Notification.success).toHaveBeenCalledWith({ message: '<i class="glyphicon glyphicon-ok"></i> Shop deleted successfully!' });
-        expect($state.go).toHaveBeenCalledWith('admin.shops.list');
+        expect(Notification.success).toHaveBeenCalledWith({ message: '<i class="glyphicon glyphicon-ok"></i> Article deleted successfully!' });
+        expect($state.go).toHaveBeenCalledWith('admin.articles.list');
       });
 
-      it('should should not delete the shop and not redirect', function () {
+      it('should should not delete the article and not redirect', function () {
         // Return false on confirm message
         spyOn(window, 'confirm').and.returnValue(false);
 

@@ -48,6 +48,8 @@ exports.update = function (req, res) {
 
   shop.title = req.body.title;
   shop.content = req.body.content;
+  shop.urlImage = req.body.urlImage;
+  shop.url = req.body.url;
 
   shop.save(function (err) {
     if (err) {

@@ -1,5 +1,6 @@
-h1{
+h1,h2,h3{
   color:white;
+  font-family: 'Sanchez', serif;
 }
 .outline{
   background-color: white;
@@ -45,4 +46,125 @@ h1{
 }
 .social-button:hover {
   opacity: 0.65;
+}
+
+
+/*Sign-in Page Css*/
+
+@media (min-width: 992px) {
+  .nav-users {
+    position: fixed;
+  }
+}
+.social-account-container {
+  display: inline-block;
+  position: relative;
+}
+.btn-add-remove-account {
+  pointer-events: none;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.user-profile-picture {
+  max-height: 150px;
+  min-height: 150px;
+}
+.social-button {
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+.social-button:hover {
+  opacity: 0.65;
+}
+
+div.centered {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.signInBox{
+  padding: 20px;
+  border-radius: 20px;
+  border: 10px solid #262626;
+  box-shadow: 10px 10px 10px #000000;
+  background:black;
+}
+
+
+
+/*Button Grouping*/
+
+.btn-group button {
+  /*background-color: #4CAF50; /* Green background */
+    border: 1px solid green; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    /*width: 50%; /* Set a width if needed */
+    display: block; /* Make the buttons appear below each other */
+}
+
+.btn-group button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+}
+
+.btn2 {
+  display:block;
+  padding: 10px;
+  margin: 10px;
+  font-size: 1.5em;
+}
+
+/*Column*/
+.column{
+  padding:10px;
+}
+
+.column2{
+  display:block;
+}
+
+.column3{
+  display:block;
+}
+
+
+
+/*Panels*/
+.col-container {
+  display: table;
+  width: 100%;
+  max-height: 975px;
+}
+.col-mid2 {
+  max-height: inherit;
+  display: table-cell;
+  padding: 16px;
+  width:50%;
+
+}
+.col-sid2 {
+  display: table-cell;
+  padding: 16px;
+  width:50%
+  left: 30px;
+  background:none;
+  border: none;
+}
+
+.class{
+  text-align: left;
+  padding-left: 10px;
+  padding-top: 0px;
+}
+
+/*Edit Profile page*/
+.settingsDiv{
+  background: white;
+  padding: 20px;
+  width: inherit;
+   text-align: center;
 }
