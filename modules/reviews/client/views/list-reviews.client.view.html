@@ -13,7 +13,8 @@
   <div style = "padding-left:50px;"><button type="button" class="btn pink btn-info btn-md pull-right" ui-sref = 'reviews.create'>Submit a Review</button></div>
  <!-- <div style = "padding: 20px;"><button type="button" class="btn btn-info btn-md" ui-sref = 'reviews.create'>Submit a Review</button></div> -->
   <div class="list-group">
-    <a ng-repeat="review in vm.reviews | filter : review.approve !== true" ui-sref="reviews.view({ reviewId: review._id })" class="list-group-itemMOD">
+    <!--ui-sref="reviews.view({ reviewId: review._id })"-->
+    <a ng-repeat="review in vm.reviews | filter : review.approve !== true" class="list-group-itemMOD">
   <!--  <div ng-Show = "review.approve">-->
         <h4 class="list-group-item-heading" ng-bind="review.title"></h4>
         <hr class = "divLine">
