@@ -20,6 +20,7 @@
       <!--<li ui-sref-active="active">
       <a ui-sref="settings.accounts">Manage Social Accounts</a>
     </li>-->
+        
       </div>
     <div class = "column">
       <div class = "column3">
@@ -28,6 +29,12 @@
         <button class="btn btn2 orange"  value = "orange" ui-sref="admin.blogpost.list">Create/Edit Blogposts</button>
         <button class="btn btn2 blue"  value = "blue" ui-sref="admin.shops.list">Create/Edit Shops</button>
         <button class="btn btn2 pink"  value = "pink" ui-sref="admin.reviews.list">Approve Reviews</button>
+        
+        <button class="btn btn2" ui-sref-active="active" ng-show="vm.user.provider === 'local'" ui-sref="settings.password">Change Password</button>
+        <button class="btn btn2 orange"  value = "orange" ui-sref="admin.calendars.list">Update Calendar</button>        
+        <a href="/api/auth/signout" target="_self">
+          <button class="btn btn2 pink"  value="pink">Signout</button>
+        </a>
       </div>
     </div>
   </div>
