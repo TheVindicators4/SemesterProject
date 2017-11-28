@@ -1,6 +1,12 @@
+<head>
+  <link rel="stylesheet" href="/modules/core/client/css/eventstream.css">
+</head>
+
 <section>
 <style media="screen">
-
+h4{
+  color:black;
+}
 .group:after {
   content: "";
   display: block;
@@ -49,9 +55,9 @@
 
 .form-appointment {
   padding: 2em;
-  background-color: #EC7022;
-  border-radius: 4px;
-  border: 1px solid rgb(130, 228, 130);
+  background-color:white;
+  border-radius: 10px;
+  border: 5px solid #4dc6ff;
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.1);
   font-family: 'PT Sans', Arial, sans-serif;
   margin: 20px auto;
@@ -61,9 +67,9 @@
 .form-appointment input[type=email],
 .form-appointment input[type=tel],
 .form-appointment textarea {
-  background-color: #FFEB00;
-  border: 1px solid rgb(153, 202, 129);
-  border-radius: .2em;
+  background-color: white;
+  border: 1px solid#4dc6ff;
+  border-radius: 10px;
   font-family: 'PT Sans', Arial, sans-serif;
   font-size: 1.1em;
   padding: .4em 1em;
@@ -96,6 +102,7 @@
 
 .form-appointment textarea {
   height: 160px;
+  width: 390px;
 }
 
 .form-appointment input[type=submit] {
@@ -115,8 +122,9 @@
 }
 
 .form-appointment .wpcf7-list-item-label {
-  color: #000;
+  color: black;
   font-size: 18;
+
 }
 
 span.wpcf7-list-item {
@@ -155,7 +163,7 @@ span.wpcf7-list-item {
             </span>
           </div>
           <div style="width: 48%; float: right;">
-            <h4>What is the best way to reach you?</h4>
+            <h4 style:"color:black;">What is the best way to reach you?</h4>
             <p><span class="wpcf7-form-control-wrap radio-98">
               <span class="wpcf7-form-control wpcf7-radio">
                 <span class="wpcf7-list-item">
@@ -170,7 +178,7 @@ span.wpcf7-list-item {
                 </span>
               </span>
             </span></p>
-            <h4>Days of the week you are available for appointment:</h4>
+            <h4 style:"color:black;">Days of the week you are available for appointment:</h4>
             <p>
               <span class="wpcf7-form-control-wrap checkbox-465">
                 <span class="wpcf7-form-control wpcf7-checkbox">
@@ -220,7 +228,8 @@ span.wpcf7-list-item {
             </div>
           </div>
           <div style="text-align: center; padding-top: 2em; border-top: 1px solid rgb(153, 202, 129); margin-top: 1em;">
-            <input type="submit" value="Request My Appointment" class="wpcf7-form-control wpcf7-submit">
+          <!--  <input type="submit" value="Request My Appointment" class="wpcf7-form-control wpcf7-submit">-->
+            <input type="submit" value="Request My Appointment" class="btn">
             <img class="ajax-loader" src="http://www.professionalaudiologicalservices.com/wp-content/plugins/contact-form-7/images/ajax-loader.gif" alt="Sending ..." style="visibility: hidden;">
           </div>
           <div class="wpcf7-response-output wpcf7-display-none"></div>

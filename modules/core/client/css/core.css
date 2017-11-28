@@ -79,12 +79,14 @@ body {
   background: linear-gradient(black, gray);
 
 }
+
   .navbar-nav {
       float: none;
       display:table;
       width:100%;
       margin: 0;
   }
+
   .nav-item {
       color: white;
   }
@@ -99,12 +101,17 @@ body {
       display:table-cell;
       text-align:center;
       font-size: 20px;
+      background-color: transparent;
   }
 
-  .navbar .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-      background-color: gray;
+  .navbar .navbar-nav > li > a:focus {
       color: white;
   }
+
+  /*.navbar .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+      background-color: gray;
+      color: white;
+  }*/
 
   .navbar-toggle{
     color:white;
