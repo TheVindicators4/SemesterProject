@@ -40,30 +40,23 @@ h1,h2 {
   color:white;
   background:#800080;
   border-color: #800080;
-
 }
 
 .btn:hover{
   color:white;
   background:#330033;
   border-color: #330033;
-
 }
-
 .btn:target{
   color:white;
   background:#330033;
   border-color: #330033;
-
 }
-
 .btn:active{
   color:white;
   background:#330033;
   border-color: #330033;
-
 }
-
 .btn:focus{
   color:white;
   background:#330033;
