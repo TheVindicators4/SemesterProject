@@ -2,15 +2,20 @@
 
   <head><link rel="stylesheet" href="/modules/calendar/client/css/calendar.client.css"></head>
 
-  <div class="col-12 text-center">
-    <h1>Calendar</h1>
+  <div class="col-12">
+    <div class="col-7 text-center pull-left">
+      <h1>Calendar</h1>
+    </div>
+    <div class="col-5 text-center pull-right">
+      <h1>Contact Me</h1>
+    </div>
   </div>
-  <div>
-    <div class="col-xs-12 col-lg-8 pull-left output" id="output"></div>
+  <div style="height:50%">
+    <div class="col-xs-12 col-lg-7 pull-left output" id="output"></div>
     <script type="text/javascript">
     document.getElementById("output").innerHTML = vm.calendar.content;
     </script>
-    <div class="col-xs-12 col-lg-4 pull-right">
+    <div class="col-xs-12 col-lg-5 pull-right">
       <div class="form-appointment">
         <div class="wpcf7" id="wpcf7-f560-p590-o1">
           <form action="/landing-page-template-do-not-delete/#wpcf7-f560-p590-o1" method="post" class="wpcf7-form" novalidate="novalidate" _lpchecked="1">
