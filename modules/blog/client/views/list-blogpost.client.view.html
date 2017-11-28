@@ -1,9 +1,9 @@
 <section>
 
   <head>
-    <!--Sanchez font family-->
+    <!--Sanchez font family--
     <link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet">
-    <!--Includes css file-->
+    <!--Includes css file--
     <link rel="stylesheet" href="/modules/core/client/css/social-media-box.css">
 
 
@@ -22,18 +22,20 @@
 
     <!-- First Blog Post -->
     <div class="container-fluid" ng-repeat="blogpost in vm.blogpost">
-
       <div class="col-xs-12 blogposting">
         <div class="col-xs-12">
           <div class="col-xs-12 col-md-8">
             <h2 class = "eventPaddingInner" style="font-size:200%">{{blogpost.title}}</h2>
+
           </div>
           <div class="col-xs-12 col-md-4">
             <p class = "eventPaddingInner"  ng-bind="blogpost.created | date:'mediumDate'"><i>{{blogpost.created}}</i></p>
           </div>
+
         </div>
+
         <div class="col-xs-12">
-          <hr>
+                <hr class = "divLine">
         </div>
         <div class="col-xs-12">
           <div class="col-xs-12 col-md-6">
