@@ -11,11 +11,11 @@
     $stateProvider
       .state('calendars', {
         abstract: true,
-        url: '/',
+        url: '',
         template: '<ui-view/>'
       })
       .state('calendars.list', {
-        url: '/contact',
+        url: '/contactme',
         templateUrl: '/modules/calendar/client/views/calendar.client.view.html',
         controller: 'CalendarsListController',
         controllerAs: 'vm'
