@@ -92,26 +92,34 @@
   </div>
 </div>
 
-<!-- Email List Pop-up --
+<!-- Email List Pop-up -->
 <div class = "centerItem">
   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Join Mailing List!</button></div>
-  <!-- Modal --
+  <!-- Modal -->
   <div class="modal custom" id="myModal" role="dialog">
     <div class="modal-dialog" >
 
-      <!-- Modal content--
+      <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header-custom">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:black">x</button>
-          <h4 class="modal-title-custom" style="text-align: center">Join the DJ ELO <br> Mailing List</h4>
+          <h4 class="modal-title-custom" style="text-align: center">Join the DJ ELO<br>Mailing List</h4>
         </div>
         <div class="modal-body-custom">
           <p style="text-align:center">Stay updated on the newest happenings on DJ ELO!</p>
-          <div class="form-group"><label>Name</label><input class="form-control email" data-placement="top" data-trigger="manual" type="text"></div>
-          <div class="form-group"><label>E-Mail</label><input class="form-control email" data-placement="top" data-trigger="manual" data-content="Must be a valid e-mail address (user@gmail.com)" type="text"></div>
-          <div style="text-align:center">
-            <button type="button" type="submit" class="btn btn-default">Submit!!</button>
-          </div>
+
+          <!-- from mailchimp -->
+          <form action="https://herokuapp.us17.list-manage.com/subscribe/post" method="POST">
+            <input type="hidden" name="u" value="3755f95698833862e584ab7ac">
+            <input type="hidden" name="id" value="606f4077f6">
+            <div class="modal-body-custom"  style="text-align:center">
+              <input type="text" placeholder="Your Name" name="MERGE1" required="" class="news_input" style="color:black">
+              <input type="email" placeholder="Email Address" name="MERGE0" required="" class="news_input" style="color:black">
+              <br>
+              <br>
+              <input type="submit" value="Sign Up!" class="news_btn" style="color:black">
+            </div>
+          </form> 
         </div>
       </div>
     </div>
@@ -128,7 +136,8 @@ jQuery(document).ready(function () {
   jQuery.cookie('visited', 'yes', {
     expires: 7 // the number of days cookie  will be effective
   });
-</script>-->
+}
+</script>
 
   <!-- Cyrus's HTML--
   <div class = "column side">
