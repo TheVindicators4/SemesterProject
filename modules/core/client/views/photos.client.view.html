@@ -12,6 +12,17 @@ body {
     padding: 20px;
     font-family: Sanchez;
 }
+.column {
+    float: left;
+    width: 33.33%;
+    display: none; /* Hide all elements by default */
+}
+
+/* Content */
+.content {
+    background-color: white;
+    padding: 10px;
+}
 
 /* Center website */
 .gallery{
@@ -28,16 +39,16 @@ h1 {
 }
 
 .row {
-    margin: 10px -16px;
+    margin: 2px -80px;
 }
 
-/* Add padding BETWEEN each column */
+/* Add padding between each column */
 .row,
 .row > .column {
     padding: 8px;
 }
 
-/* Create three equal columns that floats next to each other */
+/* Create three equal columns that float next to each other */
 .column {
     float: left;
     width: 33.33%;
@@ -51,15 +62,162 @@ h1 {
     clear: both;
 }
 
-/* Content */
-.content {
-    background-color: white;
-    padding: 10px;
-}
 
-/* The "show" class is added to the filtered elements */
+
+/* The show class is added to the filtered elements */
 .show {
   display: block;
+}
+/* Opacity and cursor change on hover, rounded edges for each photo in gallery */
+#myImg1 {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg1:hover {opacity: 0.7;}
+
+#myImg2 {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg2:hover {opacity: 0.7;}
+
+#myImg3 {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg3:hover {opacity: 0.7;}
+
+#myImg4 {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg4:hover {opacity: 0.7;}
+
+#myImg5 {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg5:hover {opacity: 0.7;}
+
+#myImg6 {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg6:hover {opacity: 0.7;}
+
+#myImg7 {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg7:hover {opacity: 0.7;}
+
+#myImg8 {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg8:hover {opacity: 0.7;}
+
+#myImg9 {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg9:hover {opacity: 0.7;}
+
+
+/* The Modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal image */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)}
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button*/
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
 }
 </style>
 </head>
@@ -74,81 +232,87 @@ h1 {
 <hr>
 
 <h2></h2>
+<!-- Filter categories -->
 <input type="radio" onclick="filterSelection('all')" name="category" checked> All
 <input type="radio" onclick="filterSelection('head')" name="category"> Headshots
 <input type="radio" onclick="filterSelection('eq')" name="category"> Equipment/Setups
-<input type="radio" onclick="filterSelection('fan')" name="category"> Fan love
+<input type="radio" onclick="filterSelection('fan')" name="category"> Fan Love
 
 <!-- Portfolio Gallery Grid -->
+<!-- All images listed with captions -->
 <div class="row">
   <div class="column head">
     <div class="content">
-      <img src="modules/core/client/views/gallery-images/1.jpg" alt="Mountains" height="250" width="300">
+      <img id="myImg1" img src="modules/core/client/views/gallery-images/1.jpg" alt="Serious face" height="220" width="300">
       <h4>Serious face</h4>
-      <p>Lorem ipsum dolor</p>
+      <!--<p>Lorem ipsum dolor</p>-->
     </div>
   </div>
   <div class="column fan">
     <div class="content">
-    <img src="modules/core/client/views/gallery-images/2.jpg" alt="Lights" height="250" width="300">
+    <img id="myImg2" img src="modules/core/client/views/gallery-images/2.jpg" alt="Love my fans" height="220" width="300">
       <h4>Love my fans</h4>
-      <p>Lorem ipsum dolor</p>
+      <!--<p>Lorem ipsum dolor</p>-->
     </div>
   </div>
   <div class="column fan">
     <div class="content">
-    <img src="modules/core/client/views/gallery-images/3.jpg" alt="Nature" height="250" width="300">
+    <img id="myImg3" img src="modules/core/client/views/gallery-images/3.jpg" alt="Event is liiiiit" height="220" width="300">
       <h4>Event is liiiiit</h4>
-      <p>Lorem ipsum dolor</p>
+      <!--<p>Lorem ipsum dolor</p>-->
     </div>
   </div>
 
   <div class="column head">
     <div class="content">
-      <img src="modules/core/client/views/gallery-images/4.jpg" alt="Car" height="250" width="300">
+      <img id="myImg4" img src="modules/core/client/views/gallery-images/4.jpg" alt="Security on fleek" height="220" width="300">
       <h4>Security on fleek</h4>
-      <p>Lorem ipsum dolor</p>
+      <!--<p>Lorem ipsum dolor</p>-->
     </div>
   </div>
   <div class="column fan">
     <div class="content">
-    <img src="modules/core/client/views/gallery-images/5.jpg" alt="Car" height="250" width="300">
+    <img id="myImg5" img src="modules/core/client/views/gallery-images/5.jpg" alt="Best fans #blessed" height="220" width="300">
       <h4>Best fans #blessed</h4>
-      <p>Lorem ipsum dolor</p>
+      <!--<p>Lorem ipsum dolor</p>-->
     </div>
   </div>
   <div class="column head">
     <div class="content">
-    <img src="modules/core/client/views/gallery-images/6.jpg" alt="Car" height="250" width="300">
+    <img id="myImg6" img src="modules/core/client/views/gallery-images/6.jpg" alt="Putting in work" height="220" width="300">
       <h4>Putting in work</h4>
-      <p>Lorem ipsum dolor</p>
+      <!--<p>Lorem ipsum dolor</p>-->
     </div>
   </div>
 
   <div class="column equip">
     <div class="content">
-      <img src="modules/core/client/views/gallery-images/7.jpg" alt="Car" height="250" width="300">
+      <img id="myImg7" img src="modules/core/client/views/gallery-images/7.jpg" alt="The best equipment" height="220" width="300">
       <h4>The best equipment</h4>
-      <p>Lorem ipsum dolor</p>
+    <!--<p>Lorem ipsum dolor</p>-->
     </div>
   </div>
   <div class="column equip">
     <div class="content">
-    <img src="modules/core/client/views/gallery-images/8.jpg" alt="Car" height="250" width="300">
+    <img id="myImg8" img src="modules/core/client/views/gallery-images/8.jpg" alt="Pioneer DJ up in here" height="220" width="300">
       <h4>Pioneer DJ up in here</h4>
-      <p>Lorem ipsum dolor</p>
+      <!--<p>Lorem ipsum dolor</p>-->
     </div>
   </div>
   <div class="column fan">
     <div class="content">
-    <img src="modules/core/client/views/gallery-images/9.jpg" alt="Car" height="250" width="300">
+    <img id="myImg9" img src="modules/core/client/views/gallery-images/9.jpg" alt="Aoki fam" height="220" width="300">
       <h4>Aoki fam</h4>
-      <p>Lorem ipsum dolor</p>
+      <!--<p>Lorem ipsum dolor</p>-->
     </div>
   </div>
 <!-- END GRID -->
 </div>
-
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
 <!-- END MAIN -->
 </div>
 
@@ -183,6 +347,74 @@ function w3RemoveClass(element, name) {
     }
   }
   element.className = arr1.join(" ");
+}
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img1 = document.getElementById('myImg1');
+var img2 = document.getElementById('myImg2');
+var img3 = document.getElementById('myImg3');
+var img4 = document.getElementById('myImg4');
+var img5 = document.getElementById('myImg5');
+var img6 = document.getElementById('myImg6');
+var img7 = document.getElementById('myImg7');
+var img8 = document.getElementById('myImg8');
+var img9 = document.getElementById('myImg9');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+// Display modal images full size
+img1.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+img2.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+img3.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+img4.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+img5.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+img6.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+img7.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+img8.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+img9.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
 }
 </script>
 

@@ -54,6 +54,10 @@ describe('Shop Admin CRUD tests', function () {
         shop = {
           title: 'Shop Title',
           content: 'Shop Content'
+
+          //new variables
+          //urlImage: 'https://drive.google.com/thumbnail?id=1FyzLIlb66lSrydF6H0dYix1fCDDRk6O3'
+          //url: 'https://www.amazon.com/'
         };
 
         done();

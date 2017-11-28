@@ -45,12 +45,12 @@
        controller: 'HomeController',
        controllerAs: 'vm'
      })
-      .state('review', {
+    /*  .state('reviews', {
         url: '/reviews',
         templateUrl: '/modules/reviews/client/views/list-reviews.client.view.html',
         controller: 'ReviewsController',
         controllerAs: 'vm'
-      })
+      })*/
       .state('contactme', {
         url: '/contactme',
         templateUrl: '/modules/calendar/client/views/calendar.client.view.html',
@@ -61,6 +61,12 @@
         url: '/login',
         templateUrl: '/modules/users/client/views/authentication/signin.client.view.html',
         controller: 'AuthenticationController',
+        controllerAs: 'vm'
+      })
+      .state('profile', {
+        url: '/settings',
+        templateUrl: '/modules/users/client/views/settings/settings.client.view.html',
+        controller: 'SettingsController',
         controllerAs: 'vm'
       })
       .state('not-found', {

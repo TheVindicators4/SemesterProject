@@ -1,0 +1,117 @@
+h1,h2 {
+  color: white;
+}
+.box {
+  display: inline-block;
+  width: 300px;
+  border: 1px solid #000;
+  background:white;/*#D3D3D3;*/
+  text-align: center;
+  font-family: 'Sanchez', serif;
+}
+
+.divider{
+    width: 5px;
+    height: auto;
+    display: inline-block;
+}
+
+.box2 {
+display: inline-block;
+width: auto;
+font-family: 'Sanchez', serif;
+}
+.socialMediaText{
+   font-size: 20px;
+
+}
+
+.column {
+    float: left;
+}
+
+/* Left and right column */
+.column.side {
+    width: 25%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    display: inline-block;
+    left: 30px;
+    border: 5px solid #000;
+    border-radius: 10px;
+    background: #D3D3D3;
+    text-align: center;
+    font-family: 'Sanchez', serif;
+}
+
+/* Middle column */
+.column.middle {
+    width: 75%;
+    padding-right: 15px;
+}
+
+.tableWrapper {
+  max-height: 800px;
+  overflow: auto;
+}
+
+.tableWrapper .rowBoards:nth-child(odd) {
+    background-color: lightgray;
+}
+
+.tableWrapper .rowBoards:nth-child(even) {
+    background-color: white;
+}
+
+.tableWrapper.rowBoards:hover {
+    background: black;
+    cursor: pointer;
+}
+.table{
+padding-top: 0;
+
+}
+/*.rowBoards{
+  color:white;
+  border: 2px solid lightgrey;
+  border-radius: 5px;
+}*/
+.eventPaddingText{
+  padding-bottom: 15px;
+  padding-top: 15px;
+  text-align: center;
+}
+
+.eventPadding
+{
+  padding-left: 20px;
+}
+
+.eventPaddingInner
+{
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.eventPaddingInnerText
+{
+  padding-left: 20px;
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+.centerItem{
+  width: 25%;
+  padding-top: 50px;
+
+  display: inline-block;
+  left: 30px;
+  text-align: center;
+  font-family: 'Sanchez', serif;
+  padding: 15px;
+}
+
+.btn{
+font-size: 20px;
+}
