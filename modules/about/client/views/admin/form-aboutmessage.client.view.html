@@ -1,6 +1,6 @@
 <section>
   <div class="page-header">
-    <h1>{{vm.aboutmessage._id ? 'Edit Aboutmessage' : 'New Aboutmessage'}}</h1>
+    <h1>{{vm.aboutmessage._id ? 'Edit Aboutmessage' : 'New About Message'}}</h1>
   </div>
   <div class="col-md-12">
     <form name="vm.form.aboutmessageForm" class="form-horizontal" ng-submit="vm.save(vm.form.aboutmessageForm.$valid)" novalidate>
@@ -9,7 +9,7 @@
           <label class="control-label" for="title">Title</label>
           <input name="title" type="text" ng-model="vm.aboutmessage.title" id="title" class="form-control" placeholder="Title" required autofocus>
           <div ng-messages="vm.form.aboutmessageForm.title.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Aboutmessage title is required.</p>
+            <p class="help-block error-text" ng-message="required">About Message title is required.</p>
           </div>
         </div>
         <div class="form-group">
