@@ -1,0 +1,81 @@
+/*Shop CSS Page*/
+
+/*List in column formate*/
+
+.custom2{
+  margin: 20px;
+  padding: 25px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 20px;
+  border-top-left-radius: 20px;
+  display: block;
+  background: white;
+  border: 5px solid #d9d9d9;
+  box-shadow: 5px 5px 10px #000000;
+  font-family: 'Sanchez', serif;
+}
+
+.list-group-item-text{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+h4{
+  font-weight: bold;
+}
+.row{
+  margin-left: 80px;
+}
+
+@media only screen and (max-width: 700px) {
+  .row{
+    margin-left: 0px;
+  }
+}
+
+.center{
+  text-align: center;
+  font-family: 'Sanchez', serif;
+}
+
+.spacing{
+  margin: 20px;
+}
+
+/*.btn{
+  color:white;
+  background:#800080;
+  border-color: #800080;
+  font-size: 16px;
+}
+
+.btn:hover{
+  color:white;
+  background:#330033;
+  border-color: #330033;
+  font-size: 16px;
+}
+
+.btn:target{
+    outline:none;
+  color:white;
+  background:#330033;
+  border-color: #330033;
+  font-size: 16px;
+}
+
+.btn:active{
+  color:white;
+  background:#330033;
+  border-color: #330033;
+  font-size: 16px;
+}
+
+.btn:focus{
+  outline:none;
+  color:white;
+  background:#330033;
+  border-color: #330033;
+  font-size: 16px;
+}*/
