@@ -110,7 +110,7 @@ div.centered {
     border-bottom: none; /* Prevent double borders */
 }
 
-.btn{
+.btn2 {
   display:block;
   padding: 10px;
   margin: 10px;
@@ -123,12 +123,10 @@ div.centered {
 }
 
 .column2{
-  background:blue;
   display:block;
 }
 
 .column3{
-  background:black;
   display:block;
 }
 
@@ -168,33 +166,4 @@ div.centered {
   padding: 20px;
   width: inherit;
    text-align: center;
-}
-
-
-
-.btn2{
-  color:white;
-  background:#800080;
-  border-color: #800080;
-}
-
-.btn2:hover{
-  color:white;
-  background:#330033;
-  border-color: #330033;
-}
-.btn2:target{
-  color:white;
-  background:#330033;
-  border-color: #330033;
-}
-.btn2:active{
-  color:white;
-  background:#330033;
-  border-color: #330033;
-}
-.btn2:focus{
-  color:white;
-  background:#330033;
-  border-color: #330033;
 }

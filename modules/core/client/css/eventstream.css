@@ -40,6 +40,8 @@ h1,h2 {
   color:white;
   background:#800080;
   border-color: #800080;
+  box-shadow: 5px 5px 10px #000000;
+    font-family: 'Sanchez', serif;
 }
 
 .btn:hover{
@@ -63,6 +65,95 @@ h1,h2 {
   border-color: #330033;
 }
 
+/*Colors for buttons*/
+/*Orange*/
+.orange{
+  color:white;
+  background:#ff8000;
+  border-color:#ff8000;
+}
+.orange:hover{
+  color:white;
+  background:#804000;
+  border-color: #804000;
+}
+
+.orange:target{
+  color:white;
+  background:#804000;
+  border-color:#804000;
+}
+.orange:active{
+  color:white;
+  background:#804000;
+  border-color: #804000;
+}
+.orange:focus{
+  color:white;
+  background:#804000;
+  border-color:#804000;
+}
+/*Blue*/
+
+.blue{
+  color:white;
+  background:#5900b3;
+  border-color:#5900b3;
+}
+.blue:hover{
+  color:white;
+  background:#330066;
+  border-color: #330066;
+}
+
+.blue:target{
+  color:white;
+  background:#330066;
+  border-color: #330066;
+}
+.blue:active{
+  color:white;
+  background:#330066;
+  border-color: #330066;
+}
+.blue:focus{
+  color:white;
+  background:#330066;
+  border-color: #330066;
+}
+
+/*Pink*/
+
+.pink{
+  color:white;
+  background:#ff0066;
+  border-color:#ff0066;
+}
+.pink:hover{
+  color:white;
+  background:#660029;
+  border-color:#660029;
+}
+
+.pink:target{
+  color:white;
+  background:#330066;
+  border-color: #330066;
+}
+.pink:active{
+  color:white;
+  background:#330066;
+  border-color: #330066;
+}
+.pink:focus{
+  color:white;
+  background:#330066;
+  border-color: #330066;
+}
+
+
+
+/*Layout Columns*/
 .col-container {
     display: table;
     width: 100%;
