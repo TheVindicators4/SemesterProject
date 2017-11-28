@@ -28,9 +28,9 @@
 
     $stateProvider
       .state('home', {
-        url: '/home',
-        templateUrl: '/modules/core/client/views/home.client.view.html',
-        controller: 'HomeController',
+        url: '/',
+        templateUrl: '/modules/eventstream/client/views/list-eventstream.client.view.html',
+        controller: 'EventstreamListController',
         controllerAs: 'vm'
       })
       .state('about', {
@@ -45,12 +45,6 @@
        controller: 'HomeController',
        controllerAs: 'vm'
      })
-      .state('blog', {
-        url: '/blog',
-        templateUrl: '/modules/blog/client/views/list-blogposts.client.view.html',
-        controller: 'BlogpostsController',
-        controllerAs: 'vm'
-      })
       .state('review', {
         url: '/reviews',
         templateUrl: '/modules/reviews/client/views/list-reviews.client.view.html',
