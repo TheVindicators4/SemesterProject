@@ -45,12 +45,12 @@
        controller: 'HomeController',
        controllerAs: 'vm'
      })
-      .state('review', {
+    /*  .state('reviews', {
         url: '/reviews',
         templateUrl: '/modules/reviews/client/views/list-reviews.client.view.html',
         controller: 'ReviewsController',
         controllerAs: 'vm'
-      })
+      })*/
       .state('contactme', {
         url: '/contact',
         templateUrl: '/modules/core/client/views/contactme.client.view.html',

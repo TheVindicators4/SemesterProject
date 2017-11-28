@@ -1,139 +1,23 @@
-
 <section>
+  <div class="page-header">
+    <h1>Reviews</h1>
+	<div style = "padding: 20px;"><button type="button" class="btn btn-info btn-md" ui-sref = 'reviews.create'>Submit a Review</button></div>
+  </div>
+ <!-- <div style = "padding: 20px;"><button type="button" class="btn btn-info btn-md" ui-sref = 'reviews.create'>Submit a Review</button></div> -->
+  <div class="list-group">
+    <a ng-repeat="review in vm.reviews | filter : review.approve !== true" ui-sref="reviews.view({ reviewId: review._id })" class="list-group-item">
+  <!--  <div ng-Show = "review.approve">-->
+        <small class="list-group-item-text">
+          Posted on
+          <span ng-bind="review.created | date:'mediumDate'"></span>
+          by
+          <span ng-if="review.user" ng-bind="review.user"></span>
+          <!--<span ng-if="!review.user">Deleted User</span>-->
+        </small>
+        <h4 class="list-group-item-heading" ng-bind="review.title"></h4>
+        <p class="list-group-item-text" ng-bind="review.content"></p>
 
-
-	<!-- REALLY SORRY FOR THIS I JUST NEED IT TO WORK RN OK -->
-	<!-- -->
-
-	<div class="page-header">
-		<h1>Reviews</h1>
-	</div>
-
-	<div class="list-group">
-		<a ng-repeat="review in vm.reviews" ui-sref="reviews.view({ reviewId: review._id })" class="list-group-item">
-			<small class="list-group-item-text">
-				Posted on
-				<span ng-bind="review.created | date:'mediumDate'"></span>
-				by
-				<span ng-if="review.user" ng-bind="review.user.displayName"></span>
-				<span ng-if="!review.user">Deleted User</span>
-			</small>
-			<h4 class="list-group-item-heading" ng-bind="review.title"></h4>
-			<p class="list-group-item-text" ng-bind="review.content"></p>
-		</a>
-	</div>
-
-
-
-	<div class="container">
-		<!-- Trigger the modal with a button -->
-		<button type="button" class="btn btn-info btn-lg" ui-sref = 'admin.reviews.create'>Submit a Review</button>
-		<!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal"  data-target="#myModal">Submit a Review</button>-->
-
-		<!-- Modal
-		<div class="modal fade" id="myModal" role="dialog">
-			<div class="modal-dialog">
-
-				<!-- Modal content
-				<section>
-				  <div class="page-header">
-				    <h1>{{vm.review._id ? 'Edit Review' : 'New Review'}}</h1>
-				  </div>
-				  <div class="pull-right">
-				    <a ng-show="vm.review._id" class="btn btn-primary" ng-click="vm.remove()">
-				      <i class="glyphicon glyphicon-trash"></i>
-				    </a>
-				  </div>
-				  <div class="col-md-12">
-				    <form name="vm.form.reviewForm" class="form-horizontal" ng-submit="vm.save(vm.form.reviewForm.$valid)" novalidate>
-				      <fieldset>
-				        <div class="form-group" show-errors>
-				          <label class="control-label" for="title">Title</label>
-				          <input name="title" type="text" ng-model="vm.review.title" id="title" class="form-control" placeholder="Title" required autofocus>
-				          <div ng-messages="vm.form.reviewForm.title.$error" role="alert">
-				            <p class="help-block error-text" ng-message="required">Review title is required.</p>
-				          </div>
-				        </div>
-				        <div class="form-group">
-				          <label class="control-label" for="content">Content</label>
-				          <textarea name="content" data-ng-model="vm.review.content" id="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
-				        </div>
-				        <div class="form-group">
-				          <button type="submit" class="btn btn-default">{{vm.review._id ? 'Update' : 'Create'}}</button>
-				        </div>
-				      </fieldset>
-				    </form>
-				  </div>
-				</section>
-			-->
-
-			</div>
-		</div>
-	-->
-
-	</div>
-
-	<div>
-		<br>
-	</div>
-
-	<!-- Beverly's HTML -->
-	<div class="column middle">
-		<div class="tableWrapper">
-			<table class="table table-striped table-hover">
-				<!-- To be relplaced with repeat function -->
-				<tr class = "rowBoards">
-					<td style="width:100px" height="100">
-						<p class = "eventPadding" style="font-size:200%">Fantastic DJ!</p>
-						<p class = "eventPadding"><i>Date</i></p>
-						<p class = "eventPadding"> INSERT REVIEW HERE</p>
-					</td>
-				</tr>
-				<tr class = "rowBoards">
-					<td style="width:100px" height="100">
-						<p style="font-size:200%">Great service</p>
-						<p><i>Date</i></p>
-						<p>Insert Review Here</p>
-					</td>
-				</tr>
-				<tr class = "rowBoards">
-					<td style="width:100px" height="100">
-						<p style="font-size:200%">Loved the music!</p>
-						<p><i>Date</i></p>
-						<p>Insert Review Here</p>
-					</td>
-				</tr>
-				<tr class = "rowBoards">
-					<td style="width:100px" height="100">
-						<p style="font-size:200%">He rocks!</p>
-						<p><i>Date</i></p>
-						<p>Insert Review Here</p>
-					</td>
-				</tr>
-				<tr class = "rowBoards">
-					<td style="width:100px" height="100">
-						<p style="font-size:200%">Title</p>
-						<p><i>Date</i></p>
-						<p>Insert Review Here</p>
-					</td>
-				</tr>
-
-				<tr class = "rowBoards">
-					<td style="width:100px" height="100">
-						<p style="font-size:200%">Title</p>
-						<p><i>Date</i></p>
-						<p>Insert Review Here</p>
-					</td>
-				</tr>
-				<!-- To be relplaced with repeat function -->
-			</table>
-		</div>
-	</div>
-
-
+      </a>
+<!--  </div>-->
+  </div>
 </section>
-
-
-
-
-<script src="http://code.jquery.com/jquery-3.2.1.js"></script>
