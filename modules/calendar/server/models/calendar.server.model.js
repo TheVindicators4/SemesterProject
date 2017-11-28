@@ -1,32 +1,93 @@
 'use strict';
 
 /**
- * Module dependencies
- */
+* Module dependencies
+*/
 var mongoose = require('mongoose'),
-  Schema = mongoose.Schema,
-  path = require('path'),
-  config = require(path.resolve('./config/config')),
-  chalk = require('chalk');
+Schema = mongoose.Schema,
+path = require('path'),
+config = require(path.resolve('./config/config')),
+chalk = require('chalk');
 
 /**
- * Calendar Schema
- */
+* Calendar Schema
+*/
 var CalendarSchema = new Schema({
   created: {
     type: Date,
     default: Date.now
   },
-  title: {
-    type: String,
-    default: '',
-    trim: true,
-    required: 'Title cannot be blank'
-  },
   content: {
-    type: String,
-    default: '',
-    trim: true
+    name: {
+      type: String,
+      default: 'Anonymous',
+      trim: true,
+    },
+    email: {
+      type: String,
+      default: 'no email given',
+      trim: true
+    },
+    phone: {
+      type: String,
+      default: 'no phone given',
+      trim: true
+    },
+    message: {
+      type: String,
+      default: 'no message',
+      required: true,
+      trim: true
+    }
+  },
+  nature: {
+    booking: {
+      type: Boolean,
+      default: 'false',
+      trim: true,
+    },
+    info: {
+      type: Boolean,
+      default: 'false',
+      trim: true
+    },
+    concern: {
+      type: Boolean,
+      default: 'false',
+      trim: true
+    },
+    other: {
+      type: Boolean,
+      default: 'false',
+      trim: true,
+    }
+  },
+  availability: {
+    monday: {
+      type: Boolean,
+      default: 'false',
+      trim: true,
+    },
+    tuesday: {
+      type: Boolean,
+      default: 'false',
+      trim: true
+    },
+    wednesday: {
+      type: Boolean,
+      default: 'false',
+      trim: true
+    },
+    thursday: {
+      type: Boolean,
+      default: 'false',
+      trim: true,
+    },
+    friday: {
+      type: Boolean,
+      default: 'false',
+      trim: true,
+    }
   },
   user: {
     type: Schema.ObjectId,
@@ -48,14 +109,14 @@ function seed(doc, options) {
   return new Promise(function (resolve, reject) {
 
     skipDocument()
-      .then(findAdminUser)
-      .then(add)
-      .then(function (response) {
-        return resolve(response);
-      })
-      .catch(function (err) {
-        return reject(err);
-      });
+    .then(findAdminUser)
+    .then(add)
+    .then(function (response) {
+      return resolve(response);
+    })
+    .catch(function (err) {
+      return reject(err);
+    });
 
     function findAdminUser(skip) {
       var User = mongoose.model('User');
@@ -66,50 +127,50 @@ function seed(doc, options) {
         }
 
         User
-          .findOne({
-            roles: { $in: ['admin'] }
-          })
-          .exec(function (err, admin) {
-            if (err) {
-              return reject(err);
-            }
+        .findOne({
+          roles: { $in: ['admin'] }
+        })
+        .exec(function (err, admin) {
+          if (err) {
+            return reject(err);
+          }
 
-            doc.user = admin;
+          doc.user = admin;
 
-            return resolve();
-          });
+          return resolve();
+        });
       });
     }
 
     function skipDocument() {
       return new Promise(function (resolve, reject) {
         Calendar
-          .findOne({
-            title: doc.title
-          })
-          .exec(function (err, existing) {
+        .findOne({
+          title: doc.title
+        })
+        .exec(function (err, existing) {
+          if (err) {
+            return reject(err);
+          }
+
+          if (!existing) {
+            return resolve(false);
+          }
+
+          if (existing && !options.overwrite) {
+            return resolve(true);
+          }
+
+          // Remove Calendar (overwrite)
+
+          existing.remove(function (err) {
             if (err) {
               return reject(err);
             }
 
-            if (!existing) {
-              return resolve(false);
-            }
-
-            if (existing && !options.overwrite) {
-              return resolve(true);
-            }
-
-            // Remove Calendar (overwrite)
-
-            existing.remove(function (err) {
-              if (err) {
-                return reject(err);
-              }
-
-              return resolve(false);
-            });
+            return resolve(false);
           });
+        });
       });
     }
 
@@ -129,7 +190,7 @@ function seed(doc, options) {
           }
 
           return resolve({
-            message: 'Database Seeding: Calendar\t' + calendar.title + ' added'
+            message: 'Database Seeding: Request submitted!'
           });
         });
       });
