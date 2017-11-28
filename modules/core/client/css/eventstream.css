@@ -183,7 +183,7 @@ h1,h2 {
 .col-container {
     display: table;
     width: 100%;
-    max-height: 975px;
+    max-height: 1370px;
 }
 .col-mid {
     max-height: inherit;
