@@ -10,10 +10,10 @@
 
   function menuConfig(Menus) {
  -    /*
-      Menus.addSubMenuItem('topbar', 'admin', {
-        title: 'Manage Articles',
-        state: 'admin.articles.list'
-      });
+ -    Menus.addSubMenuItem('topbar', 'admin', {
+ -      title: 'Manage Articles',
+ -      state: 'admin.articles.list'
+ -    });
  -    */
-    }
+ -  }
 }());
