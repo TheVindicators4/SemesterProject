@@ -77,7 +77,7 @@
         });
       });
 
-      describe('Accounts Route', function () {
+      /*describe('Accounts Route', function () {
         var accountsstate;
         beforeEach(inject(function ($state) {
           accountsstate = $state.get('settings.accounts');
@@ -94,9 +94,9 @@
         it('Should have templateUrl', function () {
           expect(accountsstate.templateUrl).toBe('/modules/users/client/views/settings/manage-social-accounts.client.view.html');
         });
-      });
+      });*/
 
-      describe('Picture Route', function () {
+      /*describe('Picture Route', function () {
         var picturestate;
         beforeEach(inject(function ($state) {
           picturestate = $state.get('settings.picture');
@@ -113,7 +113,7 @@
         it('Should have templateUrl', function () {
           expect(picturestate.templateUrl).toBe('/modules/users/client/views/settings/change-profile-picture.client.view.html');
         });
-      });
+      });*/
 
       describe('Handle Trailing Slash', function () {
         beforeEach(inject(function ($state, $rootScope, _Authentication_, _$httpBackend_) {
@@ -128,6 +128,7 @@
           $httpBackend.whenGET('/modules/users/client/views/settings/settings.client.view.html').respond(200);
           $httpBackend.whenGET('/modules/core/client/views/home.client.view.html').respond(200);
           $httpBackend.whenGET('/modules/users/client/views/settings/edit-profile.client.view.html').respond(200);
+          $httpBackend.whenGET('/modules/eventstream/client/views/list-eventstream.client.view.html').respond(200, '');
 
           $state.go('settings.profile');
           $rootScope.$digest();
@@ -193,7 +194,7 @@
         }));
 
         it('Should have the correct URL', function () {
-          expect(signinstate.url).toEqual('/signin?err');
+          expect(signinstate.url).toEqual('/signin-secret-jFklos');
         });
 
         it('Should not be abstract', function () {

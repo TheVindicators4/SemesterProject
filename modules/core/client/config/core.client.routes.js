@@ -28,9 +28,9 @@
 
     $stateProvider
       .state('home', {
-        url: '/home',
-        templateUrl: '/modules/core/client/views/home.client.view.html',
-        controller: 'HomeController',
+        url: '/',
+        templateUrl: '/modules/eventstream/client/views/list-eventstream.client.view.html',
+        controller: 'EventstreamListController',
         controllerAs: 'vm'
       })
       .state('about', {
@@ -45,12 +45,12 @@
        controller: 'HomeController',
        controllerAs: 'vm'
      })
-      .state('review', {
+    /*  .state('reviews', {
         url: '/reviews',
         templateUrl: '/modules/reviews/client/views/list-reviews.client.view.html',
         controller: 'ReviewsController',
         controllerAs: 'vm'
-      })
+      })*/
       .state('contactme', {
         url: '/contact',
         templateUrl: '/modules/core/client/views/contactme.client.view.html',
@@ -61,6 +61,12 @@
         url: '/login',
         templateUrl: '/modules/users/client/views/authentication/signin.client.view.html',
         controller: 'AuthenticationController',
+        controllerAs: 'vm'
+      })
+      .state('profile', {
+        url: '/settings',
+        templateUrl: '/modules/users/client/views/settings/settings.client.view.html',
+        controller: 'SettingsController',
         controllerAs: 'vm'
       })
       .state('not-found', {

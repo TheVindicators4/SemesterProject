@@ -20,6 +20,18 @@
         controller: 'ReviewsListController',
         controllerAs: 'vm'
       })
+      .state('reviews.create', {
+        url: '/create',
+        templateUrl: '/modules/reviews/client/views/create-review.client.view.html',
+        controller: 'ReviewsController',
+        controllerAs: 'vm',
+        data: {
+          roles: ['guest']
+        },
+        resolve: {
+          reviewResolve: newReview
+        }
+      })
       .state('reviews.view', {
         url: '/:reviewId',
         templateUrl: '/modules/reviews/client/views/view-review.client.view.html',
@@ -41,4 +53,13 @@
       reviewId: $stateParams.reviewId
     }).$promise;
   }
+
+
+  newReview.$inject = ['ReviewsService'];
+
+  function newReview(ReviewsService) {
+    return new ReviewsService();
+  }
+
+
 }());

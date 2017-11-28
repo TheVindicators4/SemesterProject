@@ -34,6 +34,7 @@
       }
 
       // Create a new review, or update the current instance
+	  review.approve = true; 
       vm.review.createOrUpdate()
         .then(successCallback)
         .catch(errorCallback);

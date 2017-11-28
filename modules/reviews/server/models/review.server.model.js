@@ -28,9 +28,17 @@ var ReviewSchema = new Schema({
     default: '',
     trim: true
   },
-  user: {
+  approve:{
+    type: Boolean,
+    default:false
+  },
+  /*user: {
     type: Schema.ObjectId,
     ref: 'User'
+  }*/
+  user:{
+    type: String,
+    default: 'guest'
   }
 });
 

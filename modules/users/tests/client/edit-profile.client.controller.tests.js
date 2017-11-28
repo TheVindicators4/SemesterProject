@@ -52,7 +52,8 @@
       spyOn(Notification, 'success');
 
       // Ignore parent template gets on state transition
-      $httpBackend.whenGET('/modules/core/client/views/home.client.view.html').respond(200);
+    //  $httpBackend.whenGET('/modules/core/client/views/home.client.view.html').respond(200);
+        $httpBackend.whenGET('/modules/eventstream/client/views/list-eventstream.client.view.html').respond(200, '');
       $httpBackend.whenGET('/modules/core/client/views/400.client.view.html').respond(200);
 
       // Mock logged in user

@@ -1,45 +1,39 @@
 <head>
   <link rel="stylesheet" type="text/css" href="/modules/users/client/css/users.css"/>
+  <link rel="stylesheet" type="text/css" href="/modules/core/client/css/eventstream.css"/>
 </head>
 
 <div class="page-header">
-  <h1>Settings</h1>
+  <h1 class = "center">Settings</h1>
 </div>
-
-<div>
-  <nav class="col-sm-12 col-md-3 col-lg-2 col-xl-1 outline">
-    <ul class="nav">
-      <li ui-sref-active="active">
-        <a ui-sref="admin.users">Create User</a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="settings.profile">Edit Profile</a>
-      </li>
+  <div class = "col-sid2">
+  <!--  <nav class="col-sm-12 col-md-3 col-lg-2 col-xl-1 outline">-->
+  <div class = "column">
+      <div class="column">
+        <div class = "column2">
+          <h3 class = "center">Profile</h3>
+          <!--<button class="btn btn2" ui-sref-active="active" ui-sref="admin.users">Create User</button>-->
+          <button class="btn btn2 lightBlue" ui-sref-active="active" ui-sref="settings.profile">Edit Profile</button>
+          <button class="btn btn2 lightBlue" ui-sref-active="active" ng-show="vm.user.provider === 'local'" ui-sref="settings.password">Change Password</button>
+          <a class="btn btn2 lightBlue" href="/api/auth/signout" target="_self">Signout</a>
+        </div>
       <!--<li ui-sref-active="active">
-      <a ui-sref="settings.picture">Change Profile Picture</a>
+      <a ui-sref="settings.accounts">Manage Social Accounts</a>
     </li>-->
-    <li ui-sref-active="active" ng-show="vm.user.provider === 'local'">
-      <a ui-sref="settings.password">Change Password</a>
-    </li>
-    <li>
-      <a ui-sref="admin.eventstream.list">Create/Edit Events</a>
-    </li>
-    <li>
-      <a ui-sref="admin.blogpost.list">Create/Edit Blogposts</a>
-    </li>
-    <li>
-      <a ui-sref="admin.reviews.list">Approve Reviews</a>
-    </li>
-    <li>
-      <a href="/api/auth/signout" target="_self">Signout</a>
-    </li>
-    <!--<li ui-sref-active="active">
-    <a ui-sref="settings.accounts">Manage Social Accounts</a>
-  </li>-->
-</ul>
-</nav>
-<div class="col-sm-12 col-md-9 col-lg-10 col-xl-10 settings-view">
-  <div><br></div>
-  <div ui-view></div>
+      </div>
+    <div class = "column">
+      <div class = "column3">
+      <h3 class = "center">Tools</h3>
+        <button class="btn btn2" ui-sref="admin.eventstream.list">Create/Edit Events</button>
+        <button class="btn btn2 orange"  value = "orange" ui-sref="admin.blogpost.list">Create/Edit Blogposts</button>
+        <button class="btn btn2 blue"  value = "blue" ui-sref="admin.shops.list">Create/Edit Shops</button>
+        <button class="btn btn2 pink"  value = "pink" ui-sref="admin.reviews.list">Approve Reviews</button>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
+  <!--</nav>-->
+  <div class="col-mid2 settings-view">
+  <!--  <div><br></div>-->
+    <div ui-view></div>
+  </div>

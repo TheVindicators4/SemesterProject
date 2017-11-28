@@ -21,37 +21,39 @@
     </h1>
 
     <!-- First Blog Post -->
-    <div ng-repeat="blogpost in vm.blogpost">
+    <div class="container-fluid" ng-repeat="blogpost in vm.blogpost">
 
-      <div class="col-md-12 blogposting">
-        <div class="col-md-12">
-          <div class="col-md-10">
+      <div class="col-xs-12 blogposting">
+        <div class="col-xs-12">
+          <div class="col-xs-12 col-md-8">
             <h2 class = "eventPaddingInner" style="font-size:200%">{{blogpost.title}}</h2>
           </div>
-          <div class="col-md-2">
+          <div class="col-xs-12 col-md-4">
             <p class = "eventPaddingInner"  ng-bind="blogpost.created | date:'mediumDate'"><i>{{blogpost.created}}</i></p>
           </div>
         </div>
-        <div class="col-md-12">
+        <div class="col-xs-12">
           <hr>
         </div>
-        <div class="col-md-12">
-          <div class="col-md-7">
-            <img class="eventPaddingInner" src="http://placehold.it/900x300" alt="">
+        <div class="col-xs-12">
+          <div class="col-xs-12 col-md-6">
+            <img class="eventPaddingInner img-responsive" src="http://placehold.it/900x300" alt="">
           </div>
-          <div class="col-md-5">
+          <div class="col-xs-12 col-md-6">
             <p class = "eventPaddingInnerText">{{blogpost.content}}</p>
           </div>
           <!--a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a-->
         </div>
-        <div class="col-md-12">
+        <div class="col-xs-12">
           <br><br>
         </div>
       </div>
       <div class="col-md-12"><br><br></div>
     </div>
-
     <div class="col-md-12">
+
+      <div class='embedsocial-album' data-ref="7f11ff401206395dcf5fd1614316eb994b167a82"></div>
+
       <!-- Pager -->
       <ul class="pager">
         <li class="previous">
@@ -64,4 +66,16 @@
     </div>
 
   </div>
+  <script>
+  (function(d, s, id){
+    var js;
+    if (d.getElementById(id)) {
+      return;
+    }
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://embedsocial.com/embedscript/ei.js";
+    d.getElementsByTagName("head")[0].appendChild(js);
+  }(document, "script", "EmbedSocialScript"));
+  </script>
 </section>
