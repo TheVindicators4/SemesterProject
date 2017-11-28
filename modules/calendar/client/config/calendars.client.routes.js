@@ -17,7 +17,7 @@
       .state('calendars.list', {
         url: '/scheduling',
         templateUrl: '/modules/calendar/client/views/calendar.client.view.html',
-        controller: 'CalendarsListController',
+        controller: 'CalendarsController',
         controllerAs: 'vm'
       })
       .state('calendars.view', {
