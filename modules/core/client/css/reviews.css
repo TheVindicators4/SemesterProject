@@ -60,11 +60,15 @@ border: 5px solid #660029;
 
 .list-group-item-heading{
   font-size: 2.0em;
+  font-weight: bold;
   color:black;
   padding: 20px;
-  padding-bottom: 2px;
+  padding-bottom: 10px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-bottom: 2px solid black;
   /*border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   padding: 20px;
@@ -79,6 +83,6 @@ border: 5px solid #660029;
   color:black;
   padding: 30px;
   padding-bottom: 25px;
-  padding-top: 10px;
+  padding-top: 15px;
 
 }
