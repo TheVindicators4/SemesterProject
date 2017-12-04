@@ -33,7 +33,7 @@ The application should run on port 3000 with the *development* environment confi
 
 
 ## Testing Your Application
-You can run the full test suite included with MEAN.JS with the test task:
+The full test suite included with MEAN.JS can be run with the test task:
 
 ```bash
 $ npm test
@@ -58,7 +58,7 @@ And to run only the client tests, run the test:client task:
 $ npm run test:client
 ```
 
-## Running your application with Gulp
+## Running the application with Gulp
 
 The MEAN.JS project integrates Gulp as build tools and task automation.
 
@@ -74,7 +74,7 @@ Then start the development environment with:
 $ gulp
 ```
 
-To run your application with *production* environment configuration, execute gulp as follows:
+To run the application with *production* environment configuration, execute gulp as follows:
 
 ```bash
 $ gulp prod
