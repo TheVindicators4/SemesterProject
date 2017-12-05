@@ -1,6 +1,9 @@
-# DJ ELO GLOBAL - Business Management Website
-This is a website built and designed to fulfill the needs of DJ ELO, an artist based in Gainesville, Florida. It's purpose is to increase DJ ELO's online presense, and give him a central location for interacting with fans and spreading awareness about his music through a personal site outside of modern social networks. 
-This entire site was built on the MEAN.JS stack, and as such requires the use of the technologies described in the section below for development to occur. 
+# DJ E-LO GLOBAL - Business Management Website
+This is a website built and designed to fulfill the needs of DJ ELO, an artist based in Gainesville, Florida. It's purpose is to increase DJ E-LO's online presence, and give him a central location for interacting with fans and spreading awareness about his music through a personal site outside of modern social networks.
+This entire site was built on the MEAN.JS stack, and as such requires the use of the technologies described in the section below for development to occur.
+
+## Link to Deployed Page
+You can find the deployed page at http://djelo-sprint-3.herokuapp.com/
 
 ## Technologies Used
 _This section was derived from the original README of a base-version of a MEAN.JS stack application_
@@ -14,6 +17,10 @@ To continue development on this MEAN.JS application, please make sure you have t
 ```bash
 $ npm install -g bower
 ```
+
+## Major Implemented features
+![Alt text](/README-IMG/landing.png?raw=true "Landing Page") Landing Page
+
 
 ## Running The Application Locally
 
@@ -85,6 +92,6 @@ It is also possible to run any Gulp tasks using npm's run command and therefore 
 
 
 ## Credits
+This application was made possible by the MEAN.JS stack. Big thanks to Bootstrap, Spotify, and Google Calendars for allowing us to implement some of the many cool features within this application.
 
 ## License
-
