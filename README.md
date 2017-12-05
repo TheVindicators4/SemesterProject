@@ -102,8 +102,8 @@ $ gulp prod
 It is also possible to run any Gulp tasks using npm's run command and therefore use locally installed version of gulp, for example: `npm run gulp eslint`
 
 ## Updating Database and Server Connections
-Database connections can be found within the following path: /config/lib
-Server connections can be found within the following paths: /modules/-/server
+* Database connections can be found within the following path: /config/lib
+* Server connections can be found within the following paths: /modules/-/server
 
 ## Credits
 This application was made possible by the MEAN.JS stack. Big thanks to Bootstrap, Spotify, and Google Calendars for allowing us to implement some of the many cool features within this application.
