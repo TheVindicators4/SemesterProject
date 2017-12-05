@@ -18,9 +18,8 @@ To continue development on this MEAN.JS application, please make sure you have t
 $ npm install -g bower
 ```
 
-## Major Implemented features
-![Alt text](/README-IMG/landing.png?raw=true "Landing Page") Landing Page
-
+## Major Implemented Features
+![alt text](README-IMG/landing.PNG "Landing page")
 
 ## Running The Application Locally
 
