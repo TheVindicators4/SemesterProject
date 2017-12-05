@@ -3,7 +3,7 @@ This is a website built and designed to fulfill the needs of DJ ELO, an artist b
 This entire site was built on the MEAN.JS stack, and as such requires the use of the technologies described in the section below for development to occur.
 
 ## Link to Deployed Page
-You can find the deployed page at http://djelo-sprint-3.herokuapp.com/
+You can find the deployed webpage at http://djelo-sprint-3.herokuapp.com/
 
 ## Technologies Used
 _This section was derived from the original README of a base-version of a MEAN.JS stack application_
@@ -101,9 +101,9 @@ $ gulp prod
 
 It is also possible to run any Gulp tasks using npm's run command and therefore use locally installed version of gulp, for example: `npm run gulp eslint`
 
-
+## Updating Database and Server Connections
+Database connections can be found within the following path: /config/lib
+Server connections can be found within the following paths: /modules/-/server
 
 ## Credits
 This application was made possible by the MEAN.JS stack. Big thanks to Bootstrap, Spotify, and Google Calendars for allowing us to implement some of the many cool features within this application.
-
-## License
