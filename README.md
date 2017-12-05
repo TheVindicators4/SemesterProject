@@ -21,17 +21,17 @@ $ npm install -g bower
 ## Major Implemented Features
 Email pop-up on initial website visit
 ![alt text](README-IMG/email-popup.PNG "Email pop-up")
-Home page
+Home page with event stream and social media links
 ![alt text](README-IMG/landing.PNG "Home page")
-About page
+Editable about page (admin functionality only)
 ![alt text](README-IMG/about.PNG "About page")
-Shop
+Shop (admin may add item for sale)
 ![alt text](README-IMG/shop.PNG "Shop")
-Gallery
+Filter gallery with modal pop-up
 ![alt text](README-IMG/gallery.PNG "Gallery")
-Blog
+Blog (admin may add blog post)
 ![alt text](README-IMG/blog.PNG "Blog")
-Reviews page
+Reviews page (only displays client review after admin approval)
 ![alt text](README-IMG/reviews.PNG "Reviews")
 
 ## Running The Application Locally
