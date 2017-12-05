@@ -1,5 +1,5 @@
 # DJ E-LO GLOBAL - Business Management Website
-This is a website built and designed to fulfill the needs of DJ ELO, an artist based in Gainesville, Florida. It's purpose is to increase DJ E-LO's online presence, and give him a central location for interacting with fans and spreading awareness about his music through a personal site outside of modern social networks.
+This is a website built and designed to fulfill the needs of DJ E-LO, an artist based in Gainesville, Florida. It's purpose is to increase DJ E-LO's online presence, and give him a central location for interacting with fans and spreading awareness about his music through a personal site outside of modern social networks.
 This entire site was built on the MEAN.JS stack, and as such requires the use of the technologies described in the section below for development to occur.
 
 ## Link to Deployed Page
