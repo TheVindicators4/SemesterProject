@@ -19,13 +19,20 @@ $ npm install -g bower
 ```
 
 ## Major Implemented Features
-![alt text](README-IMG/email-popup.PNG "Email pop-up") Email pop-up on initial website visit
-![alt text](README-IMG/landing.PNG "Home page") Home page
-![alt text](README-IMG/about.PNG "About page") About page
-![alt text](README-IMG/shop.PNG "Shop") Shop
-![alt text](README-IMG/gallery.PNG "Gallery") Gallery
-![alt text](README-IMG/blog.PNG "Blog") Blog
-![alt text](README-IMG/reviews.PNG "Reviews") Reviews page
+Email pop-up on initial website visit
+![alt text](README-IMG/email-popup.PNG "Email pop-up")
+Home page
+![alt text](README-IMG/landing.PNG "Home page")
+About page
+![alt text](README-IMG/about.PNG "About page")
+Shop
+![alt text](README-IMG/shop.PNG "Shop")
+Gallery
+![alt text](README-IMG/gallery.PNG "Gallery")
+Blog
+![alt text](README-IMG/blog.PNG "Blog")
+Reviews page
+![alt text](README-IMG/reviews.PNG "Reviews")
 
 ## Running The Application Locally
 
