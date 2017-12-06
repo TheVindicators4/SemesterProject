@@ -21,7 +21,8 @@
            <p class = "eventPaddingInner pull-right"  ng-bind="eventstream.created | date:'mediumDate'"><i>{{eventstream.created}}</i></p>
          </div>
            <div class="panel-body">
-             <img class = "eventPaddingImage" src="/modules/core/client/img/img-Social/logo1.jpg"  alt="Logo" style="width:300px;height:300px;"></img>
+             <!--<img class = "eventPaddingImage" src="/modules/core/client/img/img-Social/logo1.jpg"  alt="Logo" style="width:300px;height:300px;"></img>-->
+             <img class = "eventPaddingImage" src="{{eventstream.urlImage}}" width="300px" height="300px"></img>
              <p class = "eventPaddingInnerText">{{eventstream.content}}</p>
            </div>
        </div>

@@ -44,7 +44,7 @@
   /*background:#ffe6f0;
   border: 5px solid #660029;*/
   background: #bfbfbf;
-  border: 5px solid #8c8c8c;
+  border: 5px solid #4d4d4d;/*#8c8c8c;*/
 
   box-shadow: 5px 5px 10px #000000;
   font-family: 'Sanchez', serif;
@@ -68,7 +68,7 @@ border: 5px solid #660029;
   border-top-right-radius: 15px;
   margin-left: 10px;
   margin-right: 10px;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #4d4d4d;
   /*border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   padding: 20px;
