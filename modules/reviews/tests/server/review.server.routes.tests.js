@@ -82,10 +82,10 @@ describe('Review CRUD tests', function () {
       });
   });
 
-  it('should not be able to save an review if not logged in', function (done) {
+  it('should be able to save an review if not logged in', function (done) {
     agent.post('/api/reviews')
       .send(review)
-      .expect(403)
+      .expect(200)
       .end(function (reviewSaveErr, reviewSaveRes) {
         // Call the assertion callback
         done(reviewSaveErr);
@@ -192,7 +192,7 @@ describe('Review CRUD tests', function () {
       });
   });
 
-  it('should not be able to delete an review if not signed in', function (done) {
+/*  it('should not be able to delete an review if not signed in', function (done) {
     // Set review user
     review.user = user;
 
@@ -213,7 +213,7 @@ describe('Review CRUD tests', function () {
         });
 
     });
-  });
+  });*/
 
   it('should be able to get a single review that has an orphaned user reference', function (done) {
     // Create orphan user creds

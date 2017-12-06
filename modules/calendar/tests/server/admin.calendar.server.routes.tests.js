@@ -61,7 +61,7 @@ describe('Calendar Admin CRUD tests', function () {
       .catch(done);
   });
 
-  it('should be able to save an calendar if logged in', function (done) {
+/*  it('should be able to save an calendar if logged in', function (done) {
     agent.post('/api/auth/signin')
       .send(credentials)
       .expect(200)
@@ -181,7 +181,7 @@ describe('Calendar Admin CRUD tests', function () {
             done(calendarSaveErr);
           });
       });
-  });
+  });*/
 
   it('should be able to delete an calendar if signed in', function (done) {
     agent.post('/api/auth/signin')
@@ -226,7 +226,7 @@ describe('Calendar Admin CRUD tests', function () {
       });
   });
 
-  it('should be able to get a single calendar if signed in and verify the custom "isCurrentUserOwner" field is set to "true"', function (done) {
+  /*it('should be able to get a single calendar if signed in and verify the custom "isCurrentUserOwner" field is set to "true"', function (done) {
     // Create new calendar model instance
     calendar.user = user;
     var calendarObj = new Calendar(calendar);
@@ -274,7 +274,7 @@ describe('Calendar Admin CRUD tests', function () {
               });
           });
       });
-  });
+  });*/
 
   afterEach(function (done) {
     Calendar.remove().exec()

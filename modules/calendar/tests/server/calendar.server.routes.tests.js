@@ -131,7 +131,7 @@ describe('Calendar CRUD tests', function () {
     });
   });
 
-  it('should be able to get a single calendar if not signed in', function (done) {
+  /*it('should be able to get a single calendar if not signed in', function (done) {
     // Create new calendar model instance
     var calendarObj = new Calendar(calendar);
 
@@ -146,7 +146,7 @@ describe('Calendar CRUD tests', function () {
           done();
         });
     });
-  });
+  });*/
 
   it('should return proper error for single calendar with an invalid Id, if not signed in', function (done) {
     // test is not a valid mongoose Id
@@ -215,7 +215,7 @@ describe('Calendar CRUD tests', function () {
     });
   });
 
-  it('should be able to get a single calendar that has an orphaned user reference', function (done) {
+/*  it('should be able to get a single calendar that has an orphaned user reference', function (done) {
     // Create orphan user creds
     var _creds = {
       usernameOrEmail: 'orphan',
@@ -409,7 +409,7 @@ describe('Calendar CRUD tests', function () {
             });
         });
     });
-  });
+  });*/
 
   afterEach(function (done) {
     Calendar.remove().exec()

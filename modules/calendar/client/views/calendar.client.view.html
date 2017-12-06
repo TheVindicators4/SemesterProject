@@ -3,7 +3,8 @@
 </head>
 <section>
 
-  <head><link rel="stylesheet" href="/modules/calendar/client/css/calendar.client.css"></head>
+  <head><link rel="stylesheet" href="/modules/calendar/client/css/calendar.client.css">
+  <link rel="stylesheet" href="/modules/core/client/css/eventstream.client.css"></head>
 
   <div class="col-12">
     <div class="col-6 text-center pull-left">
@@ -15,7 +16,7 @@
   </div>
   <div style="height:inherit;">
     <div class="col-xs-12 col-lg-6 pull-left output text-center" style="margin-top:25px;" id="output">
-      <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=489h2m4jioa9g6klo2fj9rbijc%40group.calendar.google.com&amp;color=%23333333&amp;ctz=America%2FNew_York" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+      <iframe class = "calendar"src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=489h2m4jioa9g6klo2fj9rbijc%40group.calendar.google.com&amp;color=%23333333&amp;ctz=America%2FNew_York" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
     </div>
     <script type="text/javascript">
     document.getElementById("output").innerHTML = vm.calendar.content;
@@ -33,7 +34,7 @@
                 <input type="hidden" name="_wpnonce" value="dbb28877d5">
               </div>
               <div class="group">
-                <div style="width: 48%; float: left;">
+                <div style="width: 48%; float: left;"  >
                   <span class="wpcf7-form-control-wrap text-680">
                     <input type="text" name="text-680" value="" size="45" ng-model="vm.calendar.content.name" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" placeholder="Name" id="name">
                   </span><br>
@@ -43,7 +44,7 @@
                   <span class="wpcf7-form-control-wrap tel-630">
                     <input type="tel" name="tel-630" value="" size="45" ng-model="vm.calendar.content.phone" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel" aria-required="true" placeholder="Phone" id="phone">
                   </span><br>
-                  <span class="wpcf7-form-control-wrap textarea-398">
+                  <span class="wpcf7-form-control-wrap textarea-398"id="style-2">
                     <textarea name="textarea-398" cols="40" rows="40" ng-model="vm.calendar.content.message" class="wpcf7-form-control wpcf7-textarea" placeholder="Message for DJ Elo" id="message"></textarea>
                   </span>
                 </div>
@@ -118,7 +119,7 @@
                 </li>
               </ul>
               <div style="text-align: center; padding-top: 2em; border-top: 1px solid rgb(153, 202, 129); margin-top: 1em;">
-                <button type="submit" class="btn btn-default" style = "background-color: deepskyblue; color: white; border-color: deepskyblue">Submit Message Request</button>
+                <button type="submit" class="btn red">Submit Message Request</button>
               </div>
               <div class="wpcf7-response-output wpcf7-display-none"></div>
             </fieldset>

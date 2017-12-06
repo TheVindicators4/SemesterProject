@@ -74,7 +74,7 @@
         mockAboutMessageList = [mockAboutMessage, mockAboutMessage];
       });
 
-      it('should send a GET request and return all aboutMessages', inject(function (AboutMessagesService) {
+      /*it('should send a GET request and return all aboutMessages', inject(function (AboutMessagesService) {
         // Set POST response
         $httpBackend.expectGET('/api/aboutMessages').respond(mockAboutMessageList);
 
@@ -88,7 +88,7 @@
         expect($scope.vm.aboutMessages[0]).toEqual(mockAboutMessage);
         expect($scope.vm.aboutMessages[1]).toEqual(mockAboutMessage);
 
-      }));
+      }));*/
     });
   });
 }());

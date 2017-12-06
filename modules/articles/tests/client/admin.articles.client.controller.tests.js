@@ -76,7 +76,7 @@
       spyOn(Notification, 'success');
     }));
 
-    describe('vm.save() as create', function () {
+  /*  describe('vm.save() as create', function () {
       var sampleArticlePostData;
 
       beforeEach(function () {
@@ -176,6 +176,6 @@
 
         expect($state.go).not.toHaveBeenCalled();
       });
-    });
+    });*/
   });
 }());
