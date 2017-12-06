@@ -1,0 +1,31 @@
+<section>
+	<div class="page-header">
+		<h1>Contact Request</h1>
+	</div>
+	<div class="col-md-12">
+		<form name="vm.form.contactForm" class="form-horizontal" ng-submit="vm.save(vm.form.contactForm.$valid)" novalidate>
+			<fieldset>
+				<div class="group col-6 pull-left">
+					<div class="form-group" show-errors>
+						<label class="control-label" for="name">Name</label>
+						<input name="name" type="text" disabled = "disabled" ng-model="vm.contact.content.name" id="name" class="form-control" placeholder="Name" required autofocus style= " background-color: silver;" >
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="message">Message</label>
+						<textarea READONLY name="message" disabled = "disabled" data-ng-model="vm.contact.content.message" id="message" class="form-control" cols="30" rows="10" placeholder="Message" style= " background-color: silver;" >
+						</textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<a ng-show="vm.contact._id" class="btn btn-primary pull-right" ng-click="vm.remove()" style= "background:red; border-color: red; margin-left: 4px;">
+						Delete<i class="glyphicon glyphicon-trash"></i>
+					</a>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</section>
+
+<!-- take out the editing functions here for the admin side so that he can only update the true or
+false field in the record object so that he can't actually change anything, he'll basically only
+be deleting or updating the recording by deleting it or by posting it -->

@@ -1,0 +1,30 @@
+<section>
+	<div class="page-header">
+		<h1>
+			Contacts
+		</h1>
+	</div>
+	<div class="list-group">
+		<a data-ng-repeat="contact in vm.contacts" data-ui-sref="admin.contacts.edit({contactId: contact._id})" class="list-group-item">
+			<small class="list-group-item-text">
+				Posted on
+				<span data-ng-bind="contact.created | date:'mediumDate'"></span>
+				by
+				<span ng-if="contact.user" ng-bind="contact.user"></span>
+				<span ng-if="!contact.user">Deleted User</span>
+			</small>
+			<h4 class="list-group-item-heading" data-ng-bind="contact.content.name"></h4>
+			<p class="list-group-item-text" data-ng-bind="contact.content.message"></p>
+
+			<!-- Edit this part to be a single button that will allow
+			ELO to either approve or deny a contact from a separate screen -->
+			<p class="btn btn-primary pull-right" data-ui-sref="admin.contacts.save">
+				View
+			</p>
+
+		</a>
+	</div>
+	<div class="alert alert-warning text-center" data-ng-if="contacts.$resolved && !contacts.length">
+		No contacts yet, why don't you <a data-ui-sref="admin.contacts.create">create one</a>?
+	</div>
+</section>

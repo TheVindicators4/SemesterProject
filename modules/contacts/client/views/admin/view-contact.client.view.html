@@ -1,0 +1,23 @@
+<head>
+  <link rel="stylesheet" href="/modules/core/client/css/eventstream.css">
+	<link rel="stylesheet" href="/modules/core/client/css/contacts.css">
+  <link rel="stylesheet" href="/modules/core/client/css/shop.css">
+</head>
+
+
+<section>
+	<div class="page-header">
+		<h1> Contact: </h1>
+		<h2 ng-bind="vm.contact.content.name" style = "color: white; "></h2>
+	</div>
+	<small>
+		<em class="text-muted">
+			Posted on
+			<span ng-bind="vm.contact.created | date:'mediumDate'"></span>
+			by
+			<span ng-if="vm.contact.user" ng-bind="vm.contact.user"></span>
+			<span ng-if="!vm.contact.user">Deleted User</span>
+		</em>
+	</small>
+	<p class="lead" ng-bind="vm.contact.content.message" style= "color: white;"></p>
+</section>

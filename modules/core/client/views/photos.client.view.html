@@ -220,6 +220,20 @@ h1 {
     }
 }
 
+.radioTextAlt{
+  font-size: 20px;
+  padding: 5px;
+}
+
+.imageFont{
+  font-size: 20px;
+}
+
+.close {
+    color: #fff;
+    opacity: 1;
+}
+
 
 
 </style>
@@ -236,32 +250,33 @@ h1 {
 <h2></h2>
 
 <!-- Filter categories -->
-<input class= "radioText"type="radio" onclick="filterSelection('all')" name="category" checked> All
-<input class= "radioText"type="radio" onclick="filterSelection('head')" name="category"> Headshots
-<input class= "radioText"type="radio" onclick="filterSelection('eq')" name="category"> Equipment/Setups
-<input class= "radioText"type="radio" onclick="filterSelection('fan')" name="category"> Fan Love
-
+<div class = "center">
+  <input class= "radioText"type="radio" onclick="filterSelection('all')" name="category" checked> <label class = "radioTextAlt">All</label>
+  <input class= "radioText"type="radio" onclick="filterSelection('head')" name="category"> <label class = "radioTextAlt"> Headshots</label>
+  <input class= "radioText"type="radio" onclick="filterSelection('eq')" name="category"> <label class = "radioTextAlt">Equipment/Setups</label>
+  <input class= "radioText"type="radio" onclick="filterSelection('fan')" name="category"><label class = "radioTextAlt"> Fan Love</label>
+</div>
 <!-- Portfolio Gallery Grid -->
 <!-- All images listed with captions -->
 <div class="row">
   <div class="column head">
     <div class="content">
       <img id="myImg1" img src="modules/core/client/views/gallery-images/1.jpg" alt="Serious face" height="220" width="300">
-      <h4>Serious face</h4>
+      <h4 class="imageFont">Serious face</h4>
       <!--<p>Lorem ipsum dolor</p>-->
     </div>
   </div>
   <div class="column fan">
     <div class="content">
     <img id="myImg2" img src="modules/core/client/views/gallery-images/2.jpg" alt="Love my fans" height="220" width="300">
-      <h4>Love my fans</h4>
+      <h4 class="imageFont">Love my fans</h4>
       <!--<p>Lorem ipsum dolor</p>-->
     </div>
   </div>
   <div class="column fan">
     <div class="content">
     <img id="myImg3" img src="modules/core/client/views/gallery-images/3.jpg" alt="Event is liiiiit" height="220" width="300">
-      <h4>Event is liiiiit</h4>
+      <h4 class="imageFont">Event is liiiiit</h4>
       <!--<p>Lorem ipsum dolor</p>-->
     </div>
   </div>
@@ -269,21 +284,21 @@ h1 {
   <div class="column head">
     <div class="content">
       <img id="myImg4" img src="modules/core/client/views/gallery-images/4.jpg" alt="Security on fleek" height="220" width="300">
-      <h4>Security on fleek</h4>
+      <h4 class="imageFont">Security on fleek</h4>
       <!--<p>Lorem ipsum dolor</p>-->
     </div>
   </div>
   <div class="column fan">
     <div class="content">
     <img id="myImg5" img src="modules/core/client/views/gallery-images/5.jpg" alt="Best fans #blessed" height="220" width="300">
-      <h4>Best fans #blessed</h4>
+      <h4 class="imageFont">Best fans #blessed</h4>
       <!--<p>Lorem ipsum dolor</p>-->
     </div>
   </div>
   <div class="column head">
     <div class="content">
     <img id="myImg6" img src="modules/core/client/views/gallery-images/6.jpg" alt="Putting in work" height="220" width="300">
-      <h4>Putting in work</h4>
+      <h4 class="imageFont">Putting in work</h4>
       <!--<p>Lorem ipsum dolor</p>-->
     </div>
   </div>
@@ -291,21 +306,21 @@ h1 {
   <div class="column equip">
     <div class="content">
       <img id="myImg7" img src="modules/core/client/views/gallery-images/7.jpg" alt="The best equipment" height="220" width="300">
-      <h4>The best equipment</h4>
+      <h4 class="imageFont">The best equipment</h4>
     <!--<p>Lorem ipsum dolor</p>-->
     </div>
   </div>
   <div class="column equip">
     <div class="content">
     <img id="myImg8" img src="modules/core/client/views/gallery-images/8.jpg" alt="Pioneer DJ up in here" height="220" width="300">
-      <h4>Pioneer DJ up in here</h4>
+      <h4 class="imageFont">Pioneer DJ up in here</h4>
       <!--<p>Lorem ipsum dolor</p>-->
     </div>
   </div>
   <div class="column fan">
     <div class="content">
     <img id="myImg9" img src="modules/core/client/views/gallery-images/9.jpg" alt="Aoki fam" height="220" width="300">
-      <h4>Aoki fam</h4>
+      <h4 class="imageFont">Aoki fam</h4>
       <!--<p>Lorem ipsum dolor</p>-->
     </div>
   </div>

@@ -15,7 +15,7 @@
       template: '<ui-view/>'
     })
     .state('reviews.list', {
-      url: '/list',
+      url: '',
       templateUrl: '/modules/reviews/client/views/list-reviews.client.view.html',
       controller: 'ReviewsListController',
       controllerAs: 'vm'

@@ -1,4 +1,7 @@
-
+<head>
+  <link rel="stylesheet" type="text/css" href="/modules/core/client/css/eventstream.css"/>
+  <link rel="stylesheet" type="text/css" href="/modules/users/client/css/users.css"/>
+</head>
 
 <div class="image2">
   <div style="width:60px; margin-left:10px">
@@ -50,12 +53,23 @@
           <a class="nav-link" ui-sref="reviews.list">Reviews</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" ui-sref="calendars.list">Contact</a>
+          <a class="nav-link" ui-sref="contacts.create">Contact</a>
         </li>
         <li class="nav-item" ng-hide="vm.authentication.user">
         </li>
-        <li class="nav-item" ng-show="vm.authentication.user">
-          <a class="nav-link" ui-sref="profile">Profile</a>
+        <li class="nav-item dropdown" ng-show="vm.authentication.user">
+
+            <a class="nav-link" ui-sref="profile">Profile</a>
+            <div class="dropdown-content">
+              <h3 class = "center">Tools</h3>
+                <a class="btn btn2" ui-sref="admin.eventstream.list">Create/Edit Events</a>
+                <a class="btn btn2 yellow" ui-sref="admin.aboutmessages.list">Edit About</a>
+                <a class="btn btn2 orange"  value = "orange" ui-sref="admin.blogpost.list">Create/Edit Blogposts</a>
+                <a class="btn btn2 blue"  value = "blue" ui-sref="admin.shops.list">Create/Edit Shops</a>
+                <a class="btn btn2 pink"  value = "pink" ui-sref="admin.reviews.list">Approve Reviews</a>
+                <a class="btn btn2 red"  href="https://login.mailchimp.com/" target="_self">Send Email Blast</a>
+              </div>
+          </div>
         </li>
       </ul>
 

@@ -63,4 +63,4 @@
   function newEmail(EmailService) {
     return new EmailService();
   }
-}();
+}());

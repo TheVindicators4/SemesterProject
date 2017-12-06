@@ -1,0 +1,31 @@
+<head>
+  <link rel="stylesheet" href="/modules/core/client/css/eventstream.css">
+    <link rel="stylesheet" href="/modules/core/client/css/contacts.css">
+        <link rel="stylesheet" href="/modules/core/client/css/shop.css">
+</head>
+
+<section>
+  <div class="page-header center">
+    <h1 class = "center">Contacts</h1>
+
+  </div>
+
+  <div style = "padding-left:50px;"><button type="button" class="btn pink btn-info btn-md pull-right" ui-sref = 'contacts.create'>Submit a Contact</button></div>
+ <!-- <div style = "padding: 20px;"><button type="button" class="btn btn-info btn-md" ui-sref = 'contacts.create'>Submit a Contact</button></div> -->
+  <div class="list-group">
+    <!--ui-sref="contacts.view({ contactId: contact._id })"-->
+    <a ng-repeat="contact in vm.contacts | filter : contact.approve !== true" class="list-group-itemMOD">
+  <!--  <div ng-Show = "contact.approve">-->
+        <div class="list-group-item-heading">{{contact.title}}
+            <span class="list-group-item-text2 pull-right" ng-bind="contact.created | date:'mediumDate'"></span>
+        </div>
+        <p class="list-group-item-text2" ng-bind="contact.content"></p>
+        <div class="list-group-item-text2">
+           - <span style = "font-style:italic;"ng-if="contact.user" ng-bind="contact.user"></span>
+          <!--<span ng-if="!contact.user">Deleted User</span>-->
+        </div>
+
+      </a>
+<!--  </div>-->
+  </div>
+</section>

@@ -1,10 +1,10 @@
 ﻿(function () {
   'use strict';
 
-  describe('Aboutmessages Route Tests', function () {
+  describe('AboutMessages Route Tests', function () {
     // Initialize global variables
     var $scope,
-      AboutmessagesService;
+      AboutMessagesService;
 
     // We can start by loading the main application module
     beforeEach(module(ApplicationConfiguration.applicationModuleName));
@@ -12,21 +12,21 @@
     // The injector ignores leading and trailing underscores here (i.e. _$httpBackend_).
     // This allows us to inject a service but then attach it to a variable
     // with the same name as the service.
-    beforeEach(inject(function ($rootScope, _AboutmessagesService_) {
+    beforeEach(inject(function ($rootScope, _AboutMessagesService_) {
       // Set a new global scope
       $scope = $rootScope.$new();
-      AboutmessagesService = _AboutmessagesService_;
+      AboutMessagesService = _AboutMessagesService_;
     }));
 
     describe('Route Config', function () {
       describe('Main Route', function () {
         var mainstate;
         beforeEach(inject(function ($state) {
-          mainstate = $state.get('admin.aboutmessages');
+          mainstate = $state.get('admin.aboutMessages');
         }));
 
         it('Should have the correct URL', function () {
-          expect(mainstate.url).toEqual('/aboutmessages');
+          expect(mainstate.url).toEqual('/aboutMessages');
         });
 
         it('Should be abstract', function () {
@@ -41,7 +41,7 @@
       describe('List Route', function () {
         var liststate;
         beforeEach(inject(function ($state) {
-          liststate = $state.get('admin.aboutmessages.list');
+          liststate = $state.get('admin.aboutMessages.list');
         }));
 
         it('Should have the correct URL', function () {
@@ -53,26 +53,26 @@
         });
 
         it('Should have templateUrl', function () {
-          expect(liststate.templateUrl).toBe('/modules/about/client/views/admin/list-aboutmessages.client.view.html');
+          expect(liststate.templateUrl).toBe('/modules/aboutMessages/client/views/admin/list-aboutMessages.client.view.html');
         });
       });
 
       describe('Create Route', function () {
         var createstate,
-          AboutmessagesAdminController,
-          mockAboutmessage;
+          AboutMessagesAdminController,
+          mockAboutMessage;
 
         beforeEach(inject(function ($controller, $state, $templateCache) {
-          createstate = $state.get('admin.aboutmessages.create');
-          $templateCache.put('/modules/about/client/views/admin/form-aboutmessage.client.view.html', '');
+          createstate = $state.get('admin.aboutMessages.create');
+          $templateCache.put('/modules/aboutMessages/client/views/admin/form-aboutMessage.client.view.html', '');
 
-          // Create mock aboutmessage
-          mockAboutmessage = new AboutmessagesService();
+          // Create mock aboutMessage
+          mockAboutMessage = new AboutMessagesService();
 
           // Initialize Controller
-          AboutmessagesAdminController = $controller('AboutmessagesAdminController as vm', {
+          AboutMessagesAdminController = $controller('AboutMessagesAdminController as vm', {
             $scope: $scope,
-            aboutmessageResolve: mockAboutmessage
+            aboutMessageResolve: mockAboutMessage
           });
         }));
 
@@ -82,16 +82,16 @@
 
         it('Should have a resolve function', function () {
           expect(typeof createstate.resolve).toEqual('object');
-          expect(typeof createstate.resolve.aboutmessageResolve).toEqual('function');
+          expect(typeof createstate.resolve.aboutMessageResolve).toEqual('function');
         });
 
         it('should respond to URL', inject(function ($state) {
-          expect($state.href(createstate)).toEqual('/admin/aboutmessages/create');
+          expect($state.href(createstate)).toEqual('/admin/aboutMessages/create');
         }));
 
-        it('should attach an aboutmessage to the controller scope', function () {
-          expect($scope.vm.aboutmessage._id).toBe(mockAboutmessage._id);
-          expect($scope.vm.aboutmessage._id).toBe(undefined);
+        it('should attach an aboutMessage to the controller scope', function () {
+          expect($scope.vm.aboutMessage._id).toBe(mockAboutMessage._id);
+          expect($scope.vm.aboutMessage._id).toBe(undefined);
         });
 
         it('Should not be abstract', function () {
@@ -99,50 +99,50 @@
         });
 
         it('Should have templateUrl', function () {
-          expect(createstate.templateUrl).toBe('/modules/about/client/views/admin/form-aboutmessage.client.view.html');
+          expect(createstate.templateUrl).toBe('/modules/aboutMessages/client/views/admin/form-aboutMessage.client.view.html');
         });
       });
 
       describe('Edit Route', function () {
         var editstate,
-          AboutmessagesAdminController,
-          mockAboutmessage;
+          AboutMessagesAdminController,
+          mockAboutMessage;
 
         beforeEach(inject(function ($controller, $state, $templateCache) {
-          editstate = $state.get('admin.aboutmessages.edit');
-          $templateCache.put('/modules/about/client/views/admin/form-aboutmessage.client.view.html', '');
+          editstate = $state.get('admin.aboutMessages.edit');
+          $templateCache.put('/modules/aboutMessages/client/views/admin/form-aboutMessage.client.view.html', '');
 
-          // Create mock aboutmessage
-          mockAboutmessage = new AboutmessagesService({
+          // Create mock aboutMessage
+          mockAboutMessage = new AboutMessagesService({
             _id: '525a8422f6d0f87f0e407a33',
-            title: 'An Aboutmessage about MEAN',
+            title: 'An AboutMessage about MEAN',
             content: 'MEAN rocks!'
           });
 
           // Initialize Controller
-          AboutmessagesAdminController = $controller('AboutmessagesAdminController as vm', {
+          AboutMessagesAdminController = $controller('AboutMessagesAdminController as vm', {
             $scope: $scope,
-            aboutmessageResolve: mockAboutmessage
+            aboutMessageResolve: mockAboutMessage
           });
         }));
 
         it('Should have the correct URL', function () {
-          expect(editstate.url).toEqual('/:aboutmessageId/edit');
+          expect(editstate.url).toEqual('/:aboutMessageId/edit');
         });
 
         it('Should have a resolve function', function () {
           expect(typeof editstate.resolve).toEqual('object');
-          expect(typeof editstate.resolve.aboutmessageResolve).toEqual('function');
+          expect(typeof editstate.resolve.aboutMessageResolve).toEqual('function');
         });
 
         it('should respond to URL', inject(function ($state) {
           expect($state.href(editstate, {
-            aboutmessageId: 1
-          })).toEqual('/admin/aboutmessages/1/edit');
+            aboutMessageId: 1
+          })).toEqual('/admin/aboutMessages/1/edit');
         }));
 
-        it('should attach an aboutmessage to the controller scope', function () {
-          expect($scope.vm.aboutmessage._id).toBe(mockAboutmessage._id);
+        it('should attach an aboutMessage to the controller scope', function () {
+          expect($scope.vm.aboutMessage._id).toBe(mockAboutMessage._id);
         });
 
         it('Should not be abstract', function () {
@@ -150,7 +150,7 @@
         });
 
         it('Should have templateUrl', function () {
-          expect(editstate.templateUrl).toBe('/modules/about/client/views/admin/form-aboutmessage.client.view.html');
+          expect(editstate.templateUrl).toBe('/modules/aboutMessages/client/views/admin/form-aboutMessage.client.view.html');
         });
 
         xit('Should go to unauthorized route', function () {

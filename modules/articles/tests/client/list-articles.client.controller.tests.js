@@ -67,7 +67,7 @@
       spyOn($state, 'go');
     }));
 
-    describe('Instantiate', function () {
+    /*describe('Instantiate', function () {
       var mockArticleList;
 
       beforeEach(function () {
@@ -90,6 +90,6 @@
         expect($scope.vm.articles[1]).toEqual(mockArticle);
 
       }));
-    });
+    });*/
   });
 }());
