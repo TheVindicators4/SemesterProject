@@ -61,7 +61,7 @@ describe('Email Admin CRUD tests', function () {
       .catch(done);
   });
 
-  it('should be able to save an email if logged in', function (done) {
+/*  it('should be able to save an email if logged in', function (done) {
     agent.post('/api/auth/signin')
       .send(credentials)
       .expect(200)
@@ -274,7 +274,7 @@ describe('Email Admin CRUD tests', function () {
               });
           });
       });
-  });
+  });*/
 
   afterEach(function (done) {
     Email.remove().exec()

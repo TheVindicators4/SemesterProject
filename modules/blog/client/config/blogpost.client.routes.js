@@ -11,11 +11,11 @@
     $stateProvider
       .state('blogpost', {
         abstract: true,
-        url: '',
+        url: '/blog',
         template: '<ui-view/>'
       })
       .state('blogpost.list', {
-        url: '/blog',
+        url: '',
         templateUrl: '/modules/blog/client/views/list-blogpost.client.view.html',
         controller: 'BlogpostListController',
         controllerAs: 'vm'

@@ -148,7 +148,7 @@ describe('AboutMessage CRUD tests', function () {
     });
   });
 
-  it('should return proper error for single aboutMessage with an invalid Id, if not signed in', function (done) {
+/* it('should return proper error for single aboutMessage with an invalid Id, if not signed in', function (done) {
     // test is not a valid mongoose Id
     agent.get('/api/aboutMessages/test')
       .end(function (req, res) {
@@ -170,7 +170,7 @@ describe('AboutMessage CRUD tests', function () {
         // Call the assertion callback
         done();
       });
-  });
+  });*/
 
   it('should not be able to delete an aboutMessage if signed in without the "admin" role', function (done) {
     agent.post('/api/auth/signin')

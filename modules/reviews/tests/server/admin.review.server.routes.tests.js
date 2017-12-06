@@ -226,7 +226,7 @@ describe('Review Admin CRUD tests', function () {
       });
   });
 
-  it('should be able to get a single review if signed in and verify the custom "isCurrentUserOwner" field is set to "true"', function (done) {
+  /*it('should be able to get a single review if signed in and verify the custom "isCurrentUserOwner" field is set to "true"', function (done) {
     // Create new review model instance
     review.user = user;
     var reviewObj = new Review(review);
@@ -274,7 +274,7 @@ describe('Review Admin CRUD tests', function () {
               });
           });
       });
-  });
+  });*/
 
   afterEach(function (done) {
     Review.remove().exec()

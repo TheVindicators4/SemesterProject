@@ -28,6 +28,11 @@ var EventstreamSchema = new Schema({
     default: '',
     trim: true
   },
+  urlImage:{
+      type: String,
+      default: '',
+      trim: true
+    },
   user: {
     type: Schema.ObjectId,
     ref: 'User'
