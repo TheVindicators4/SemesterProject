@@ -10,95 +10,101 @@ config = require(path.resolve('./config/config')),
 chalk = require('chalk');
 
 /**
-* Calendar Schema
+* Contact Schema
 */
-var CalendarSchema = new Schema({
+var ContactSchema = new Schema({
   created: {
     type: Date,
     default: Date.now
   },
-  name: {
+  content: {
+    name: {
+      type: String,
+      default: 'Anonymous',
+      trim: true,
+    },
+    email: {
+      type: String,
+      default: 'no email given',
+      trim: true
+    },
+    phone: {
+      type: String,
+      default: 'no phone given',
+      trim: true
+    },
+    message: {
+      type: String,
+      default: 'no message',
+      required: true,
+      trim: true
+    }
+  },
+  nature: {
+    booking: {
+      type: Boolean,
+      default: 'false',
+      trim: true,
+    },
+    info: {
+      type: Boolean,
+      default: 'false',
+      trim: true
+    },
+    concern: {
+      type: Boolean,
+      default: 'false',
+      trim: true
+    },
+    other: {
+      type: Boolean,
+      default: 'false',
+      trim: true,
+    }
+  },
+  availability: {
+    monday: {
+      type: Boolean,
+      default: 'false',
+      trim: true,
+    },
+    tuesday: {
+      type: Boolean,
+      default: 'false',
+      trim: true
+    },
+    wednesday: {
+      type: Boolean,
+      default: 'false',
+      trim: true
+    },
+    thursday: {
+      type: Boolean,
+      default: 'false',
+      trim: true,
+    },
+    friday: {
+      type: Boolean,
+      default: 'false',
+      trim: true,
+    }
+  },
+  user:{
     type: String,
-    default: 'Anonymous',
-    trim: true,
-  },
-  email: {
-    type: String,
-    default: 'no email given',
-    trim: true
-  },
-  phone: {
-    type: String,
-    default: 'no phone given',
-    trim: true
-  },
-  message: {
-    type: String,
-    default: 'no message',
-    required: true,
-    trim: true
-  },
-  booking: {
-    type: Boolean,
-    default: 'false',
-    trim: true,
-  },
-  info: {
-    type: Boolean,
-    default: 'false',
-    trim: true
-  },
-  concern: {
-    type: Boolean,
-    default: 'false',
-    trim: true
-  },
-  other: {
-    type: Boolean,
-    default: 'false',
-    trim: true,
-  },
-  monday: {
-    type: Boolean,
-    default: 'false',
-    trim: true,
-  },
-  tuesday: {
-    type: Boolean,
-    default: 'false',
-    trim: true
-  },
-  wednesday: {
-    type: Boolean,
-    default: 'false',
-    trim: true
-  },
-  thursday: {
-    type: Boolean,
-    default: 'false',
-    trim: true,
-  },
-  friday: {
-    type: Boolean,
-    default: 'false',
-    trim: true,
-  },
-  user: {
-    type: Schema.ObjectId,
-    ref: 'User'
+    default: 'guest'
   }
 });
 
-CalendarSchema.statics.seed = seed;
+ContactSchema.statics.seed = seed;
 
-mongoose.model('Calendar', CalendarSchema);
+mongoose.model('Contact', ContactSchema);
 
 /**
-* Seeds the User collection with document (Calendar)
+* Seeds the User collection with document (Contact)
 * and provided options.
 */
 function seed(doc, options) {
-  var Calendar = mongoose.model('Calendar');
+  var Contact = mongoose.model('Contact');
 
   return new Promise(function (resolve, reject) {
 
@@ -138,7 +144,7 @@ function seed(doc, options) {
 
     function skipDocument() {
       return new Promise(function (resolve, reject) {
-        Calendar
+        Contact
         .findOne({
           title: doc.title
         })
@@ -155,7 +161,7 @@ function seed(doc, options) {
             return resolve(true);
           }
 
-          // Remove Calendar (overwrite)
+          // Remove Contact (overwrite)
 
           existing.remove(function (err) {
             if (err) {
@@ -172,19 +178,19 @@ function seed(doc, options) {
       return new Promise(function (resolve, reject) {
         if (skip) {
           return resolve({
-            message: chalk.yellow('Database Seeding: Calendar\t' + doc.title + ' skipped')
+            message: chalk.yellow('Database Seeding: Contact\t' + doc.title + ' skipped')
           });
         }
 
-        var calendar = new Calendar(doc);
+        var contact = new Contact(doc);
 
-        calendar.save(function (err) {
+        contact.save(function (err) {
           if (err) {
             return reject(err);
           }
 
           return resolve({
-            message: 'Database Seeding: Request submitted!'
+            message: 'Database Seeding: Contact\t' + contact.title + ' added'
           });
         });
       });
