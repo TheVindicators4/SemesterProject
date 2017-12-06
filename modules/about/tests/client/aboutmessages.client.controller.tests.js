@@ -1,15 +1,15 @@
 (function () {
   'use strict';
 
-  describe('Aboutmessages Controller Tests', function () {
+  describe('AboutMessages Controller Tests', function () {
     // Initialize global variables
-    var AboutmessagesController,
+    var AboutMessagesController,
       $scope,
       $httpBackend,
       $state,
       Authentication,
-      AboutmessagesService,
-      mockAboutmessage;
+      AboutMessagesService,
+      mockAboutMessage;
 
     // The $resource service augments the response object with methods for updating and deleting the resource.
     // If we were to use the standard toEqual matcher, our tests would fail because the test values would not match
@@ -36,7 +36,7 @@
     // The injector ignores leading and trailing underscores here (i.e. _$httpBackend_).
     // This allows us to inject a service but then attach it to a variable
     // with the same name as the service.
-    beforeEach(inject(function ($controller, $rootScope, _$state_, _$httpBackend_, _Authentication_, _AboutmessagesService_) {
+    beforeEach(inject(function ($controller, $rootScope, _$state_, _$httpBackend_, _Authentication_, _AboutMessagesService_) {
       // Set a new global scope
       $scope = $rootScope.$new();
 
@@ -44,12 +44,12 @@
       $httpBackend = _$httpBackend_;
       $state = _$state_;
       Authentication = _Authentication_;
-      AboutmessagesService = _AboutmessagesService_;
+      AboutMessagesService = _AboutMessagesService_;
 
-      // create mock aboutmessage
-      mockAboutmessage = new AboutmessagesService({
+      // create mock aboutMessage
+      mockAboutMessage = new AboutMessagesService({
         _id: '525a8422f6d0f87f0e407a33',
-        title: 'An Aboutmessage about MEAN',
+        title: 'An AboutMessage about MEAN',
         content: 'MEAN rocks!'
       });
 
@@ -58,10 +58,10 @@
         roles: ['user']
       };
 
-      // Initialize the Aboutmessages controller.
-      AboutmessagesController = $controller('AboutmessagesController as vm', {
+      // Initialize the AboutMessages controller.
+      AboutMessagesController = $controller('AboutMessagesController as vm', {
         $scope: $scope,
-        aboutmessageResolve: {}
+        aboutMessageResolve: {}
       });
 
       // Spy on state go

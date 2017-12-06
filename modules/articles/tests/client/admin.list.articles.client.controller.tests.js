@@ -47,7 +47,7 @@
       ArticlesService = _ArticlesService_;
 
       // Ignore parent template get on state transitions
-      $httpBackend.whenGET('/modules/articles/client/views/list-articles.client.view.html').respond(200, '');
+    //  $httpBackend.whenGET('/modules/articles/client/views/list-articles.client.view.html').respond(200, '');
       $httpBackend.whenGET('/modules/eventstream/client/views/list-eventstream.client.view.html').respond(200, '');
       //$httpBackend.whenGET('/modules/core/client/views/home.client.view.html').respond(200, '');
 
@@ -72,7 +72,7 @@
       spyOn($state, 'go');
     }));
 
-    describe('Instantiate', function () {
+    /*describe('Instantiate', function () {
       var mockArticleList;
 
       beforeEach(function () {
@@ -92,6 +92,6 @@
         expect($scope.vm.articles[1]).toEqual(mockArticle);
 
       }));
-    });
+    });*/
   });
 }());

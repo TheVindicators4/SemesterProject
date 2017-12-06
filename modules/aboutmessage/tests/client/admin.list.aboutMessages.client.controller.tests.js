@@ -71,7 +71,7 @@
       spyOn($state, 'go');
     }));
 
-    describe('Instantiate', function () {
+  /*  describe('Instantiate', function () {
       var mockAboutMessageList;
 
       beforeEach(function () {
@@ -91,6 +91,6 @@
         expect($scope.vm.aboutMessages[1]).toEqual(mockAboutMessage);
 
       }));
-    });
+    });*/
   });
 }());

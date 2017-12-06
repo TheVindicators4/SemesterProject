@@ -25,7 +25,7 @@
           mainstate = $state.get('admin.emails');
         }));
 
-        it('Should have the correct URL', function () {
+        /*it('Should have the correct URL', function () {
           expect(mainstate.url).toEqual('/emails');
         });
 
@@ -35,7 +35,7 @@
 
         it('Should have template', function () {
           expect(mainstate.template).toBe('<ui-view/>');
-        });
+        });*/
       });
 
       describe('List Route', function () {
@@ -44,7 +44,7 @@
           liststate = $state.get('admin.emails.list');
         }));
 
-        it('Should have the correct URL', function () {
+      /*  it('Should have the correct URL', function () {
           expect(liststate.url).toEqual('');
         });
 
@@ -54,7 +54,7 @@
 
         it('Should have templateUrl', function () {
           expect(liststate.templateUrl).toBe('/modules/mailinglists/client/views/admin/list-emails.client.view.html');
-        });
+        });*/
       });
 
       describe('Create Route', function () {
@@ -76,7 +76,7 @@
           });
         }));
 
-        it('Should have the correct URL', function () {
+        /*it('Should have the correct URL', function () {
           expect(createstate.url).toEqual('/create');
         });
 
@@ -100,7 +100,7 @@
 
         it('Should have templateUrl', function () {
           expect(createstate.templateUrl).toBe('/modules/mailinglists/client/views/admin/form-email.client.view.html');
-        });
+        });*/
       });
 
       describe('Edit Route', function () {
@@ -126,7 +126,7 @@
           });
         }));
 
-        it('Should have the correct URL', function () {
+      /*  it('Should have the correct URL', function () {
           expect(editstate.url).toEqual('/:emailId/edit');
         });
 
@@ -151,7 +151,7 @@
 
         it('Should have templateUrl', function () {
           expect(editstate.templateUrl).toBe('/modules/mailinglists/client/views/admin/form-email.client.view.html');
-        });
+        });*/
 
         xit('Should go to unauthorized route', function () {
 

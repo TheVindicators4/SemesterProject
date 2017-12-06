@@ -43,8 +43,8 @@
   display: block;
   /*background:#ffe6f0;
   border: 5px solid #660029;*/
-  background: white;
-  border: 5px solid #d9d9d9;
+  background: #bfbfbf;
+  border: 5px solid #4d4d4d;/*#8c8c8c;*/
 
   box-shadow: 5px 5px 10px #000000;
   font-family: 'Sanchez', serif;
@@ -60,11 +60,15 @@ border: 5px solid #660029;
 
 .list-group-item-heading{
   font-size: 2.0em;
+  font-weight: bold;
   color:black;
   padding: 20px;
-  padding-bottom: 2px;
+  padding-bottom: 10px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-bottom: 2px solid #4d4d4d;
   /*border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   padding: 20px;
@@ -79,6 +83,6 @@ border: 5px solid #660029;
   color:black;
   padding: 30px;
   padding-bottom: 25px;
-  padding-top: 10px;
+  padding-top: 15px;
 
 }

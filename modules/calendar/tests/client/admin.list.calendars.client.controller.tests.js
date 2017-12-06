@@ -47,8 +47,9 @@
       CalendarsService = _CalendarsService_;
 
       // Ignore parent template get on state transitions
-      $httpBackend.whenGET('/modules/calendar/client/views/list-calendars.client.view.html').respond(200, '');
-      $httpBackend.whenGET('/modules/core/client/views/home.client.view.html').respond(200, '');
+    //  $httpBackend.whenGET('/modules/calendar/client/views/list-calendars.client.view.html').respond(200, '');
+    //  $httpBackend.whenGET('/modules/core/client/views/home.client.view.html').respond(200, '');
+      $httpBackend.whenGET('/modules/eventstream/client/views/list-eventstream.client.view.html').respond(200, '');
 
       // create mock calendar
       mockCalendar = new CalendarsService({

@@ -1,5 +1,6 @@
 h1,h2 {
   color: white;
+  font-family: 'Sanchez', serif;
 }
 .box {
   display: inline-block;
@@ -82,6 +83,7 @@ padding-top: 0;
   padding-bottom: 15px;
   padding-top: 15px;
   text-align: center;
+  font-family: 'Sanchez', serif;
 }
 
 .eventPadding
@@ -93,6 +95,7 @@ padding-top: 0;
 {
   padding-left: 20px;
   padding-top: 20px;
+  font-family: 'Sanchez', serif;
 }
 
 .eventPaddingInnerText
@@ -101,6 +104,7 @@ padding-top: 0;
   padding-left: 20px;
   padding-top: 20px;
   font-size: 20px;
+  font-family: 'Sanchez', serif;
 }
 
 .centerItem{
@@ -119,8 +123,8 @@ font-size: 20px;
 }
 
 div.blogposting {
-  background-color: #00264d;
-  border: 5px solid #000d1a;
+  background-color:#800033;/*#00264d;*/
+  border: 5px solid #330014;
   box-shadow: 10px 10px 5px black;
   border-radius: 20px;
 }
