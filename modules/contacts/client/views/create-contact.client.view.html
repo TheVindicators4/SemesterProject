@@ -2,25 +2,24 @@
   <link rel="stylesheet" href="/modules/contact/client/css/contacts.client.css">
 </head>
 <section>
-  <div class="group" style="height:inherit;">
+  <div style="height:inherit;">
     <div class="group col-xs-12 col-xl-6 pull-left text-center" id="output">
       <div class="col-12 text-center">
         <h1>Calendar</h1>
       </div>
-      <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=489h2m4jioa9g6klo2fj9rbijc%40group.calendar.google.com&amp;color=%23333333&amp;ctz=America%2FNew_York" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+      <div style="margin-top:25px">
+        <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=489h2m4jioa9g6klo2fj9rbijc%40group.calendar.google.com&amp;color=%23333333&amp;ctz=America%2FNew_York" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+      </div>
     </div>
-    <script type="text/javascript">
-    document.getElementById("output").innerHTML = vm.calendar.content;
-    </script>
     <div class="group col-xs-12 col-xl-6 pull-right">
       <div class="col-12 text-center">
         <h1>Contact Me</h1>
       </div>
       <div class="form-appointment">
         <div class="wpcf7" id="wpcf7-f560-p590-o1">  <!--action="/landing-page-template-do-not-delete/#wpcf7-f560-p590-o1"-->
-          <form name="vm.form.contactForm" ng-submit="vm.save(vm.form.contactForm.$valid)" class="wpcf7-form" method="post" novalidate>
+          <form name="vm.form.contactForm" ng-submit="vm.save(vm.form.contactForm.$valid)" class="wpcf7-form" novalidate>
             <fieldset>
-              <div class="">
+              <div class="group">
                 <div class="col-xs-12 col-xl-6" >
                   <div>
                     <span class="wpcf7-form-control-wrap text-680">
