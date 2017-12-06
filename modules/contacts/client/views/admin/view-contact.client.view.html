@@ -8,7 +8,7 @@
 <section>
 	<div class="page-header">
 		<h1> Contact: </h1>
-		<h2 ng-bind="vm.contact.title" style = "color: white; "></h2>
+		<h2 ng-bind="vm.contact.content.name" style = "color: white; "></h2>
 	</div>
 	<small>
 		<em class="text-muted">
@@ -19,5 +19,5 @@
 			<span ng-if="!vm.contact.user">Deleted User</span>
 		</em>
 	</small>
-	<p class="lead" ng-bind="vm.contact.content" style= "color: white;"></p>
+	<p class="lead" ng-bind="vm.contact.content.message" style= "color: white;"></p>
 </section>

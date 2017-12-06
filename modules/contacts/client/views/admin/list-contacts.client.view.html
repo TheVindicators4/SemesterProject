@@ -13,8 +13,8 @@
 				<span ng-if="contact.user" ng-bind="contact.user"></span>
 				<span ng-if="!contact.user">Deleted User</span>
 			</small>
-			<h4 class="list-group-item-heading" data-ng-bind="contact.title"></h4>
-			<p class="list-group-item-text" data-ng-bind="contact.content"></p>
+			<h4 class="list-group-item-heading" data-ng-bind="contact.content.name"></h4>
+			<p class="list-group-item-text" data-ng-bind="contact.content.message"></p>
 
 			<!-- Edit this part to be a single button that will allow
 			ELO to either approve or deny a contact from a separate screen -->
