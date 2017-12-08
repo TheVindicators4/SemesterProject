@@ -7,6 +7,7 @@
 
   AboutmessagesListController.$inject = ['AboutmessagesService'];
 
+  // Controller for About Messages List
   function AboutmessagesListController(AboutmessagesService) {
     var vm = this;
 

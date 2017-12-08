@@ -7,6 +7,7 @@
 
   routeConfig.$inject = ['$stateProvider'];
 
+  // Configuring the about module admin routes
   function routeConfig($stateProvider) {
     $stateProvider
       .state('admin.aboutmessages', {

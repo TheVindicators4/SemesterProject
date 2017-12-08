@@ -7,6 +7,7 @@
 
   routeConfig.$inject = ['$stateProvider'];
 
+  // configures routes for contacts for admin side
   function routeConfig($stateProvider) {
     $stateProvider
     .state('admin.contacts', {

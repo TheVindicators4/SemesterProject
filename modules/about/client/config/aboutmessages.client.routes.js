@@ -7,6 +7,7 @@
 
   routeConfig.$inject = ['$stateProvider'];
 
+  // Configuring the about module client routes
   function routeConfig($stateProvider) {
     $stateProvider
       .state('aboutmessages', {

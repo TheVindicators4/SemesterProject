@@ -7,6 +7,7 @@
 
   menuConfig.$inject = ['menuService'];
 
+  // configures menu item for reviews page
   function menuConfig(menuService) {
     menuService.addMenuItem('topbar', {
       title: 'Reviews',

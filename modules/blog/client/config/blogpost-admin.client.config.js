@@ -1,7 +1,7 @@
 ﻿(function () {
   'use strict';
 
-  // Configuring the Articles Admin module
+  // Configuring the blogs Admin module
   angular
     .module('blogpost.admin')
     .run(menuConfig);

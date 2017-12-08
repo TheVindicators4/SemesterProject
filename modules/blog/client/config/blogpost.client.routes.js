@@ -7,6 +7,7 @@
 
   routeConfig.$inject = ['$stateProvider'];
 
+  // configures blogpost routes
   function routeConfig($stateProvider) {
     $stateProvider
       .state('blogpost', {
