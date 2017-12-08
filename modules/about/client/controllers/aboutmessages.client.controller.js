@@ -7,6 +7,7 @@
 
   AboutmessagesController.$inject = ['$scope', 'aboutmessageResolve', 'Authentication'];
 
+  // Controller for About Messages
   function AboutmessagesController($scope, aboutmessage, Authentication) {
     var vm = this;
 

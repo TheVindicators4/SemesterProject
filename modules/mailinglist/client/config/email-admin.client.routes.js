@@ -7,6 +7,7 @@
 
   routeConfig.$inject = ['$stateProvider'];
 
+  // configures routes for admin side of mailing list
   function routeConfig($stateProvider) {
     $stateProvider
       .state('admin.email', {

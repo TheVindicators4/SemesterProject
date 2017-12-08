@@ -7,6 +7,7 @@
 
   routeConfig.$inject = ['$stateProvider'];
 
+  // configures the routes for admin side of reviews
   function routeConfig($stateProvider) {
     $stateProvider
       .state('admin.reviews', {

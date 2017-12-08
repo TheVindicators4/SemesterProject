@@ -7,6 +7,7 @@
 
   BlogpostAdminController.$inject = ['$scope', '$state', '$window', 'blogpostResolve', 'Authentication', 'Notification'];
 
+  // controller for blog posts on admin side
   function BlogpostAdminController($scope, $state, $window, blogpost, Authentication, Notification) {
     var vm = this;
 

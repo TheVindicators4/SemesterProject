@@ -7,6 +7,7 @@
 
   AboutmessagesService.$inject = ['$resource', '$log'];
 
+  // Allows About Message to be created or updated; throws err on failure
   function AboutmessagesService($resource, $log) {
     var Aboutmessage = $resource('/api/aboutmessages/:aboutmessageId', {
       aboutmessageId: '@_id'
