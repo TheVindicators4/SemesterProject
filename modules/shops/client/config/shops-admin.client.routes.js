@@ -7,6 +7,7 @@
 
   routeConfig.$inject = ['$stateProvider'];
 
+  // Configures routes to admin side of the shop page
   function routeConfig($stateProvider) {
     $stateProvider
       .state('admin.shops', {

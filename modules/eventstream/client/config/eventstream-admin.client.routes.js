@@ -7,6 +7,7 @@
 
   routeConfig.$inject = ['$stateProvider'];
 
+  // Configures routes for eventstream posts on admin side
   function routeConfig($stateProvider) {
     $stateProvider
       .state('admin.eventstream', {

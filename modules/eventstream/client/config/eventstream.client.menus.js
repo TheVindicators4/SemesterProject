@@ -7,6 +7,7 @@
 
   menuConfig.$inject = ['menuService'];
 
+  // configures menu item for evenstream page
   function menuConfig(menuService) {
     menuService.addMenuItem('topbar', {
       title: 'Eventstream',

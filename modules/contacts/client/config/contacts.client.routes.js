@@ -7,6 +7,7 @@
 
   routeConfig.$inject = ['$stateProvider'];
 
+    // configures routes for contacts
   function routeConfig($stateProvider) {
     $stateProvider
     .state('contacts', {

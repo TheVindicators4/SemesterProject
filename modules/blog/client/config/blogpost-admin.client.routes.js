@@ -7,6 +7,7 @@
 
   routeConfig.$inject = ['$stateProvider'];
 
+  // configuring the blogs admin routes
   function routeConfig($stateProvider) {
     $stateProvider
       .state('admin.blogpost', {
