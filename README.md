@@ -30,6 +30,7 @@ Availability: https://developer.spotify.com/technologies/widgets/spotify-play-bu
 Title: CSS Navigation Bar  
 Author: w3schools  
 Date: 2015  
+Availability: https://www.w3schools.com/css/css_navbar.asp  
   
 Title: Add a Signup Form to Your Website  
 Author: MailChimp  
