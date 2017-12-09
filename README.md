@@ -15,6 +15,33 @@ To continue development on this MEAN.JS application, please make sure you have t
 $ npm install -g bower
 ```
 
+## Attributed Code
+
+Title: Custom Scrollbar styling
+Author: Abhishek Pathak
+Date: 2016
+Availability: https://codepen.io/devstreak/pen/dMYgeO
+
+Title: Spotify Play Button
+Author: Spotify
+Date: 2016
+Availability: https://developer.spotify.com/technologies/widgets/spotify-play-button/
+
+Title: CSS Navigation Bar
+Author: w3schools
+Date: 2015
+
+Title: Add a Signup Form to Your Website
+Author: MailChimp
+Date: 2017
+Availability: https://kb.mailchimp.com/lists/signup-forms/add-a-signup-form-to-your-website
+
+Title: Bootstrap Modal Plugin
+Author: w3schools
+Date: 2015
+Availability: https://www.w3schools.com/bootstrap/bootstrap_modal.asp
+
+
 ## Running The Application Locally
 
 Before running this application, make sure all dependencies are installed by running:
