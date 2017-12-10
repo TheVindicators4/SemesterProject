@@ -7,6 +7,7 @@
 
   menuConfig.$inject = ['menuService'];
 
+  // Configures the blogpost menu item
   function menuConfig(menuService) {
     menuService.addMenuItem('topbar', {
       title: 'Blogpost',

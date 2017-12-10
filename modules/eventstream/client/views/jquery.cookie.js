@@ -1,3 +1,4 @@
+// Used to save cookies when user visits the site
 /*!
  * jQuery Cookie Plugin v1.4.0
  * https://github.com/carhartl/jquery-cookie

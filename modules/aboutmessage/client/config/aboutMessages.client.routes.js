@@ -7,6 +7,7 @@
 
   routeConfig.$inject = ['$stateProvider'];
 
+  // Configuring routes for About Message
   function routeConfig($stateProvider) {
     $stateProvider
       .state('aboutMessages', {
