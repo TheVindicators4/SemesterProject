@@ -7,6 +7,7 @@
 
   routeConfig.$inject = ['$stateProvider'];
 
+  // Configures routes for reviews page
   function routeConfig($stateProvider) {
     $stateProvider
     .state('reviews', {

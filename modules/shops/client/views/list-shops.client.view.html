@@ -1,3 +1,4 @@
+<!-- lists the shop items on the shop page -->
 <head>
   <link rel="stylesheet" href="/modules/core/client/css/shop.css">
   <link rel="stylesheet" href="/modules/core/client/css/eventstream.css">
@@ -11,7 +12,7 @@
   <div ng-repeat="shop in vm.shops" class="custom2">
       <div class="center">
         <h4 class="list-group-item-heading spacing" ng-bind="shop.title"></h4>
-        <img class = "spacing"src="{{shop.urlImage}}" width="300px" height="300px"></img>
+        <img class = "spacing"src="https://drive.google.com/thumbnail?id={{shop.urlImage}}" width="300px" height="300px"></img>
         <p class="list-group-item-text spacing" ng-bind="shop.content"></p>
         <a href="{{shop.url}}" target="_blank" class = "btn blue spacing">Shop Site</a>
       </div>

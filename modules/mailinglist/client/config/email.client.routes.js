@@ -7,6 +7,7 @@
 
   routeConfig.$inject = ['$stateProvider'];
 
+  // configures the routes for mailing list
   function routeConfig($stateProvider) {
     $stateProvider
       .state('email', {

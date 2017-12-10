@@ -7,6 +7,7 @@
 
   routeConfig.$inject = ['$stateProvider'];
 
+  // Configures routes for evenstream posts
   function routeConfig($stateProvider) {
     $stateProvider
       .state('eventstream', {

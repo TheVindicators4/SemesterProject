@@ -1,3 +1,4 @@
+<!-- Page for editing the shop items on admin side -->
 <head>
   <link rel="stylesheet" href="/modules/core/client/css/shop.css">
   <link rel="stylesheet" href="/modules/core/client/css/eventstream.css">
@@ -6,13 +7,16 @@
 <section>
   <div class="page-header center">
     <h1>Shop - Edit/Create</h1>
+    <a class="btn btn-primary pull-right" data-ui-sref="admin.shops.create">
+      <i class="glyphicon glyphicon-plus"></i>
+    </a>
   </div>
   <div class = "row">
   <div ng-repeat="shop in vm.shops" data-ui-sref="admin.shops.edit({shopId: shop._id})" class="custom2">
       <a data-ui-sref="admin.shops.edit({shopId: shop._id})" style = "a:hover:#990099;">
         <div class="center">
           <h4 class="list-group-item-heading spacing" ng-bind="shop.title"></h4>
-          <img class = "spacing"src="{{shop.urlImage}}" width="300px" height="300px"></img>
+          <img class = "spacing"src="https://drive.google.com/thumbnail?id={{shop.urlImage}}" width="300px" height="300px"></img>
           <p class="list-group-item-text spacing" ng-bind="shop.content"></p>
           <a href="{{shop.url}}" target="_blank" class = "btn blue spacing">Shop Site</a>
         </div>
