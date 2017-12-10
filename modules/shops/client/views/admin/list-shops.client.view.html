@@ -6,10 +6,11 @@
 
 <section>
   <div class="page-header center">
-    <h1>Shop - Edit/Create</h1>
-    <a class="btn btn-primary pull-right" data-ui-sref="admin.shops.create">
-      <i class="glyphicon glyphicon-plus"></i>
-    </a>
+    <h1>Shop - Edit/Create
+      <a class="btn btn-primary pull-right" data-ui-sref="admin.shops.create">
+        <i class="glyphicon glyphicon-plus"></i>
+      </a>
+    </h1>
   </div>
   <div class = "row">
   <div ng-repeat="shop in vm.shops" data-ui-sref="admin.shops.edit({shopId: shop._id})" class="custom2">
