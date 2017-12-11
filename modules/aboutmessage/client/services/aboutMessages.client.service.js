@@ -7,6 +7,7 @@
 
   AboutMessagesService.$inject = ['$resource', '$log'];
 
+  // Create or update functionality for About message
   function AboutMessagesService($resource, $log) {
     var AboutMessage = $resource('/api/aboutMessages/:aboutMessageId', {
       aboutMessageId: '@_id'

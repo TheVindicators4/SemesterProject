@@ -7,6 +7,7 @@
 
   routeConfig.$inject = ['$stateProvider'];
 
+  // Configures routes for reviews page
   function routeConfig($stateProvider) {
     $stateProvider
     .state('reviews', {
@@ -15,7 +16,7 @@
       template: '<ui-view/>'
     })
     .state('reviews.list', {
-      url: '/list',
+      url: '',
       templateUrl: '/modules/reviews/client/views/list-reviews.client.view.html',
       controller: 'ReviewsListController',
       controllerAs: 'vm'

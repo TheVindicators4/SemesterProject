@@ -48,6 +48,7 @@ exports.update = function (req, res) {
 
   eventstream.title = req.body.title;
   eventstream.content = req.body.content;
+  eventstream.urlImage= req.body.urlImage;
 
   eventstream.save(function (err) {
     if (err) {

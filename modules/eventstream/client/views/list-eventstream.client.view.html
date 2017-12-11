@@ -11,16 +11,18 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
 </head>
 
-
+<!-- Lists the event stream posts -->
 <div class = "col-container">
 <div class = "col-padding">
   <div class = "col-mid">
     <div class = "panelBox" id= "style-2">
        <div class="panel" ng-repeat="eventstream in vm.eventstream">
-         <div class = "eventPaddingTitle">{{eventstream.title}}</div>
+         <div class = "eventPaddingTitle">{{eventstream.title}}
+           <p class = "eventPaddingInner pull-right"  ng-bind="eventstream.created | date:'mediumDate'"><i>{{eventstream.created}}</i></p>
+         </div>
            <div class="panel-body">
-             <p class = "eventPaddingInner"  ng-bind="eventstream.created | date:'mediumDate'"><i>{{eventstream.created}}</i></p>
-             <img class = "eventPaddingImage" src="/modules/core/client/img/img-Social/logo1.jpg"  alt="Logo" style="width:300px;height:300px;"></img>
+             <!--<img class = "eventPaddingImage" src="/modules/core/client/img/img-Social/logo1.jpg"  alt="Logo" style="width:300px;height:300px;"></img>-->
+             <img class = "eventPaddingImage" src="https://drive.google.com/thumbnail?id={{eventstream.urlImage}}" width="300px" height="300px"></img>
              <p class = "eventPaddingInnerText">{{eventstream.content}}</p>
            </div>
        </div>
@@ -29,9 +31,41 @@
 </div>
 
 
+<!-- Button for mailing list modal -->
 <div class = 'col-sid'>
 <!--  <div class = "social-media">-->
       <button type="button" class="btn" data-toggle="modal" data-target="#myModal">Join Mailing List!</button>
+
+
+      <!-- Mailing list modal -->
+      <div class="modal custom" id="myModal" role="dialog">
+        <div class="modal-dialog" >
+          <!-- Modal content-->
+            <div class="custom2">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:black">x</button>
+              <h4 style="text-align: center">Join the DJ ELO<br> Mailing List</h4>
+
+              <p style="text-align:center">Stay updated on the newest happenings on DJ ELO!</p>
+
+              <!-- from mailchimp to connect to its site-->
+              <form action="https://herokuapp.us17.list-manage.com/subscribe/post" method="POST">
+                <input type="hidden" name="u" value="7169aa29ef2b589e67cd60440">
+                <input type="hidden" name="id" value="7c5f564af8">
+                <div style="text-align:center">
+                  <input type="text" placeholder="First Name" name="MERGE1" required="" class="news_input" style="color:black" autofocus>
+                  <input type="text" placeholder="Last Name" name="MERGE2" required="" class="news_input" style="color:black">
+                  <br>
+                  <br>
+                  <input type="email" placeholder="Email Address" name="MERGE0" required="" class="news_input" style="color:black">
+                  <br>
+                  <br>
+                  <input type="submit" value="Sign Up!" class="btn">
+                </div>
+              </form>
+            </div>
+        </div>
+      </div>
+
       <p>
         <hr>
       </p>
@@ -87,7 +121,7 @@
     <center class = "socialMediaText">DJ E-LO Giving Back</p></center>
     <center><img class="img-responsive" src="/modules/core/client/img/img-Social/charity.png" width="200" height="100"></center>
     <p></p>
-    <class = "charityText">A big part of why DJ E-LO began DJing was to help raise money for charity. DJ E-LO is a big supporter of the St. Jude Children's Research Hospital. St. Jude works tediously to treat cancer and other life-threatening diseases for children. Part of what makes St. Jude so great is that care is absolutely free, so no child gets refused treatment for financial reasons. As a result, these children rely on the generousity of donors to receive their treatment. Click here to support this amazing cause!</p>
+    <p class = "charityText">A big part of why DJ E-LO began DJing was to help raise money for charity. DJ E-LO is a big supporter of the St. Jude Children's Research Hospital. St. Jude works tediously to treat cancer and other life-threatening diseases for children. Part of what makes St. Jude so great is that care is absolutely free, so no child gets refused treatment for financial reasons. As a result, these children rely on the generousity of donors to receive their treatment. Click here to support this amazing cause!</p>
       <!--Adds button that redirects to paypal in new tab-->
       <center><a href="https://www.paypal.com/fundraiser/charity/2739" target="blank" style="text-decoration : none;">
         <img src="/modules/core/client/img/img-Social/donate.gif" title="Donate"/></center>
@@ -97,18 +131,18 @@
 </div>
 
 
-
-<!-- Modal -->
+<!-- Obsolete code, to erase -->
+<!-- Modal --
 <div class="modal custom" id="myModal" role="dialog">
   <div class="modal-dialog" >
-    <!-- Modal content-->
+    <!-- Modal content--
       <div class="custom2">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:black">x</button>
         <h4 style="text-align: center">Join the DJ ELO<br> Mailing List</h4>
 
         <p style="text-align:center">Stay updated on the newest happenings on DJ ELO!</p>
 
-        <!-- from mailchimp -->
+        <!-- from mailchimp --
         <form action="https://herokuapp.us17.list-manage.com/subscribe/post" method="POST">
           <input type="hidden" name="u" value="3755f95698833862e584ab7ac">
           <input type="hidden" name="id" value="606f4077f6">
@@ -125,7 +159,7 @@
         </form>
       </div>
   </div>
-</div>
+</div>-->
 
 <script type="text/javascript">
   jQuery(document).ready(function () {

@@ -7,6 +7,7 @@
 
   AboutmessagesAdminController.$inject = ['$scope', '$state', '$window', 'aboutmessageResolve', 'Authentication', 'Notification'];
 
+  // CRUD module for About Message
   function AboutmessagesAdminController($scope, $state, $window, aboutmessage, Authentication, Notification) {
     var vm = this;
 

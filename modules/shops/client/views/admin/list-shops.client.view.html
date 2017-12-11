@@ -1,4 +1,33 @@
-﻿<section>
+<!-- Page for editing the shop items on admin side -->
+<head>
+  <link rel="stylesheet" href="/modules/core/client/css/shop.css">
+  <link rel="stylesheet" href="/modules/core/client/css/eventstream.css">
+</head>
+
+<section>
+  <div class="page-header center">
+    <h1>Shop - Edit/Create
+      <a class="btn btn-primary pull-right" data-ui-sref="admin.shops.create">
+        <i class="glyphicon glyphicon-plus"></i>
+      </a>
+    </h1>
+  </div>
+  <div class = "row">
+  <div ng-repeat="shop in vm.shops" data-ui-sref="admin.shops.edit({shopId: shop._id})" class="custom2">
+      <a data-ui-sref="admin.shops.edit({shopId: shop._id})" style = "a:hover:#990099;">
+        <div class="center">
+          <h4 class="list-group-item-heading spacing" ng-bind="shop.title"></h4>
+          <img class = "spacing"src="https://drive.google.com/thumbnail?id={{shop.urlImage}}" width="300px" height="300px"></img>
+          <p class="list-group-item-text spacing" ng-bind="shop.content"></p>
+          <a href="{{shop.url}}" target="_blank" class = "btn blue spacing">Shop Site</a>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+﻿<!--<section>
   <div class="page-header">
     <h1>
       Shops
@@ -23,4 +52,4 @@
   <div class="alert alert-warning text-center" data-ng-if="shops.$resolved && !shops.length">
     No shops yet, why don't you <a data-ui-sref="admin.shops.create">create one</a>?
   </div>
-</section>
+</section>-->

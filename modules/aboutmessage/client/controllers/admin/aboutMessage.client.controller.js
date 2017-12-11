@@ -7,6 +7,7 @@
 
   AboutMessagesAdminController.$inject = ['$scope', '$state', '$window', 'aboutMessageResolve', 'Authentication', 'Notification'];
 
+  // Controller for About Message for admin side
   function AboutMessagesAdminController($scope, $state, $window, aboutMessage, Authentication, Notification) {
     var vm = this;
 

@@ -1,3 +1,4 @@
+<!-- Page that lists reviews and gives option to create a new review -->
 <head>
   <link rel="stylesheet" href="/modules/core/client/css/eventstream.css">
     <link rel="stylesheet" href="/modules/core/client/css/reviews.css">
@@ -16,15 +17,12 @@
     <!--ui-sref="reviews.view({ reviewId: review._id })"-->
     <a ng-repeat="review in vm.reviews | filter : review.approve !== true" class="list-group-itemMOD">
   <!--  <div ng-Show = "review.approve">-->
-        <h4 class="list-group-item-heading" ng-bind="review.title"></h4>
-        <hr class = "divLine">
-
+        <div class="list-group-item-heading">{{review.title}}
+            <span class="list-group-item-text2 pull-right" ng-bind="review.created | date:'mediumDate'"></span>
+        </div>
         <p class="list-group-item-text2" ng-bind="review.content"></p>
         <div class="list-group-item-text2">
-          Posted on
-          <span ng-bind="review.created | date:'mediumDate'"></span>
-          by
-          <span ng-if="review.user" ng-bind="review.user"></span>
+           - <span style = "font-style:italic;"ng-if="review.user" ng-bind="review.user"></span>
           <!--<span ng-if="!review.user">Deleted User</span>-->
         </div>
 
