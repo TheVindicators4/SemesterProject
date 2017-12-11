@@ -28,11 +28,13 @@ Editable about page (admin functionality only)
 Shop (admin may add item for sale)
 ![alt text](README-IMG/shop.PNG "Shop")
 Filter gallery with modal pop-up
-![alt text](README-IMG/gallery.PNG "Gallery")
+![alt text](README-IMG/gallery1.PNG "Gallery")
 Blog (admin may add blog post)
 ![alt text](README-IMG/blog.PNG "Blog")
 Reviews page (only displays client review after admin approval)
 ![alt text](README-IMG/reviews.PNG "Reviews")
+Contact page with Google calendar iframe
+![alt text](README-IMG/contact.PNG "Contact & Calendar")
 
 ## Running The Application Locally
 
