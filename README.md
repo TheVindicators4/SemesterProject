@@ -1,6 +1,9 @@
-# DJ ELO GLOBAL - Business Management Website
-This is a website built and designed to fulfill the needs of DJ ELO, an artist based in Gainesville, Florida. It's purpose is to increase DJ ELO's online presense, and give him a central location for interacting with fans and spreading awareness about his music through a personal site outside of modern social networks. 
-This entire site was built on the MEAN.JS stack, and as such requires the use of the technologies described in the section below for development to occur. 
+# DJ E-LO GLOBAL - Business Management Website
+This is a website built and designed to fulfill the needs of DJ E-LO, an artist based in Gainesville, Florida. It's purpose is to increase DJ E-LO's online presence, and give him a central location for interacting with fans and spreading awareness about his music through a personal site outside of modern social networks.
+This entire site was built on the MEAN.JS stack, and as such requires the use of the technologies described in the section below for development to occur.
+
+## Link to Deployed Page
+You can find the deployed webpage at http://djelo-sprint-3.herokuapp.com/
 
 ## Technologies Used
 _This section was derived from the original README of a base-version of a MEAN.JS stack application_
@@ -14,6 +17,50 @@ To continue development on this MEAN.JS application, please make sure you have t
 ```bash
 $ npm install -g bower
 ```
+## Major Implemented Features
+Email pop-up on initial website visit
+![alt text](README-IMG/email-popup.PNG "Email pop-up")
+Home page with event stream and social media links
+![alt text](README-IMG/landing.PNG "Home page")
+Editable about page (admin functionality only)
+![alt text](README-IMG/about.PNG "About page")
+Shop (admin may add item for sale)
+![alt text](README-IMG/shop.PNG "Shop")
+Filter gallery with modal pop-up
+![alt text](README-IMG/gallery1.PNG "Gallery")
+Blog (admin may add blog post)
+![alt text](README-IMG/blog.PNG "Blog")
+Reviews page (only displays client review after admin approval)
+![alt text](README-IMG/reviews.PNG "Reviews")
+Contact page with Google calendar iframe
+![alt text](README-IMG/contact.PNG "Contact & Calendar")
+
+## Attributed Code
+
+Title: Custom Scrollbar styling  
+Author: Abhishek Pathak  
+Date: 2016  
+Availability: https://codepen.io/devstreak/pen/dMYgeO  
+  
+Title: Spotify Play Button  
+Author: Spotify  
+Date: 2016  
+Availability: https://developer.spotify.com/technologies/widgets/spotify-play-button/  
+  
+Title: CSS Navigation Bar  
+Author: w3schools  
+Date: 2015  
+Availability: https://www.w3schools.com/css/css_navbar.asp  
+  
+Title: Add a Signup Form to Your Website  
+Author: MailChimp  
+Date: 2017  
+Availability: https://kb.mailchimp.com/lists/signup-forms/add-a-signup-form-to-your-website  
+  
+Title: Bootstrap Modal Plugin  
+Author: w3schools  
+Date: 2015  
+Availability: https://www.w3schools.com/bootstrap/bootstrap_modal.asp  
 
 ## Running The Application Locally
 
@@ -82,9 +129,9 @@ $ gulp prod
 
 It is also possible to run any Gulp tasks using npm's run command and therefore use locally installed version of gulp, for example: `npm run gulp eslint`
 
-
+## Updating Database and Server Connections
+* Database connections can be found within the following path: /config/lib
+* Server connections can be found within the following paths: /modules/-/server
 
 ## Credits
-
-## License
-
+This application was made possible by the MEAN.JS stack. Big thanks to Bootstrap, Spotify, and Google Calendars for allowing us to implement some of the many cool features within this application.

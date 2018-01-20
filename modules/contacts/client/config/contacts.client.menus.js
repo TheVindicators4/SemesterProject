@@ -7,6 +7,7 @@
 
   menuConfig.$inject = ['menuService'];
 
+  // configures menu item for contacts page
   function menuConfig(menuService) {
     menuService.addMenuItem('topbar', {
       title: 'Contacts',
